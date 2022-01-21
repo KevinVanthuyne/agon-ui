@@ -6,8 +6,8 @@
   <main class="columns-container">
     <app-game-column
       class="column"
-      *ngFor="let game of games"
-      [title]="game.name"
+      *ngFor="let game of games$ | async"
+      [game]="game"
     ></app-game-column>
   </main>
 </div>

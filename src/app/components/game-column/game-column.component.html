@@ -1,5 +1,8 @@
 <div class="column-container">
-  <h2>{{ title }}</h2>
+  <h2>{{ game.name }}</h2>
 
-  <p>Score</p>
+  <div *ngFor="let hs of highScores">
+    <h3>{{ hs.username }}</h3>
+    <p>{{ hs.score }}</p>
+  </div>
 </div>
