@@ -1,0 +1,12 @@
+.root-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-container {
+  background-color: gray;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}

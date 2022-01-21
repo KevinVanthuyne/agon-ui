@@ -1,10 +1,13 @@
-<mat-toolbar color="primary">
-  <h1>Scored</h1>
-</mat-toolbar>
+<div class="root-container">
+  <mat-toolbar color="primary" class="toolbar">
+    <h1>Scored</h1>
+  </mat-toolbar>
 
-<main>
-  <app-game-column
-    *ngFor="let game of games"
-    [title]="game.name"
-  ></app-game-column>
-</main>
+  <main class="columns-container">
+    <app-game-column
+      class="column"
+      *ngFor="let game of games"
+      [title]="game.name"
+    ></app-game-column>
+  </main>
+</div>
