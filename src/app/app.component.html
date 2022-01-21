@@ -3,5 +3,8 @@
 </mat-toolbar>
 
 <main>
-  <app-game-column title="Monster Bash"></app-game-column>
+  <app-game-column
+    *ngFor="let game of games"
+    [title]="game.name"
+  ></app-game-column>
 </main>
