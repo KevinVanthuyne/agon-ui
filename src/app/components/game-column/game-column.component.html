@@ -1,4 +1,7 @@
-<div class="column-container">
+<div
+  class="column-container"
+  [ngStyle]="{ backgroundColor: game.gameStyle.backgroundColor }"
+>
   <h2>{{ game.name }}</h2>
 
   <app-high-score-card
