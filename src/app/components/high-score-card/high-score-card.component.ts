@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import HighScore from '../../models/high-score';
+import GameStyle from '../../models/game-style';
 
 @Component({
   selector: 'app-high-score-card',
@@ -8,4 +9,5 @@ import HighScore from '../../models/high-score';
 })
 export class HighScoreCardComponent {
   @Input() highScore!: HighScore;
+  @Input() gameStyle!: GameStyle;
 }

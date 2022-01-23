@@ -1,4 +1,6 @@
 <div class="card">
-  <div class="title">{{ highScore.username }}</div>
+  <div class="title" [ngStyle]="{ color: gameStyle.fontColor }">
+    {{ highScore.username }}
+  </div>
   <div class="score">{{ highScore.score.toLocaleString() }}</div>
 </div>
