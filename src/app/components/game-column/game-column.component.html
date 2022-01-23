@@ -3,10 +3,14 @@
   [ngStyle]="{ backgroundColor: game.gameStyle.backgroundColor }"
 >
   <img
+    *ngIf="game.gameStyle.headerImage"
     [src]="game.gameStyle.headerImage"
     [alt]="game.name"
     class="header-img"
   />
+  <h2 *ngIf="!game.gameStyle.headerImage" class="mat-display-1">
+    {{ game.name }}
+  </h2>
 
   <app-high-score-card
     *ngFor="let hs of highScores"
