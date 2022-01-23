@@ -2,7 +2,11 @@
   class="column-container"
   [ngStyle]="{ backgroundColor: game.gameStyle.backgroundColor }"
 >
-  <h2>{{ game.name }}</h2>
+  <img
+    [src]="game.gameStyle.headerImage"
+    [alt]="game.name"
+    class="header-img"
+  />
 
   <app-high-score-card
     *ngFor="let hs of highScores"
