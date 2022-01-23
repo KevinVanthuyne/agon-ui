@@ -1,0 +1,21 @@
+.card {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 20px 5px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  word-break: break-all;
+  line-height: 1em;
+  margin-bottom: 20px;
+}
+
+.score {
+  font-size: 2em;
+  font-weight: 500;
+}

@@ -6,9 +6,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { GameColumnComponent } from './components/game-column/game-column.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HighScoreCardComponent } from './components/high-score-card/high-score-card.component';
 
 @NgModule({
-  declarations: [AppComponent, GameColumnComponent],
+  declarations: [AppComponent, GameColumnComponent, HighScoreCardComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
