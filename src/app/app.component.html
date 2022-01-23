@@ -6,7 +6,7 @@
   <main class="columns-container">
     <app-game-column
       class="column"
-      *ngFor="let game of games$ | async"
+      *ngFor="let game of games"
       [game]="game"
     ></app-game-column>
   </main>

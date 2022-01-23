@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class GameService {
   constructor(private http: HttpClient) {}
 
-  get games$(): Observable<Game[]> {
-    return this.http.get<Game[]>('http://localhost:8080/api/v1/game');
+  get passedGames$(): Observable<Game[]> {
+    return this.http.get<Game[]>('http://localhost:8080/api/v1/game/passed');
   }
 }
