@@ -17,6 +17,8 @@ import { ScoreToBeatComponent } from '../ticker-items/score-to-beat/score-to-bea
 })
 export class TickerPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
+
+  private readonly intervalTime = 1000;
   currentIndex = -1;
   interval: number | undefined;
   components: Type<TickerItemComponent>[] = [
@@ -46,6 +48,6 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   setupInterval() {
     this.interval = setInterval(() => {
       this.loadComponent();
-    }, 3000);
+    }, this.intervalTime);
   }
 }
