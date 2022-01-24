@@ -10,6 +10,9 @@ import { HighScoreCardComponent } from './components/high-score-card/high-score-
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
+import { TickerDirective } from './directives/ticker.directive';
+import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/game-of-the-month.component';
+import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
 
 const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
@@ -25,6 +28,9 @@ const appRoutes: Routes = [
     HighScoreCardComponent,
     LeaderboardPageComponent,
     TickerPageComponent,
+    TickerDirective,
+    GameOfTheMonthComponent,
+    ScoreToBeatComponent,
   ],
   imports: [
     BrowserModule,
