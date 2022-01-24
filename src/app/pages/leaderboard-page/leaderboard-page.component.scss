@@ -1,3 +1,5 @@
+@use "../../scss/variables" as vars;
+
 .root-container {
   height: 100%;
   display: flex;
@@ -13,6 +15,6 @@
 }
 
 .toolbar {
-  background-color: #212121;
-  color: #fafafa;
+  background-color: vars.$dark-gray;
+  color: vars.$broken-white;
 }

@@ -1,6 +1,6 @@
-.root-container {
-  height: 100%;
-  //display: flex;
-  //flex-direction: column;
-  background-color: gray;
+@use "../../scss/variables" as vars;
+
+.ticker-container {
+  background-color: vars.$dark-gray;
+  color: vars.$broken-white;
 }

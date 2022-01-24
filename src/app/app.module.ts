@@ -13,6 +13,7 @@ import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
 import { TickerDirective } from './directives/ticker.directive';
 import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/game-of-the-month.component';
 import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatToolbarModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
