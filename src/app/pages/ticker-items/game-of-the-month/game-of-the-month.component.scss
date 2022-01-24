@@ -13,4 +13,19 @@
 
 .game {
   font-size: 50vh;
+  font-weight: bold;
+
+  .game-content {
+    display: block; /* Important to give the content a width */
+    width: 100%;
+    transform: translateX(100%); /* Animation start out of the screen */
+    animation: move 10s linear infinite;
+  }
+
+  /* Create the animation */
+  @keyframes move {
+    to {
+      transform: translateX(-100%);
+    }
+  }
 }
