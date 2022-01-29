@@ -1,17 +1,15 @@
-@use "/src/app/scss/variables" as vars;
-
-.item {
+.item-container {
   flex-grow: 1;
 }
 
-.fit-text {
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 33vh;
 }
 
 .ticker-container {
-  background-color: vars.$dark-gray;
-  color: vars.$broken-white;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
