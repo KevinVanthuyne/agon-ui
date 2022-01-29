@@ -1,26 +1,17 @@
-.title {
-  font-size: 5em;
-}
+@use "/src/app/scss/variables" as vars;
 
-.row {
-  height: 30vh;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.score {
-  font-weight: bold;
-}
-
-.user {
-  text-align: center;
+.item {
+  flex-grow: 1;
 }
 
 .fit-text {
-  height: 30vh;
+  height: 33vh;
+}
+
+.ticker-container {
+  background-color: vars.$dark-gray;
+  color: vars.$broken-white;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }
