@@ -18,6 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
   { path: 'ticker', component: TickerPageComponent },
+  { path: 'ticker/1', component: GameOfTheMonthComponent },
+  { path: 'ticker/2', component: ScoreToBeatComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
