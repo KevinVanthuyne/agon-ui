@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { TickerItemComponent } from '../ticker-item.component';
-import fitty, { FittyInstance } from 'fitty';
+import * as textFit from 'textfit';
 
 @Component({
   selector: 'app-score-to-beat',
@@ -10,11 +10,12 @@ import fitty, { FittyInstance } from 'fitty';
 export class ScoreToBeatComponent
   implements TickerItemComponent, AfterViewInit
 {
-  fits: FittyInstance | undefined;
-
   ngAfterViewInit() {
-    const score: HTMLElement = document.getElementById('score')!;
-    this.fits = fitty(score, { minSize: 50, maxSize: 300 });
-    this.fits.fit();
+    const score = document.getElementById('score')!;
+    const elements = document.getElementsByClassName('fit-text');
+
+    for (let i = 0; i < elements.length; i++) {
+        textFit(elements.item(i) as HTMLElement , {maxFontSize: 1000, alignHoriz: true});
+    }
   }
 }
