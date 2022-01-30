@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TickerItemComponent } from '../ticker-item.component';
 import { GameService } from '../../../services/game.service';
+import { Observable } from 'rxjs';
 import Game from '../../../models/game';
 
 @Component({
@@ -11,7 +12,7 @@ import Game from '../../../models/game';
 export class GameOfTheMonthComponent implements TickerItemComponent {
   constructor(private gameService: GameService) {}
 
-  get currentGame(): Game | undefined {
-    return this.gameService.currentGame;
+  get activeGame$(): Observable<Game> {
+    return this.gameService.activeGame$;
   }
 }

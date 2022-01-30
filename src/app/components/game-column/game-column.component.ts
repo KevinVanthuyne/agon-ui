@@ -1,26 +1,20 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import Game from '../../models/game';
 import { ScoreService } from '../../services/score.service';
+import { Observable } from 'rxjs';
 import HighScore from '../../models/high-score';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-game-column',
   templateUrl: './game-column.component.html',
   styleUrls: ['./game-column.component.scss'],
 })
-export class GameColumnComponent implements OnInit {
+export class GameColumnComponent {
   @Input() game!: Game;
-  highScores: HighScore[] = [];
 
   constructor(private scoreService: ScoreService) {}
 
-  ngOnInit(): void {
-    this.scoreService
-      .ranking$(this.game.id)
-      .pipe(take(1))
-      .subscribe((highScores) => {
-        this.highScores = highScores;
-      });
+  get highScores$(): Observable<HighScore[]> {
+    return this.scoreService.getHighScores$(this.game.id);
   }
 }

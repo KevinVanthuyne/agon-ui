@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col game">
-      <span class="game-content">{{ currentGame?.name }}</span>
+      <span class="game-content">{{ (activeGame$ | async)?.name }}</span>
     </div>
   </div>
 </app-ticker-item-container>

@@ -4,14 +4,29 @@
       <div class="text-uppercase ticker-title">Score to beat</div>
     </div>
   </div>
-  <div class="item-container">
+
+  <!-- No score yet -->
+  <div class="item-container" *ngIf="!(currentHighScore$ | async)">
     <div class="item">
-      <div class="font-weight-bold fit-text">100,541,150</div>
+      <div class="font-weight-bold fit-text">No scores posted yet!</div>
     </div>
   </div>
-  <div class="item-container">
-    <div class="item">
-      <span class="text-uppercase fit-text">Kevv</span>
+
+  <!-- Scores available -->
+  <ng-container *ngIf="currentHighScore$ | async as currentHighScore">
+    <div class="item-container">
+      <div class="item">
+        <div class="font-weight-bold fit-text">
+          {{ currentHighScore.score }}
+        </div>
+      </div>
     </div>
-  </div>
+    <div class="item-container">
+      <div class="item">
+        <span class="text-uppercase fit-text">
+          {{ currentHighScore.username }}
+        </span>
+      </div>
+    </div>
+  </ng-container>
 </app-ticker-item-container>
