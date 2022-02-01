@@ -23,6 +23,7 @@
     "@angular/router": "~13.1.0",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
     "bootstrap": "^4.6.0",
+    "dynamic-marquee": "^2.1.3",
     "fitter-happier-text": "^0.0.7",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
