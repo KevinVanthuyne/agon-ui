@@ -1,0 +1,10 @@
+<app-ticker-item-container>
+  <ng-container *ngIf="(activeGame$ | async)?.gameStyle?.headerImage">
+    <div
+      class="image"
+      [ngStyle]="{
+        backgroundImage: 'url('+ (activeGame$ | async)?.gameStyle?.headerImage + ')'
+      }"
+    ></div>
+  </ng-container>
+</app-ticker-item-container>

@@ -15,12 +15,14 @@ import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/
 import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TickerItemContainerComponent } from './components/ticker-item-container/ticker-item-container.component';
+import { GameImageComponent } from './pages/ticker-items/game-image/game-image.component';
 
 const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
   { path: 'ticker/2', component: ScoreToBeatComponent },
+  { path: 'ticker/3', component: GameImageComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     GameOfTheMonthComponent,
     ScoreToBeatComponent,
     TickerItemContainerComponent,
+    GameImageComponent,
   ],
   imports: [
     BrowserModule,
