@@ -19,13 +19,13 @@ import { GameImageComponent } from '../ticker-items/game-image/game-image.compon
 export class TickerPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
 
-  private readonly intervalTime = 1000;
+  private readonly intervalTime = 5000;
   currentIndex = -1;
   interval: number | undefined;
   components: Type<TickerItemComponent>[] = [
     GameOfTheMonthComponent,
-    ScoreToBeatComponent,
     GameImageComponent,
+    ScoreToBeatComponent,
   ];
 
   ngAfterViewInit() {

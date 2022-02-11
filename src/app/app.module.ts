@@ -21,8 +21,8 @@ const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
-  { path: 'ticker/2', component: ScoreToBeatComponent },
-  { path: 'ticker/3', component: GameImageComponent },
+  { path: 'ticker/2', component: GameImageComponent },
+  { path: 'ticker/3', component: ScoreToBeatComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
