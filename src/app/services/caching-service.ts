@@ -9,8 +9,8 @@ import { Subject } from 'rxjs';
  */
 @Injectable()
 export abstract class CachingService implements OnDestroy {
-  // private static readonly REFRESH_INTERVAL = 300000; // 5 minutes
-  protected static readonly REFRESH_INTERVAL = 1000; // 5 minutes
+  // protected static readonly REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+  protected static readonly REFRESH_INTERVAL = 5000; // 5 minutes
   protected destroy$ = new Subject<void>();
 
   ngOnDestroy(): void {

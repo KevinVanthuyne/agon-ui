@@ -18,9 +18,9 @@ import { RunnerUpScoresComponent } from '../ticker-items/runner-up-scores/runner
   styleUrls: ['./ticker-page.component.scss'],
 })
 export class TickerPageComponent implements AfterViewInit, OnDestroy {
-  @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
+  static readonly INTERVAL = 5000;
 
-  private readonly intervalTime = 5000;
+  @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
   currentIndex = -1;
   interval: number | undefined;
   components: Type<TickerItemComponent>[] = [
@@ -52,6 +52,6 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   setupInterval() {
     this.interval = setInterval(() => {
       this.loadComponent();
-    }, this.intervalTime);
+    }, TickerPageComponent.INTERVAL);
   }
 }
