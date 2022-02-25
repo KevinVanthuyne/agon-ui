@@ -23,6 +23,7 @@ export class GameOfTheMonthComponent
       rate: -600,
     });
     this._sub = this.gameService.activeGame$.subscribe((game) => {
+      if (!this._marquee) return;
       this._marquee?.clear();
       this._marquee?.appendItem(game.name);
       this._marquee?.onAllItemsRemoved(() => {

@@ -46,7 +46,11 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
     const viewContainerRef = this.tickerHost.viewContainerRef;
     viewContainerRef.clear();
 
-    viewContainerRef.createComponent<TickerItemComponent>(tickerItemComponent);
+    const componentRef =
+      viewContainerRef.createComponent<TickerItemComponent>(
+        tickerItemComponent
+      );
+    componentRef.changeDetectorRef.detectChanges();
   }
 
   setupInterval() {
