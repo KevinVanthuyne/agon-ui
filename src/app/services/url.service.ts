@@ -15,4 +15,8 @@ export class UrlService {
   get allGames(): string {
     return 'http://localhost:8080/api/v1/game';
   }
+
+  get allRankings(): string {
+    return 'http://localhost:8080/api/v1/score/ranking/all';
+  }
 }

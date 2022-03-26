@@ -10,6 +10,7 @@ import {
 } from 'rxjs';
 import HighScore from '../models/high-score';
 import { CachingService } from './caching-service';
+import { UrlService } from './url.service';
 
 @Injectable({
   providedIn: 'root',
@@ -17,7 +18,7 @@ import { CachingService } from './caching-service';
 export class ScoreService extends CachingService implements OnDestroy {
   private highScoreCache$: Observable<Map<number, HighScore[]>> | undefined;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private url: UrlService) {
     super();
   }
 
@@ -40,9 +41,7 @@ export class ScoreService extends CachingService implements OnDestroy {
 
   private getAllRankings$(): Observable<Map<number, HighScore[]>> {
     return this.http
-      .get<{ [gameId: number]: HighScore[] }>(
-        `http://localhost:8080/api/v1/score/ranking/all`
-      )
+      .get<{ [gameId: number]: HighScore[] }>(this.url.allRankings)
       .pipe(
         map((highScoresObject) => {
           return new Map<number, HighScore[]>(
