@@ -8,3 +8,5 @@ RUN npm run build --prod
 # Stage 2: Serve the app with nginx
 FROM nginx:alpine
 COPY --from=node /app/dist/scored-ui /usr/share/nginx/html
+
+EXPOSE 80
