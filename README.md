@@ -12,7 +12,7 @@ Angular frontend for the Scored bot.
 ### Docker setup
 
 * Run `docker build -t kevinvt/scored-ui .` to build image
-* Run `docker run -d -p 8085:80 kevinvt/scored-ui:latest` to run the image manually
+* Use Docker Compose to run [scored-docker-compose](https://github.com/KevinVanthuyne/scored-docker-compose) and run the entire application
 
 ## Development
 
