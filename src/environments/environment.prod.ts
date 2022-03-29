@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080', // Used in docker-compose
+  apiUrl: 'http://scores.kevinvt.com', // Used in docker-compose. http://localhost:8080 for local docker composing
 };
