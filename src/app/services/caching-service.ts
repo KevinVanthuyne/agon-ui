@@ -1,5 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { Subject } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 /**
  * Services that retrieve data should extend this class. It provides a set refresh interval on which the services should
@@ -9,8 +10,7 @@ import { Subject } from 'rxjs';
  */
 @Injectable()
 export abstract class CachingService implements OnDestroy {
-  // protected static readonly REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
-  protected static readonly REFRESH_INTERVAL = 5000; // 5 minutes
+  protected static readonly REFRESH_INTERVAL = environment.cacheRefreshInterval;
   protected destroy$ = new Subject<void>();
 
   ngOnDestroy(): void {
