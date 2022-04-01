@@ -1,8 +1,10 @@
 # Stage 1: Build the Angular app
 FROM node:16-alpine as node
+ENV NODE_ENV=production
 WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm install --production
 COPY . .
-RUN npm install
 RUN npm run build --prod
 
 # Stage 2: Serve the app with nginx
