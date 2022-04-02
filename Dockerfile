@@ -1,9 +1,9 @@
 # Stage 1: Build the Angular app
 FROM node:16-alpine as node
-ENV NODE_ENV=production
+#ENV NODE_ENV=production
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install --production
+COPY ["package.json", "package-lock.json*", "./"]
+RUN npm install
 COPY . .
 RUN npm run build --prod
 
