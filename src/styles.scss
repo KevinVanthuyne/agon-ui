@@ -36,6 +36,10 @@ $scored-ui-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
+html {
+  font-size: 11px;
+}
+
 html,
 body {
   height: 100%;
@@ -52,4 +56,11 @@ body {
 .ticker-title {
   font-size: 7rem;
   font-weight: bold;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  html {
+    font-size: 14px;
+  }
 }
