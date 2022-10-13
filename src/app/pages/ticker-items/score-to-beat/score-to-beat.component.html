@@ -1,14 +1,14 @@
 <app-ticker-item-container>
   <div class="item-container">
     <div class="item">
-      <div class="text-uppercase ticker-title">Score to beat</div>
+      <div class="text-uppercase ticker-title">Hoogste score</div>
     </div>
   </div>
 
   <!-- No score yet -->
   <div class="item-container" *ngIf="!(currentHighScore$ | async)">
     <div class="item">
-      <div class="font-weight-bold fit-text">No scores posted yet!</div>
+      <div class="font-weight-bold fit-text">Nog geen scores gepost!</div>
     </div>
   </div>
 
