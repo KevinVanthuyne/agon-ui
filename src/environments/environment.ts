@@ -8,6 +8,7 @@ export const environment = {
   leaderBoardUrl: 'http://localhost:8080/leaderboard',
   partakeCompetitionUrl: 'https://tronk.be/flipperkast.html',
   cacheRefreshInterval: 5 * 1000, // 5 seconds
+  tickerPageInterval: 2 * 1000, // 2 seconds
 };
 
 /*

@@ -13,6 +13,7 @@ import { GameImageComponent } from '../ticker-items/game-image/game-image.compon
 import { RunnerUpScoresComponent } from '../ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from '../ticker-items/competition-qr-code/competition-qr-code.component';
 import { WinPrizesComponent } from '../ticker-items/win-prizes/win-prizes.component';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-ticker-page',
@@ -20,8 +21,6 @@ import { WinPrizesComponent } from '../ticker-items/win-prizes/win-prizes.compon
   styleUrls: ['./ticker-page.component.scss'],
 })
 export class TickerPageComponent implements AfterViewInit, OnDestroy {
-  static readonly INTERVAL = 5000;
-
   @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
   currentIndex = -1;
   interval: number | undefined;
@@ -60,6 +59,6 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   setupInterval() {
     this.interval = setInterval(() => {
       this.loadComponent();
-    }, TickerPageComponent.INTERVAL);
+    }, environment.tickerPageInterval);
   }
 }
