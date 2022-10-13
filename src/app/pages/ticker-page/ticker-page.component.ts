@@ -11,6 +11,7 @@ import { GameOfTheMonthComponent } from '../ticker-items/game-of-the-month/game-
 import { ScoreToBeatComponent } from '../ticker-items/score-to-beat/score-to-beat.component';
 import { GameImageComponent } from '../ticker-items/game-image/game-image.component';
 import { RunnerUpScoresComponent } from '../ticker-items/runner-up-scores/runner-up-scores.component';
+import { CompetitionQrCodeComponent } from '../ticker-items/competition-qr-code/competition-qr-code.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -28,6 +29,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
     GameImageComponent,
     ScoreToBeatComponent,
     RunnerUpScoresComponent,
+    CompetitionQrCodeComponent,
   ];
 
   ngAfterViewInit() {

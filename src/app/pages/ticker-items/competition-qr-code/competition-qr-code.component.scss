@@ -1,0 +1,42 @@
+.row {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 6em;
+}
+
+.left-arrow, .right-arrow {
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+
+}
+
+.left-arrow {
+  animation-name: pointing-left-to-right;
+}
+
+.right-arrow {
+  animation-name: pointing-right-to-left;
+  transform: scaleX(-1);
+}
+
+@keyframes pointing-left-to-right {
+  from {
+    translate: -50px
+  }
+  to {
+    translate: 50px
+  }
+}
+
+@keyframes pointing-right-to-left {
+  from {
+    translate: 50px
+  }
+  to {
+    translate: -50px
+  }
+}
+
