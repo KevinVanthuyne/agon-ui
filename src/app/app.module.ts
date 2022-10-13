@@ -19,6 +19,7 @@ import { GameImageComponent } from './pages/ticker-items/game-image/game-image.c
 import { RunnerUpScoresComponent } from './pages/ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { QRCodeModule } from 'angular2-qrcode';
+import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.component';
 
 const appRoutes: Routes = [
   { path: 'leaderboard', component: LeaderboardPageComponent },
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
   { path: 'ticker/2', component: GameImageComponent },
   { path: 'ticker/3', component: ScoreToBeatComponent },
   { path: 'ticker/4', component: RunnerUpScoresComponent },
-  { path: 'ticker/5', component: CompetitionQrCodeComponent },
+  { path: 'ticker/5', component: WinPrizesComponent },
+  { path: 'ticker/6', component: CompetitionQrCodeComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     GameImageComponent,
     RunnerUpScoresComponent,
     CompetitionQrCodeComponent,
+    WinPrizesComponent,
   ],
   imports: [
     BrowserModule,
