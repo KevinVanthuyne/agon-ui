@@ -1,4 +1,8 @@
+import Game from '../game';
+import Score from '../score';
+
 export default interface AbstractDivision {
   id: number;
-  gameId: number;
+  game: Game;
+  scores: Score[];
 }

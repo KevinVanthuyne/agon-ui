@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HighScoreCompetitionService } from '../../../services/competition/high-score-competition.service';
 import { take } from 'rxjs';
 import HighScoreDivision from '../../../models/division/high-score-division';
+import Game from '../../../models/game';
 
 @Component({
   selector: 'app-high-score-leaderboard-page',
@@ -19,5 +20,9 @@ export class HighScoreLeaderboardPageComponent implements OnInit {
       .subscribe((divisions) => {
         this.divisions = divisions;
       });
+  }
+
+  get games(): Game[] {
+    return this.divisions.map((div) => div.game);
   }
 }

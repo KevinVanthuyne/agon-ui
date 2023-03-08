@@ -23,6 +23,7 @@ import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.c
 import { PageContainerComponent } from './components/page-container/page-container.component';
 import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-score-leaderboard-page/high-score-leaderboard-page.component';
 import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
+import { DivisionColumnsComponent } from './components/division-columns/division-columns.component';
 
 const appRoutes: Routes = [
   {
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
     PageContainerComponent,
     HighScoreLeaderboardPageComponent,
     PeriodLeaderboardPageComponent,
+    DivisionColumnsComponent,
   ],
   imports: [
     BrowserModule,
