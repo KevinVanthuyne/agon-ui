@@ -1,1 +1,11 @@
-<p>period-leaderboard-page works!</p>
+<div class="columns-container">
+  <div *ngIf="games.length === 0" class="d-flex justify-content-center align-items-center vw-100 mat-h1">
+    <p>No games have been played yet!</p>
+  </div>
+
+  <app-game-column
+    class="column"
+    *ngFor="let game of games"
+    [game]="game"
+  ></app-game-column>
+</div>

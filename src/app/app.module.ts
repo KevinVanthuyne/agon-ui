@@ -29,6 +29,7 @@ const appRoutes: Routes = [
     path: 'leaderboard',
     component: LeaderboardPageComponent,
     children: [
+      { path: '', redirectTo: 'period', pathMatch: 'full' },
       { path: 'period', component: PeriodLeaderboardPageComponent },
       { path: 'high-score', component: HighScoreLeaderboardPageComponent },
     ],
