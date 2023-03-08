@@ -1,5 +1,4 @@
 import AbstractDivision from './abstract-division';
-import Game from '../game';
 import Score from '../score';
 
 export default class PeriodDivision extends AbstractDivision {
@@ -8,12 +7,12 @@ export default class PeriodDivision extends AbstractDivision {
 
   constructor(
     id: number,
-    game: Game,
+    gameId: number,
     scores: Score[],
     startDateTime: Date,
     endDateTime: Date
   ) {
-    super(id, game, scores);
+    super(id, gameId);
     this.startDateTime = startDateTime;
     this.endDateTime = endDateTime;
   }

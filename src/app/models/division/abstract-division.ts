@@ -1,14 +1,9 @@
-import Game from '../game';
-import Score from '../score';
-
 export default abstract class AbstractDivision {
   id: number;
-  game: Game;
-  scores: Score[];
+  gameId: number;
 
-  protected constructor(id: number, game: Game, scores: Score[]) {
+  protected constructor(id: number, gameId: number) {
     this.id = id;
-    this.game = game;
-    this.scores = scores;
+    this.gameId = gameId;
   }
 }
