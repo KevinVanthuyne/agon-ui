@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import Game from '../../../models/game';
-import { GameService } from '../../../services/game.service';
 import { take } from 'rxjs';
+import PeriodDivision from '../../../models/division/period-division';
+import { PeriodCompetitionService } from '../../../services/competition/period-competition.service';
 
 @Component({
   selector: 'app-period-leaderboard-page',
@@ -9,13 +9,15 @@ import { take } from 'rxjs';
   styleUrls: ['./period-leaderboard-page.component.scss'],
 })
 export class PeriodLeaderboardPageComponent implements OnInit {
-  games: Game[] = [];
+  divisions: PeriodDivision[] = [];
 
-  constructor(public gameService: GameService) {}
+  constructor(private competitionService: PeriodCompetitionService) {}
 
   ngOnInit(): void {
-    this.gameService.passedGames$.pipe(take(1)).subscribe((games) => {
-      this.games = games.reverse();
-    });
+    this.competitionService.allDivisions$
+      .pipe(take(1))
+      .subscribe((divisions) => {
+        this.divisions = divisions;
+      });
   }
 }

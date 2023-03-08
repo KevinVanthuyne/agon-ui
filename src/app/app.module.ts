@@ -24,6 +24,7 @@ import { PageContainerComponent } from './components/page-container/page-contain
 import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-score-leaderboard-page/high-score-leaderboard-page.component';
 import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
 import { DivisionColumnsComponent } from './components/division-columns/division-columns.component';
+import { DivisionColumnComponent } from './components/division-column/division-column.component';
 
 const appRoutes: Routes = [
   {
@@ -65,6 +66,7 @@ const appRoutes: Routes = [
     HighScoreLeaderboardPageComponent,
     PeriodLeaderboardPageComponent,
     DivisionColumnsComponent,
+    DivisionColumnComponent,
   ],
   imports: [
     BrowserModule,

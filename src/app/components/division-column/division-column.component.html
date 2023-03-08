@@ -1,0 +1,25 @@
+<div
+  class="column-container"
+  [ngStyle]="{
+    backgroundColor: gameStyle.backgroundColor,
+    backgroundImage: gameStyle.backgroundImage
+      ? 'url(' + gameStyle.backgroundImage + ')'
+      : ''
+  }"
+>
+  <img
+    *ngIf="gameStyle.headerImage"
+    [src]="gameStyle.headerImage"
+    [alt]="game.name"
+    class="header-img"
+  />
+  <h2 *ngIf="!gameStyle.headerImage" class="mat-display-1">
+    {{ game.name }}
+  </h2>
+
+  <!--  <app-high-score-card-->
+  <!--    *ngFor="let hs of highScores$ | async"-->
+  <!--    [highScore]="hs"-->
+  <!--    [gameStyle]="game.gameStyle"-->
+  <!--  ></app-high-score-card>-->
+</div>

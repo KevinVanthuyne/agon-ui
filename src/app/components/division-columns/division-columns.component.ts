@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import Game from '../../models/game';
+import AbstractDivision from '../../models/division/abstract-division';
 
 @Component({
   selector: 'app-division-columns',
@@ -7,6 +7,5 @@ import Game from '../../models/game';
   styleUrls: ['./division-columns.component.scss'],
 })
 export class DivisionColumnsComponent {
-  // TODO refactor to divisions
-  @Input() games!: Game[];
+  @Input() divisions!: AbstractDivision[];
 }
