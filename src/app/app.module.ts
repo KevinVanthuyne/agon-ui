@@ -21,9 +21,18 @@ import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-
 import { QRCodeModule } from 'angular2-qrcode';
 import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.component';
 import { PageContainerComponent } from './components/page-container/page-container.component';
+import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-score-leaderboard-page/high-score-leaderboard-page.component';
+import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
 
 const appRoutes: Routes = [
-  { path: 'leaderboard', component: LeaderboardPageComponent },
+  {
+    path: 'leaderboard',
+    component: LeaderboardPageComponent,
+    children: [
+      { path: 'period', component: PeriodLeaderboardPageComponent },
+      { path: 'high-score', component: HighScoreLeaderboardPageComponent },
+    ],
+  },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
   { path: 'ticker/2', component: GameImageComponent },
@@ -51,6 +60,8 @@ const appRoutes: Routes = [
     CompetitionQrCodeComponent,
     WinPrizesComponent,
     PageContainerComponent,
+    HighScoreLeaderboardPageComponent,
+    PeriodLeaderboardPageComponent,
   ],
   imports: [
     BrowserModule,
