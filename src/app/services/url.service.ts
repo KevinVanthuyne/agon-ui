@@ -5,19 +5,19 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UrlService {
-  get passedGames(): string {
-    return `${environment.apiUrl}/api/v1/game/passed`;
-  }
-
-  get activeGame(): string {
-    return `${environment.apiUrl}/api/v1/game/active`;
-  }
-
-  get allGames(): string {
-    return `${environment.apiUrl}/api/v1/game`;
-  }
-
-  get allRankings(): string {
-    return `${environment.apiUrl}/api/v1/score/ranking/all`;
-  }
+  public static readonly urls = {
+    games: {
+      root: `${environment.apiUrl}/api/v1/game`,
+      passed: `${environment.apiUrl}/api/v1/game/passed`,
+      active: `${environment.apiUrl}/api/v1/game/active`,
+    },
+    rankings: {
+      root: `${environment.apiUrl}/api/v1/score/ranking/all`,
+    },
+    competitions: {
+      root: `${environment.apiUrl}/api/v1/competitions`,
+      highScore: `${environment.apiUrl}/api/v1/competitions/high-score`,
+      period: `${environment.apiUrl}/api/v1/competitions/period`,
+    },
+  };
 }
