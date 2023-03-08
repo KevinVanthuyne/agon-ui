@@ -5,7 +5,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class UrlService {
-  public static readonly urls = {
+  public static readonly URLS = {
     games: {
       root: `${environment.apiUrl}/api/v1/game`,
       passed: `${environment.apiUrl}/api/v1/game/passed`,

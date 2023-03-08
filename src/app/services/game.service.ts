@@ -20,7 +20,7 @@ export class GameService extends CachingService implements OnDestroy {
   get allGames$(): Observable<Game[]> {
     if (!this.gameCache$) {
       this.gameCache$ = timer(0, GameService.REFRESH_INTERVAL).pipe(
-        switchMap(() => this.http.get<Game[]>(UrlService.urls.games.root)),
+        switchMap(() => this.http.get<Game[]>(UrlService.URLS.games.root)),
         takeUntil(this.destroy$),
         shareReplay(1)
       );
@@ -31,7 +31,7 @@ export class GameService extends CachingService implements OnDestroy {
   get passedGames$(): Observable<Game[]> {
     if (!this.passedGamesCache$) {
       this.passedGamesCache$ = timer(0, GameService.REFRESH_INTERVAL).pipe(
-        switchMap(() => this.http.get<Game[]>(UrlService.urls.games.passed)),
+        switchMap(() => this.http.get<Game[]>(UrlService.URLS.games.passed)),
         takeUntil(this.destroy$),
         shareReplay(1)
       );
@@ -42,7 +42,7 @@ export class GameService extends CachingService implements OnDestroy {
   get activeGame$(): Observable<Game> {
     if (!this.activeGameCache$) {
       this.activeGameCache$ = timer(0, GameService.REFRESH_INTERVAL).pipe(
-        switchMap(() => this.http.get<Game>(UrlService.urls.games.active)),
+        switchMap(() => this.http.get<Game>(UrlService.URLS.games.active)),
         takeUntil(this.destroy$),
         shareReplay(1)
       );

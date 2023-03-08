@@ -41,7 +41,7 @@ export class ScoreService extends CachingService implements OnDestroy {
 
   private getAllRankings$(): Observable<Map<number, HighScore[]>> {
     return this.http
-      .get<{ [gameId: number]: HighScore[] }>(UrlService.urls.rankings.root)
+      .get<{ [gameId: number]: HighScore[] }>(UrlService.URLS.rankings.root)
       .pipe(
         map((highScoresObject) => {
           return new Map<number, HighScore[]>(
