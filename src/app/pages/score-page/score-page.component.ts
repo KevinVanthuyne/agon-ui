@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-score-page',
@@ -7,5 +7,5 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./score-page.component.scss'],
 })
 export class ScorePageComponent {
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: UntypedFormBuilder) {}
 }

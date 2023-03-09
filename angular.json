@@ -106,6 +106,5 @@
     "@schematics/angular:component": {
       "style": "scss"
     }
-  },
-  "defaultProject": "scored-ui"
+  }
 }
