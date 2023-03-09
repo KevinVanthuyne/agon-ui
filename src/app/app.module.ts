@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-import { HighScoreCardComponent } from './components/high-score-card/high-score-card.component';
+import { ScoreCardComponent } from './components/score-card/score-card.component';
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
@@ -49,7 +49,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HighScoreCardComponent,
+    ScoreCardComponent,
     LeaderboardPageComponent,
     TickerPageComponent,
     TickerDirective,

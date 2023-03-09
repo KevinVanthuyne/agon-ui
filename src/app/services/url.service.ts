@@ -19,5 +19,8 @@ export class UrlService {
       highScore: `${environment.apiUrl}/api/v1/competitions/high-score`,
       period: `${environment.apiUrl}/api/v1/competitions/period`,
     },
+    scores: {
+      active: `${environment.apiUrl}/api/v1/scores/active`,
+    },
   };
 }

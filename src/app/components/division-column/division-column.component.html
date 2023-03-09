@@ -17,9 +17,9 @@
     {{ game.name }}
   </h2>
 
-  <!--  <app-high-score-card-->
-  <!--    *ngFor="let hs of highScores$ | async"-->
-  <!--    [highScore]="hs"-->
-  <!--    [gameStyle]="game.gameStyle"-->
-  <!--  ></app-high-score-card>-->
+  <app-score-card
+    *ngFor="let score of scores$ | async"
+    [score]="score"
+    [gameStyle]="game.gameStyle"
+  ></app-score-card>
 </div>
