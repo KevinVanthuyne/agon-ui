@@ -24,6 +24,12 @@ import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-sco
 import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
 import { DivisionColumnsComponent } from './components/division-columns/division-columns.component';
 import { DivisionColumnComponent } from './components/division-column/division-column.component';
+import { ScorePageComponent } from './pages/score-page/score-page.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -35,6 +41,7 @@ const appRoutes: Routes = [
       { path: 'high-score', component: HighScoreLeaderboardPageComponent },
     ],
   },
+  { path: 'score', component: ScorePageComponent },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
   { path: 'ticker/2', component: GameImageComponent },
@@ -65,6 +72,8 @@ const appRoutes: Routes = [
     PeriodLeaderboardPageComponent,
     DivisionColumnsComponent,
     DivisionColumnComponent,
+    ScorePageComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +83,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     NgbModule,
     QRCodeModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
