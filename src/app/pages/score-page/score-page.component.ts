@@ -18,6 +18,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ScorePageComponent {
   @ViewChild('formDirective') private formDirective: NgForm | undefined;
 
+  formError: string | undefined;
   form = this.fb.nonNullable.group({
     divisionId: [0, [Validators.required, Validators.min(1)]],
     username: ['', [Validators.required, Validators.minLength(3)]],
@@ -43,7 +44,6 @@ export class ScorePageComponent {
   }
 
   onSubmit(): void {
-    console.log(this.form);
     this.scoreService
       .addScore$({
         divisionId: this.form.value.divisionId!,
@@ -54,9 +54,12 @@ export class ScorePageComponent {
         next: () => {
           this.formDirective?.resetForm();
           this.form.reset();
+          this.formError = undefined;
           this.snackBar.open('Score submitted!', 'Dismiss', { duration: 3000 });
         },
-        error: (e) => console.error(e),
+        error: (response) => {
+          this.formError = response.error;
+        },
       });
   }
 }
