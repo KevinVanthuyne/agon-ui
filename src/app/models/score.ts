@@ -1,7 +1,6 @@
-import User from './user';
-
 export default interface Score {
   id: string;
+  divisionId: number;
   points: string;
-  user: User;
+  username: string;
 }
