@@ -1,3 +1,5 @@
+@use "../../scss/variables" as vars;
+
 .root-container {
   height: 100vh;
   display: flex;
@@ -7,5 +9,5 @@
 .main {
   flex-grow: 1;
   display: flex;
-  background-color: gray;
+  background-color: vars.$medium-gray;
 }

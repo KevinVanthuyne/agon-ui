@@ -1,8 +1,6 @@
 @use "../../scss/variables" as vars;
 
 .toolbar {
-  background-color: vars.$dark-gray;
-  color: vars.$broken-white;
   height: vars.$nav-bar-height;
 
   nav ul {

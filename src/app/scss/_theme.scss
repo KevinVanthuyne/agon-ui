@@ -1,0 +1,18 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: mat.define-palette(mat.$gray-palette);
+$accent-palette: mat.define-palette(mat.$amber-palette);
+
+$my-theme: mat.define-dark-theme((
+  color: (
+    primary: $primary-palette,
+    accent: $accent-palette,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.core-theme($my-theme);
+@include mat.all-component-themes($my-theme);

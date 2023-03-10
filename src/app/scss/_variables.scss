@@ -1,9 +1,13 @@
+@use 'theme' as theme;
+@use '@angular/material' as mat;
+
 // Sizes
 $nav-bar-height: 3rem;
 $footer-height: 2rem;
 
 // Colors
-$broken-white: #fafafa;
+$broken-white: mat.get-color-from-palette(theme.$primary-palette, 50);
 $translucent-broken-white: rgba(250, 250, 250, 0.6);
-$light-gray: #727272;
-$dark-gray: #212121;
+$light-gray: mat.get-color-from-palette(theme.$primary-palette, 600);
+$medium-gray: mat.get-color-from-palette(theme.$primary-palette, 800);
+$dark-gray: mat.get-color-from-palette(theme.$primary-palette, 900);
