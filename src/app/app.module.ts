@@ -32,6 +32,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const appRoutes: Routes = [
   {
@@ -91,6 +92,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
