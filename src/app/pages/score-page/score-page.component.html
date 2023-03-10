@@ -1,26 +1,33 @@
 <app-page-container title="Score">
-  <form class="container mt-5">
-    <div class="row-cols-1">
+  <form [formGroup]="form" class="container mt-5" (ngSubmit)="onSubmit()">
+    <div class="row-cols-1 mb-2">
       <mat-form-field appearance="fill">
         <mat-label>Division</mat-label>
-        <input matInput/>
+        <input matInput [formControl]="form.controls.divisionId" required/>
+        <mat-error *ngIf="form.controls.divisionId.errors?.['required']">Can not be empty</mat-error>
+        <mat-error *ngIf="form.controls.divisionId.errors?.['min']">Can not be lower than 1</mat-error>
       </mat-form-field>
     </div>
 
-    <div class="row-cols-1">
+    <div class="row-cols-1 mb-2">
       <mat-form-field appearance="fill">
         <mat-label>Name</mat-label>
-        <input matInput/>
+        <input matInput [formControl]="form.controls.username" required/>
+        <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
+        <mat-error *ngIf="form.controls.username.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>
       </mat-form-field>
     </div>
 
-    <div class="row-cols-1">
+    <div class="row-cols-1 mb-2">
       <mat-form-field appearance="fill">
         <mat-label>Score</mat-label>
-        <input matInput/>
+        <input matInput [formControl]="form.controls.points" required/>
+        <mat-error *ngIf="form.controls.points.errors?.['required']">Can not be empty</mat-error>
+        <mat-error *ngIf="form.controls.points.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>
+        <mat-error *ngIf="form.controls.points.errors?.['pattern']">Can only be a number</mat-error>
       </mat-form-field>
     </div>
 
-    <button type="submit" mat-raised-button>Submit</button>
+    <button type="submit" mat-raised-button [disabled]="form.invalid">Submit</button>
   </form>
 </app-page-container>

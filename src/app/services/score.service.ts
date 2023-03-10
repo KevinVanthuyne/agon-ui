@@ -42,6 +42,10 @@ export class ScoreService extends CachingService implements OnDestroy {
     return this.divisionScoreCache$;
   }
 
+  addScore$(score: Score): Observable<void> {
+    return this.http.post<void>(UrlService.URLS.scores.root, score);
+  }
+
   get allHighScores$(): Observable<Map<number, HighScore[]>> {
     if (!this.highScoreCache$) {
       this.highScoreCache$ = timer(0, ScoreService.REFRESH_INTERVAL).pipe(

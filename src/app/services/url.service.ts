@@ -20,6 +20,7 @@ export class UrlService {
       period: `${environment.apiUrl}/api/v1/competitions/period`,
     },
     scores: {
+      root: `${environment.apiUrl}/api/v1/scores`,
       active: `${environment.apiUrl}/api/v1/scores/active`,
     },
   };
