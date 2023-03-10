@@ -1,0 +1,21 @@
+@use "../../scss/variables" as vars;
+
+.footer {
+  background-color: vars.$dark-gray;
+  color: vars.$broken-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  height: 2em;
+
+  a {
+    margin: 0 0.5em;
+    color: vars.$broken-white;
+    text-decoration: underline;
+
+    &:hover {
+      color: vars.$translucent-broken-white;
+    }
+  }
+}

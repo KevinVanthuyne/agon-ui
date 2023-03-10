@@ -31,6 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { FooterComponent } from './components/footer/footer.component';
 
 const appRoutes: Routes = [
   {
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
     DivisionColumnComponent,
     ScorePageComponent,
     NavBarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

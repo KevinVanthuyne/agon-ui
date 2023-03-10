@@ -16,6 +16,10 @@
 
       a {
         color: vars.$broken-white;
+
+        &:hover {
+          color: vars.$translucent-broken-white;
+        }
       }
     }
   }
