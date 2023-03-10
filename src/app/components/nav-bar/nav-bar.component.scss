@@ -3,7 +3,7 @@
 .toolbar {
   background-color: vars.$dark-gray;
   color: vars.$broken-white;
-  height: 2.5em;
+  height: vars.$nav-bar-height;
 
   nav ul {
     list-style: none;

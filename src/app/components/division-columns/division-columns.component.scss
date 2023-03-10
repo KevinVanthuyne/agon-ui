@@ -1,5 +1,7 @@
+@use "../../scss/variables" as vars;
+
 .columns-container {
-  height: 100%;
+  height: calc(100vh - #{vars.$nav-bar-height} - #{vars.$footer-height});
   display: flex;
   flex-direction: row;
   overflow-y: auto;
