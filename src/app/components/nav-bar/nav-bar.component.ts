@@ -6,5 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss'],
 })
 export class NavBarComponent {
-  @Input() title!: string;
+  @Input() title?: string;
+
+  get displayTitle(): string {
+    return this.title ? `- ${this.title}` : '';
+  }
 }
