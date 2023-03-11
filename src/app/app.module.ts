@@ -39,6 +39,7 @@ import { HttpRequestInterceptor } from './interceptors/http-request-interceptor'
 import { GamesPageComponent } from './pages/admin/games-page/games-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 import { ROUTES } from './app.routing';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { ROUTES } from './app.routing';
     ReactiveFormsModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTableModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },

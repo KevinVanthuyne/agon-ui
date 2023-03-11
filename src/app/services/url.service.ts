@@ -7,12 +7,12 @@ import { environment } from '../../environments/environment';
 export class UrlService {
   public static readonly URLS = {
     games: {
-      root: `${environment.apiUrl}/api/v1/game`,
-      passed: `${environment.apiUrl}/api/v1/game/passed`,
-      active: `${environment.apiUrl}/api/v1/game/active`,
+      root: `${environment.apiUrl}/api/v1/games`,
+      passed: `${environment.apiUrl}/api/v1/games/passed`,
+      active: `${environment.apiUrl}/api/v1/games/active`,
     },
     rankings: {
-      root: `${environment.apiUrl}/api/v1/score/ranking/all`,
+      root: `${environment.apiUrl}/api/v1/scores/ranking/all`,
     },
     competitions: {
       root: `${environment.apiUrl}/api/v1/competitions`,
