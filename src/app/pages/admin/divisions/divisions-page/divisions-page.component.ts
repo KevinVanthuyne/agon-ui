@@ -8,7 +8,7 @@ import { HighScoreCompetitionService } from '../../../../services/competition/hi
   styleUrls: ['./divisions-page.component.scss'],
 })
 export class DivisionsPageComponent implements OnInit {
-  displayedColumns = ['id', 'gameName', 'gameId'];
+  displayedColumns = ['id', 'gameName', 'gameId', 'delete'];
   divisions: AbstractDivision[] = [];
 
   // TODO only HighScoreCompetition is supported for now
@@ -16,5 +16,15 @@ export class DivisionsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.compService.allDivisions$.subscribe((divs) => (this.divisions = divs));
+  }
+
+  deleteDivision(division: AbstractDivision) {
+    if (
+      confirm(
+        `Are you sure you want to delete division ${division.id} with game "${division.game.name}?"`
+      )
+    ) {
+      this.compService.deleteDivision(division.id).subscribe();
+    }
   }
 }

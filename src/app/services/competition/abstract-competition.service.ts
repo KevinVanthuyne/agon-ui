@@ -37,4 +37,10 @@ export default abstract class AbstractCompetitionService<
   addDivision(gameId: number): Observable<Div> {
     return this.http.post<Div>(`${this.competitionUrl}/divisions`, { gameId });
   }
+
+  deleteDivision(divisionId: number): Observable<void> {
+    return this.http.delete<void>(
+      `${this.competitionUrl}/divisions/${divisionId}`
+    );
+  }
 }
