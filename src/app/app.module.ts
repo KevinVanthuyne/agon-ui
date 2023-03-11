@@ -36,6 +36,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { XhrInterceptor } from './interceptors/xhr-interceptor';
 import { HttpRequestInterceptor } from './interceptors/http-request-interceptor';
+import { GamesPageComponent } from './pages/admin/games-page/games-page.component';
+import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 
 const appRoutes: Routes = [
   {
@@ -49,6 +51,14 @@ const appRoutes: Routes = [
   },
   { path: 'score', component: ScorePageComponent },
   { path: 'login', component: LoginPageComponent },
+  {
+    path: 'admin',
+    component: AdminPageComponent,
+    children: [
+      { path: '', redirectTo: 'games', pathMatch: 'full' },
+      { path: 'games', component: GamesPageComponent },
+    ],
+  },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
   { path: 'ticker/2', component: GameImageComponent },
@@ -83,6 +93,8 @@ const appRoutes: Routes = [
     NavBarComponent,
     FooterComponent,
     LoginPageComponent,
+    GamesPageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,

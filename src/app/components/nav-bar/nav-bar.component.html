@@ -5,6 +5,11 @@
       <!--      <li><a routerLink="/leaderboard/period">Period</a></li>-->
       <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
       <li><a routerLink="/score">Add Score</a></li>
+
+      <ng-container *ngIf="isAuthenticated">
+        <li><a routerLink="/admin/games">Games</a></li>
+      </ng-container>
+
       <li *ngIf="!isAuthenticated"><a routerLink="/login">Log in</a></li>
       <li *ngIf="isAuthenticated">
         <button mat-button (click)="logout()">Log out</button>
