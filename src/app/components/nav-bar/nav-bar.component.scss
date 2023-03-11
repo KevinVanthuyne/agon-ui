@@ -2,25 +2,34 @@
 
 .toolbar {
   height: vars.$nav-bar-height;
+  width: 100%;
 
-  nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    margin: 0 0 0 3em;
-    padding: 0;
-    font-size: 1.2rem;
+  nav {
+    flex-grow: 1;
 
-    li {
-      margin-right: 1em;
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      margin: 0 0 0 3em;
+      padding: 0;
+      font-size: 1.2rem;
 
-      a {
-        color: vars.$broken-white;
+      li {
+        margin-right: 1em;
 
-        &:hover {
-          color: vars.$translucent-broken-white;
+        a {
+          color: vars.$broken-white;
+
+          &:hover {
+            color: vars.$translucent-broken-white;
+          }
         }
       }
+    }
+
+    .spacer {
+      flex-grow: 1;
     }
   }
 }
