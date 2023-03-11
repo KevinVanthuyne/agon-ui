@@ -45,6 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
 import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
 import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
+import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game
     DivisionsPageComponent,
     NewDivisionPageComponent,
     NewGamePageComponent,
+    EditGameStylePageComponent,
   ],
   imports: [
     BrowserModule,

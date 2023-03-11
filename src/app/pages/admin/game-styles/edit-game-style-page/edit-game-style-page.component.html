@@ -1,0 +1,10 @@
+<ng-container *ngIf="gameStyle$ | async as gameStyle">
+  <ul>
+    <li>{{gameStyle.gameId}}</li>
+    <li>{{gameStyle.borderColor}}</li>
+    <li>{{gameStyle.fontColor}}</li>
+    <li>{{gameStyle.headerImage}}</li>
+    <li>{{gameStyle.backgroundColor}}</li>
+    <li>{{gameStyle.backgroundImage}}</li>
+  </ul>
+</ng-container>

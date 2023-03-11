@@ -11,6 +11,9 @@ export class UrlService {
       passed: `${environment.apiUrl}/api/v1/games/passed`,
       active: `${environment.apiUrl}/api/v1/games/active`,
     },
+    gameStyles: {
+      root: `${environment.apiUrl}/api/v1/game-styles`,
+    },
     rankings: {
       root: `${environment.apiUrl}/api/v1/scores/ranking/all`,
     },

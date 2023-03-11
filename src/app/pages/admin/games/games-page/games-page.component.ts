@@ -8,7 +8,7 @@ import Game from '../../../../models/game';
   styleUrls: ['./games-page.component.scss'],
 })
 export class GamesPageComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'delete'];
+  displayedColumns = ['id', 'name', 'editStyle', 'delete'];
   games: Game[] = [];
 
   constructor(private gameService: GameService) {}

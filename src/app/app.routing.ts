@@ -18,6 +18,7 @@ import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.compo
 import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
 import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
 import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
+import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 
 export const ROUTES: Routes = [
   {
@@ -39,6 +40,7 @@ export const ROUTES: Routes = [
       { path: '', redirectTo: 'divisions', pathMatch: 'full' },
       { path: 'divisions', component: DivisionsPageComponent },
       { path: 'games', component: GamesPageComponent },
+      { path: 'game-style/:id', component: EditGameStylePageComponent },
       { path: 'new-game', component: NewGamePageComponent },
       { path: 'scores', component: ScoresPageComponent },
       { path: 'new-division', component: NewDivisionPageComponent },
