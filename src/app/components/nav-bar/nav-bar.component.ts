@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,7 +9,17 @@ import { Component, Input } from '@angular/core';
 export class NavBarComponent {
   @Input() title?: string;
 
+  constructor(private authService: AuthService) {}
+
   get displayTitle(): string {
     return this.title ? `- ${this.title}` : '';
+  }
+
+  get isAuthenticated(): boolean {
+    return this.authService.authenticated;
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

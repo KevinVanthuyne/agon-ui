@@ -23,5 +23,8 @@ export class UrlService {
       root: `${environment.apiUrl}/api/v1/scores`,
       active: `${environment.apiUrl}/api/v1/scores/active`,
     },
+    user: `${environment.apiUrl}/api/v1/auth/user`,
+    logout: `${environment.apiUrl}/api/v1/auth/logout`,
+    login: `${environment.apiUrl}/api/v1/auth/login`,
   };
 }

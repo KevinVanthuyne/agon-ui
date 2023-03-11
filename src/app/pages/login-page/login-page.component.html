@@ -1,5 +1,8 @@
 <app-page-container>
-  <form [formGroup]="form" #loginForm class="container mt-5" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" #loginForm="ngForm" class="container mt-5" (ngSubmit)="onSubmit()">
+
+    <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
+
     <div class="row-cols-1 mb-2">
       <mat-form-field appearance="fill">
         <mat-label>Username</mat-label>

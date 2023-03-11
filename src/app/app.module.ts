@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ScoreCardComponent } from './components/score-card/score-card.component';
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -34,6 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { XhrInterceptor } from './interceptors/xhr-interceptor';
+import { HttpRequestInterceptor } from './interceptors/http-request-interceptor';
 
 const appRoutes: Routes = [
   {
@@ -97,7 +99,14 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatSnackBarModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpRequestInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

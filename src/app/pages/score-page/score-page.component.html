@@ -1,5 +1,5 @@
 <app-page-container>
-  <form [formGroup]="form" #formDirective class="container mt-5" (ngSubmit)="onSubmit()">
+  <form [formGroup]="form" #formDirective="ngForm" class="container mt-5" (ngSubmit)="onSubmit()">
 
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
 
