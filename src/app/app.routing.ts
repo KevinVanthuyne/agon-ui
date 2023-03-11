@@ -15,7 +15,8 @@ import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.c
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
-import { DivisionsPageComponent } from './pages/admin/divisions-page/divisions-page.component';
+import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
+import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
 
 export const ROUTES: Routes = [
   {
@@ -38,6 +39,7 @@ export const ROUTES: Routes = [
       { path: 'games', component: GamesPageComponent },
       { path: 'scores', component: ScoresPageComponent },
       { path: 'divisions', component: DivisionsPageComponent },
+      { path: 'new-division', component: NewDivisionPageComponent },
     ],
   },
   { path: 'ticker', component: TickerPageComponent },

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import AbstractDivision from '../../../models/division/abstract-division';
-import { HighScoreCompetitionService } from '../../../services/competition/high-score-competition.service';
+import AbstractDivision from '../../../../models/division/abstract-division';
+import { HighScoreCompetitionService } from '../../../../services/competition/high-score-competition.service';
 
 @Component({
   selector: 'app-divisions-page',

@@ -33,4 +33,8 @@ export default abstract class AbstractCompetitionService<
     );
     return this.divisionCache$;
   }
+
+  addDivision(gameId: number): Observable<Div> {
+    return this.http.post<Div>(`${this.competitionUrl}/divisions`, { gameId });
+  }
 }

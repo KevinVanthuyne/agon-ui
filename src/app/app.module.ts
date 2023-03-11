@@ -42,7 +42,8 @@ import { ROUTES } from './app.routing';
 import { MatTableModule } from '@angular/material/table';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
 import { MatIconModule } from '@angular/material/icon';
-import { DivisionsPageComponent } from './pages/admin/divisions-page/divisions-page.component';
+import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
+import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { DivisionsPageComponent } from './pages/admin/divisions-page/divisions-p
     AdminPageComponent,
     ScoresPageComponent,
     DivisionsPageComponent,
+    NewDivisionPageComponent,
   ],
   imports: [
     BrowserModule,
