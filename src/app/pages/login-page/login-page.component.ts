@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +17,11 @@ export class LoginPageComponent {
     password: ['', [Validators.required]],
   });
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {}
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   onSubmit() {
     this.authService
@@ -24,8 +29,7 @@ export class LoginPageComponent {
       .subscribe({
         next: (authenticated) => {
           if (authenticated) {
-            this.form.reset();
-            this.formDirective?.resetForm();
+            this.router.navigate(['/admin']);
           }
         },
         error: () => {
