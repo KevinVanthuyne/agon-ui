@@ -11,7 +11,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./scores-page.component.scss'],
 })
 export class ScoresPageComponent implements OnInit {
-  displayedColumns = ['id', 'username', 'points'];
+  displayedColumns = ['id', 'username', 'points', 'delete'];
   divisions: AbstractDivision[] = [];
   divisionFormControl = new FormControl<number>(0);
   scores: Score[] = [];
@@ -28,9 +28,21 @@ export class ScoresPageComponent implements OnInit {
     );
   }
 
-  updateDivision(divisionId: number) {
+  updateDivision(divisionId: number): void {
     this.scoreService
       .getAllScoresOnce$(divisionId)
       .subscribe((scores) => (this.scores = scores));
+  }
+
+  deleteScore(score: Score): void {
+    if (
+      confirm(
+        `Are you sure you want to delete the following score?\n\n- Id: ${score.id}\n- User: ${score.username}\n- Points: ${score.points}`
+      )
+    ) {
+      this.scoreService.deleteScore(score.id!).subscribe(() => {
+        this.updateDivision(this.divisionFormControl.value!);
+      });
+    }
   }
 }

@@ -41,6 +41,7 @@ import { AdminPageComponent } from './pages/admin/admin-page/admin-page.componen
 import { ROUTES } from './app.routing';
 import { MatTableModule } from '@angular/material/table';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.compo
     MatSnackBarModule,
     MatTableModule,
     FormsModule,
+    MatIconModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },

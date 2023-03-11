@@ -51,6 +51,10 @@ export class ScoreService extends CachingService implements OnDestroy {
     return this.http.post<void>(UrlService.URLS.scores.root, score);
   }
 
+  deleteScore(scoreId: string): Observable<void> {
+    return this.http.delete<void>(`${UrlService.URLS.scores.root}/${scoreId}`);
+  }
+
   // TODO methods underneath are deprecated
 
   get allHighScores$(): Observable<Map<number, HighScore[]>> {
