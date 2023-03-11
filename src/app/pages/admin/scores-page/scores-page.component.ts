@@ -11,7 +11,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./scores-page.component.scss'],
 })
 export class ScoresPageComponent implements OnInit {
-  displayedColumns = ['id', 'username', 'points', 'delete'];
+  displayedColumns = ['timestamp', 'id', 'username', 'points', 'delete'];
   divisions: AbstractDivision[] = [];
   divisionFormControl = new FormControl<number>(0);
   scores: Score[] = [];

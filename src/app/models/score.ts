@@ -3,4 +3,5 @@ export default interface Score {
   divisionId: number;
   points: string;
   username: string;
+  timestamp?: Date;
 }
