@@ -35,10 +35,10 @@ export const ROUTES: Routes = [
     component: AdminPageComponent,
     canActivate: [AuthGuardService],
     children: [
-      { path: '', redirectTo: 'games', pathMatch: 'full' },
+      { path: '', redirectTo: 'divisions', pathMatch: 'full' },
+      { path: 'divisions', component: DivisionsPageComponent },
       { path: 'games', component: GamesPageComponent },
       { path: 'scores', component: ScoresPageComponent },
-      { path: 'divisions', component: DivisionsPageComponent },
       { path: 'new-division', component: NewDivisionPageComponent },
     ],
   },
