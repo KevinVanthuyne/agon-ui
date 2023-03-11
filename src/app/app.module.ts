@@ -33,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
 
 const appRoutes: Routes = [
   {
@@ -45,6 +46,7 @@ const appRoutes: Routes = [
     ],
   },
   { path: 'score', component: ScorePageComponent },
+  { path: 'login', component: LoginPageComponent },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: GameOfTheMonthComponent },
   { path: 'ticker/2', component: GameImageComponent },
@@ -78,6 +80,7 @@ const appRoutes: Routes = [
     ScorePageComponent,
     NavBarComponent,
     FooterComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
