@@ -36,7 +36,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { XhrInterceptor } from './interceptors/xhr-interceptor';
 import { HttpRequestInterceptor } from './interceptors/http-request-interceptor';
-import { GamesPageComponent } from './pages/admin/games-page/games-page.component';
+import { GamesPageComponent } from './pages/admin/games/games-page/games-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 import { ROUTES } from './app.routing';
 import { MatTableModule } from '@angular/material/table';
@@ -44,6 +44,7 @@ import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.compo
 import { MatIconModule } from '@angular/material/icon';
 import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
 import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
+import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-p
     ScoresPageComponent,
     DivisionsPageComponent,
     NewDivisionPageComponent,
+    NewGamePageComponent,
   ],
   imports: [
     BrowserModule,

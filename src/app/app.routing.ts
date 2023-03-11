@@ -5,7 +5,7 @@ import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-sco
 import { ScorePageComponent } from './pages/score-page/score-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
-import { GamesPageComponent } from './pages/admin/games-page/games-page.component';
+import { GamesPageComponent } from './pages/admin/games/games-page/games-page.component';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
 import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/game-of-the-month.component';
 import { GameImageComponent } from './pages/ticker-items/game-image/game-image.component';
@@ -17,6 +17,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
 import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/divisions-page.component';
 import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
+import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
 
 export const ROUTES: Routes = [
   {
@@ -38,6 +39,7 @@ export const ROUTES: Routes = [
       { path: '', redirectTo: 'divisions', pathMatch: 'full' },
       { path: 'divisions', component: DivisionsPageComponent },
       { path: 'games', component: GamesPageComponent },
+      { path: 'new-game', component: NewGamePageComponent },
       { path: 'scores', component: ScoresPageComponent },
       { path: 'new-division', component: NewDivisionPageComponent },
     ],
