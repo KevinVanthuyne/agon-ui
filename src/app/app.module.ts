@@ -42,6 +42,7 @@ import { ROUTES } from './app.routing';
 import { MatTableModule } from '@angular/material/table';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
 import { MatIconModule } from '@angular/material/icon';
+import { DivisionsPageComponent } from './pages/admin/divisions-page/divisions-page.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { MatIconModule } from '@angular/material/icon';
     GamesPageComponent,
     AdminPageComponent,
     ScoresPageComponent,
+    DivisionsPageComponent,
   ],
   imports: [
     BrowserModule,
