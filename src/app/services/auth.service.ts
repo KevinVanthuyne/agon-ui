@@ -29,7 +29,7 @@ export class AuthService {
     );
   }
 
-  logout() {
+  logout(): void {
     this.http.post(UrlService.URLS.logout, {}).subscribe({
       next: () => {
         this.authenticated = false;

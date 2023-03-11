@@ -1,0 +1,32 @@
+<mat-form-field appearance="fill">
+  <mat-label>Division</mat-label>
+
+  <mat-select [formControl]="divisionFormControl" required (valueChange)="updateDivision($event)">
+    <mat-option *ngFor="let division of divisions" [value]="division.id">
+      Division {{ division.id}} - {{ division.game.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<table mat-table [dataSource]="scores">
+  <!-- Id -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let score"> {{ score.id }} </td>
+  </ng-container>
+
+  <!-- Username -->
+  <ng-container matColumnDef="username">
+    <th mat-header-cell *matHeaderCellDef>Username</th>
+    <td mat-cell *matCellDef="let score"> {{ score.username }} </td>
+  </ng-container>
+
+  <!-- Points -->
+  <ng-container matColumnDef="points">
+    <th mat-header-cell *matHeaderCellDef>Points</th>
+    <td mat-cell *matCellDef="let score"> {{ score.points.toLocaleString() }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

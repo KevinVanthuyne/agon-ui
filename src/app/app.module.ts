@@ -29,7 +29,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -40,6 +40,7 @@ import { GamesPageComponent } from './pages/admin/games-page/games-page.componen
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 import { ROUTES } from './app.routing';
 import { MatTableModule } from '@angular/material/table';
+import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { MatTableModule } from '@angular/material/table';
     LoginPageComponent,
     GamesPageComponent,
     AdminPageComponent,
+    ScoresPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,6 +84,7 @@ import { MatTableModule } from '@angular/material/table';
     MatSelectModule,
     MatSnackBarModule,
     MatTableModule,
+    FormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },

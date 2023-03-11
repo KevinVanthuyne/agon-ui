@@ -12,7 +12,6 @@ import HighScore from '../models/high-score';
 import { CachingService } from './caching-service';
 import { UrlService } from './url.service';
 import Score from '../models/score';
-import AbstractDivision from '../models/division/abstract-division';
 
 @Injectable({
   providedIn: 'root',
@@ -25,13 +24,19 @@ export class ScoreService extends CachingService implements OnDestroy {
     super();
   }
 
-  getScores$(division: AbstractDivision): Observable<Score[]> {
-    return this.allActiveScores$.pipe(
-      map((divisionScores) => divisionScores.get(division.id) || [])
+  getAllScoresOnce$(divisionId: number): Observable<Score[]> {
+    return this.http.get<Score[]>(
+      `${UrlService.URLS.scores.divisions}/${divisionId}`
     );
   }
 
-  private get allActiveScores$(): Observable<Map<number, Score[]>> {
+  getHighestScores$(divisionId: number): Observable<Score[]> {
+    return this.allHighestScores$.pipe(
+      map((divisionScores) => divisionScores.get(divisionId) || [])
+    );
+  }
+
+  private get allHighestScores$(): Observable<Map<number, Score[]>> {
     if (this.divisionScoreCache$) return this.divisionScoreCache$;
 
     this.divisionScoreCache$ = timer(0, ScoreService.REFRESH_INTERVAL).pipe(
@@ -45,6 +50,8 @@ export class ScoreService extends CachingService implements OnDestroy {
   addScore$(score: Score): Observable<void> {
     return this.http.post<void>(UrlService.URLS.scores.root, score);
   }
+
+  // TODO methods underneath are deprecated
 
   get allHighScores$(): Observable<Map<number, HighScore[]>> {
     if (!this.highScoreCache$) {

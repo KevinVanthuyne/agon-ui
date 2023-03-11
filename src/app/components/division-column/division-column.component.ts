@@ -25,6 +25,6 @@ export class DivisionColumnComponent {
   }
 
   get scores$(): Observable<Score[]> {
-    return this.scoreService.getScores$(this.division);
+    return this.scoreService.getHighestScores$(this.division.id);
   }
 }
