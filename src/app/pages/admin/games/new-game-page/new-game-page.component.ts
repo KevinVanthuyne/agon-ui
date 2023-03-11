@@ -21,7 +21,7 @@ export class NewGamePageComponent {
 
   onSubmit() {
     this.gameService
-      .addGame(this.form.value.name!)
+      .addGame$(this.form.value.name!)
       .subscribe(() => this.router.navigate(['/admin/games']));
   }
 }

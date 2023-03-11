@@ -50,7 +50,11 @@ export class GameService extends CachingService implements OnDestroy {
     return this.activeGameCache$;
   }
 
-  addGame(name: string): Observable<Game> {
+  addGame$(name: string): Observable<Game> {
     return this.http.post<Game>(UrlService.URLS.games.root, { name });
+  }
+
+  delete$(gameId: number): Observable<void> {
+    return this.http.delete<void>(`${UrlService.URLS.games.root}/${gameId}`);
   }
 }
