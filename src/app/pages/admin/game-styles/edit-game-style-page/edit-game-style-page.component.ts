@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 import { GameStyleService } from '../../../../services/game-style.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
@@ -24,7 +24,8 @@ export class EditGameStylePageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private gameStyleService: GameStyleService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -35,9 +36,8 @@ export class EditGameStylePageComponent implements OnInit {
         )
       )
       .subscribe((style) => {
-        console.log(style);
         this.form = this.fb.nonNullable.group({
-          gameId: [style.gameId],
+          gameId: [{ value: style.gameId, disabled: true }],
           backgroundImage: [style.backgroundImage],
           backgroundColor: [style.backgroundColor],
           headerImage: [style.headerImage],
@@ -47,5 +47,10 @@ export class EditGameStylePageComponent implements OnInit {
       });
   }
 
-  onSubmit() {}
+  onSubmit(): void {
+    const gameStyle = this.form!.getRawValue();
+    this.gameStyleService.update$(gameStyle).subscribe(() => {
+      this.router.navigate(['/admin/games']);
+    });
+  }
 }

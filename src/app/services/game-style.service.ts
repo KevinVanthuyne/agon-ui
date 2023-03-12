@@ -13,4 +13,11 @@ export class GameStyleService {
   get$(id: number): Observable<GameStyle> {
     return this.http.get<GameStyle>(`${UrlService.URLS.gameStyles.root}/${id}`);
   }
+
+  update$(gameStyle: GameStyle): Observable<GameStyle> {
+    return this.http.put<GameStyle>(
+      `${UrlService.URLS.gameStyles.root}`,
+      gameStyle
+    );
+  }
 }
