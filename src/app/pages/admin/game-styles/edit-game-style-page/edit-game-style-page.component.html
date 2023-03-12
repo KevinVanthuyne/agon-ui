@@ -1,10 +1,50 @@
-<ng-container *ngIf="gameStyle$ | async as gameStyle">
-  <ul>
-    <li>{{gameStyle.gameId}}</li>
-    <li>{{gameStyle.borderColor}}</li>
-    <li>{{gameStyle.fontColor}}</li>
-    <li>{{gameStyle.headerImage}}</li>
-    <li>{{gameStyle.backgroundColor}}</li>
-    <li>{{gameStyle.backgroundImage}}</li>
-  </ul>
-</ng-container>
+<form *ngIf="form" [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+
+  <!--    <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>-->
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Game Id</mat-label>
+      <input matInput [formControl]="form.controls.gameId" required/>
+      <!--          <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>-->
+      <!--          <mat-error *ngIf="form.controls.username.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>-->
+    </mat-form-field>
+  </div>
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Background Image</mat-label>
+      <input matInput [formControl]="form.controls.backgroundImage" required/>
+    </mat-form-field>
+  </div>
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Background Color</mat-label>
+      <input matInput [formControl]="form.controls.backgroundColor" required/>
+    </mat-form-field>
+  </div>
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Header Image</mat-label>
+      <input matInput [formControl]="form.controls.headerImage" required/>
+    </mat-form-field>
+  </div>
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Border Color</mat-label>
+      <input matInput [formControl]="form.controls.borderColor" required/>
+    </mat-form-field>
+  </div>
+
+  <div class="row-cols-1 mb-2">
+    <mat-form-field appearance="fill">
+      <mat-label>Font Color</mat-label>
+      <input matInput [formControl]="form.controls.fontColor" required/>
+    </mat-form-field>
+  </div>
+
+  <button type="submit" mat-raised-button [disabled]="form.invalid">Submit</button>
+</form>
