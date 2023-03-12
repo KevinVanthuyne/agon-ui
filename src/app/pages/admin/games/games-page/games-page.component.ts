@@ -8,13 +8,25 @@ import Game from '../../../../models/game';
   styleUrls: ['./games-page.component.scss'],
 })
 export class GamesPageComponent implements OnInit {
-  displayedColumns = ['id', 'name', 'editStyle', 'delete'];
+  displayedColumns = [
+    'id',
+    'name',
+    'editStyle',
+    'bgColor',
+    'bgImg',
+    'headerImg',
+    'borderColor',
+    'fontColor',
+    'delete',
+  ];
   games: Game[] = [];
 
   constructor(private gameService: GameService) {}
 
   ngOnInit(): void {
-    this.gameService.allGames$.subscribe((games) => (this.games = games));
+    this.gameService.allGames$.subscribe((games) => {
+      this.games = games;
+    });
   }
 
   delete(game: Game) {
