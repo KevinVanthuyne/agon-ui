@@ -46,6 +46,7 @@ import { DivisionsPageComponent } from './pages/admin/divisions/divisions-page/d
 import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-page/new-division-page.component';
 import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
+import { LinkComponent } from './components/link/link.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-
     NewDivisionPageComponent,
     NewGamePageComponent,
     EditGameStylePageComponent,
+    LinkComponent,
   ],
   imports: [
     BrowserModule,
