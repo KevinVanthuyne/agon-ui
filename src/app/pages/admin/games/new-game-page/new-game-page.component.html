@@ -1,11 +1,13 @@
 <h2>New Game</h2>
 
 <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Name</mat-label>
-      <input matInput [formControl]="form.controls.name" required/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="form.controls.name" required/>
+      </mat-form-field>
+    </div>
   </div>
 
   <button type="submit" mat-raised-button [disabled]="form.invalid">Submit</button>

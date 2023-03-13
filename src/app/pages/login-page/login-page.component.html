@@ -3,20 +3,24 @@
 
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
 
-    <div class="row-cols-1 mb-2">
-      <mat-form-field appearance="fill">
-        <mat-label>Username</mat-label>
-        <input matInput [formControl]="form.controls.username" required/>
-        <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
-      </mat-form-field>
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput [formControl]="form.controls.username" required/>
+          <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
+        </mat-form-field>
+      </div>
     </div>
 
-    <div class="row-cols-1 mb-2">
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
-        <input matInput [formControl]="form.controls.password" type="password" required/>
-        <mat-error *ngIf="form.controls.password.errors?.['required']">Can not be empty</mat-error>
-      </mat-form-field>
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [formControl]="form.controls.password" type="password" required/>
+          <mat-error *ngIf="form.controls.password.errors?.['required']">Can not be empty</mat-error>
+        </mat-form-field>
+      </div>
     </div>
 
     <button type="submit" mat-raised-button [disabled]="form.invalid">Log in</button>

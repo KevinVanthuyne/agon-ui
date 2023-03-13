@@ -3,38 +3,45 @@
 
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
 
-    <div class="row-cols-1 mb-2">
-      <mat-form-field appearance="fill">
-        <mat-label>Game</mat-label>
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Game</mat-label>
 
-        <mat-select [formControl]="form.controls.divisionId" required>
-          <mat-option *ngFor="let division of divisions$ | async" [value]="division.id">
-            {{ division.game.name }}
-          </mat-option>
-        </mat-select>
+          <mat-select [formControl]="form.controls.divisionId" required>
+            <mat-option *ngFor="let division of divisions$ | async" [value]="division.id">
+              {{ division.game.name }}
+            </mat-option>
+          </mat-select>
 
-        <mat-error *ngIf="form.controls.divisionId.errors?.['required']">Can not be empty</mat-error>
-        <mat-error *ngIf="form.controls.divisionId.errors?.['min']">Can not be lower than 1</mat-error>
-      </mat-form-field>
+          <mat-error *ngIf="form.controls.divisionId.errors?.['required']">Can not be empty</mat-error>
+          <mat-error *ngIf="form.controls.divisionId.errors?.['min']">Can not be lower than 1</mat-error>
+        </mat-form-field>
+      </div>
     </div>
 
-    <div class="row-cols-1 mb-2">
-      <mat-form-field appearance="fill">
-        <mat-label>Name</mat-label>
-        <input matInput [formControl]="form.controls.username" required/>
-        <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
-        <mat-error *ngIf="form.controls.username.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>
-      </mat-form-field>
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="form.controls.username" required/>
+          <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
+          <mat-error *ngIf="form.controls.username.errors?.['minlength']">Can not be shorter than 3 characters
+          </mat-error>
+        </mat-form-field>
+      </div>
     </div>
 
-    <div class="row-cols-1 mb-2">
-      <mat-form-field appearance="fill">
-        <mat-label>Score</mat-label>
-        <input matInput [formControl]="form.controls.points" required/>
-        <mat-error *ngIf="form.controls.points.errors?.['required']">Can not be empty</mat-error>
-        <mat-error *ngIf="form.controls.points.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>
-        <mat-error *ngIf="form.controls.points.errors?.['pattern']">Can only be a number</mat-error>
-      </mat-form-field>
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill">
+          <mat-label>Score</mat-label>
+          <input matInput [formControl]="form.controls.points" required/>
+          <mat-error *ngIf="form.controls.points.errors?.['required']">Can not be empty</mat-error>
+          <mat-error *ngIf="form.controls.points.errors?.['minlength']">Can not be shorter than 3 characters</mat-error>
+          <mat-error *ngIf="form.controls.points.errors?.['pattern']">Can only be a number</mat-error>
+        </mat-form-field>
+      </div>
     </div>
 
     <button type="submit" mat-raised-button [disabled]="form.invalid">Submit</button>

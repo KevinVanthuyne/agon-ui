@@ -20,6 +20,7 @@
 
         a {
           color: vars.$broken-white;
+          text-decoration: none;
 
           &:hover {
             color: vars.$translucent-broken-white;

@@ -2,46 +2,58 @@
 
   <!--    <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>-->
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Game Id</mat-label>
-      <input matInput [formControl]="form.controls.gameId"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Game Id</mat-label>
+        <input matInput [formControl]="form.controls.gameId"/>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Background Image</mat-label>
-      <input matInput [formControl]="form.controls.backgroundImage"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Background Image</mat-label>
+        <input matInput [formControl]="form.controls.backgroundImage"/>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Background Color</mat-label>
-      <input matInput [formControl]="form.controls.backgroundColor"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Background Color</mat-label>
+        <input matInput [formControl]="form.controls.backgroundColor"/>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Header Image</mat-label>
-      <input matInput [formControl]="form.controls.headerImage"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Header Image</mat-label>
+        <input matInput [formControl]="form.controls.headerImage"/>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Border Color</mat-label>
-      <input matInput [formControl]="form.controls.borderColor"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Border Color</mat-label>
+        <input matInput [formControl]="form.controls.borderColor"/>
+      </mat-form-field>
+    </div>
   </div>
 
-  <div class="row-cols-1 mb-2">
-    <mat-form-field appearance="fill">
-      <mat-label>Font Color</mat-label>
-      <input matInput [formControl]="form.controls.fontColor"/>
-    </mat-form-field>
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Font Color</mat-label>
+        <input matInput [formControl]="form.controls.fontColor"/>
+      </mat-form-field>
+    </div>
   </div>
 
   <button type="submit" mat-raised-button [disabled]="form.invalid">Submit</button>
