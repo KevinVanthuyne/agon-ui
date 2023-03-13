@@ -13,7 +13,9 @@
 
   <ng-container matColumnDef="bgColor">
     <th mat-header-cell *matHeaderCellDef>Bg Color</th>
-    <td mat-cell *matCellDef="let game"> {{ game.gameStyle.backgroundColor }} </td>
+    <td mat-cell *matCellDef="let game" [ngStyle]="{
+      backgroundColor: game.gameStyle.backgroundColor
+    }"> {{ game.gameStyle.backgroundColor }} </td>
   </ng-container>
 
   <ng-container matColumnDef="bgImg">
@@ -40,12 +42,16 @@
 
   <ng-container matColumnDef="borderColor">
     <th mat-header-cell *matHeaderCellDef>Border Color</th>
-    <td mat-cell *matCellDef="let game"> {{ game.gameStyle.borderColor }} </td>
+    <td mat-cell *matCellDef="let game" [ngStyle]="{
+      backgroundColor: game.gameStyle.borderColor
+    }"> {{ game.gameStyle.borderColor }} </td>
   </ng-container>
 
   <ng-container matColumnDef="fontColor">
     <th mat-header-cell *matHeaderCellDef>Font Color</th>
-    <td mat-cell *matCellDef="let game"> {{ game.gameStyle.fontColor }} </td>
+    <td mat-cell *matCellDef="let game" [ngStyle]="{
+      backgroundColor: game.gameStyle.fontColor
+    }"> {{ game.gameStyle.fontColor }} </td>
   </ng-container>
 
   <ng-container matColumnDef="editStyle">
