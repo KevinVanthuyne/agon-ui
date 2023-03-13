@@ -8,5 +8,4 @@ import { Component, Input } from '@angular/core';
 export class LinkComponent {
   @Input() href!: string;
   @Input() margin = false;
-  @Input() innerStyle?: { [property: string]: string };
 }

@@ -18,15 +18,23 @@
 
   <ng-container matColumnDef="bgImg">
     <th mat-header-cell *matHeaderCellDef>Bg Image</th>
-    <td mat-cell *matCellDef="let game" class="long-content-cell">
-      <app-link [href]="game.gameStyle.backgroundImage">{{ game.gameStyle.backgroundImage }}</app-link>
+    <td mat-cell *matCellDef="let game">
+      <app-link *ngIf="game.gameStyle.backgroundImage" [href]="game.gameStyle.backgroundImage">
+        <img
+          [src]="game.gameStyle.backgroundImage"
+          alt="background image for {{game.name}}"
+          class="img-fluid img-cell"
+        />
+      </app-link>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="headerImg">
     <th mat-header-cell *matHeaderCellDef>Header Image</th>
-    <td mat-cell *matCellDef="let game" class="long-content-cell">
-      <app-link [href]="game.gameStyle.headerImage">{{ game.gameStyle.headerImage }}</app-link>
+    <td mat-cell *matCellDef="let game">
+      <app-link *ngIf="game.gameStyle.headerImage" [href]="game.gameStyle.headerImage">
+        <img [src]="game.gameStyle.headerImage" alt="header image for {{game.name}}" class="img-fluid img-cell"/>
+      </app-link>
     </td>
   </ng-container>
 
