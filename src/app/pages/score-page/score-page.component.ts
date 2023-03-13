@@ -4,7 +4,7 @@ import { ScoreService } from '../../services/score.service';
 import { Observable } from 'rxjs';
 import { HighScoreCompetitionService } from '../../services/competition/high-score-competition.service';
 import HighScoreDivision from '../../models/division/high-score-division';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
 
 /**
  * Page with a form to submit a score. Does not implement any kind of authentication to provide quick and public input.
