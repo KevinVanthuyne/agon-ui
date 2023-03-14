@@ -7,12 +7,7 @@ import {
 } from '@angular/core';
 import { TickerDirective } from '../../directives/ticker.directive';
 import { TickerItemComponent } from '../ticker-items/ticker-item.component';
-import { GameOfTheMonthComponent } from '../ticker-items/game-of-the-month/game-of-the-month.component';
-import { ScoreToBeatComponent } from '../ticker-items/score-to-beat/score-to-beat.component';
-import { GameImageComponent } from '../ticker-items/game-image/game-image.component';
-import { RunnerUpScoresComponent } from '../ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from '../ticker-items/competition-qr-code/competition-qr-code.component';
-import { WinPrizesComponent } from '../ticker-items/win-prizes/win-prizes.component';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -25,11 +20,10 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   currentIndex = -1;
   interval: number | undefined;
   components: Type<TickerItemComponent>[] = [
-    GameOfTheMonthComponent,
-    GameImageComponent,
-    ScoreToBeatComponent,
-    RunnerUpScoresComponent,
-    WinPrizesComponent,
+    // GameOfTheMonthComponent,
+    // GameImageComponent,
+    // ScoreToBeatComponent,
+    // RunnerUpScoresComponent,
     CompetitionQrCodeComponent,
   ];
 

@@ -18,7 +18,6 @@ import { GameImageComponent } from './pages/ticker-items/game-image/game-image.c
 import { RunnerUpScoresComponent } from './pages/ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { QRCodeModule } from 'angular2-qrcode';
-import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.component';
 import { PageContainerComponent } from './components/page-container/page-container.component';
 import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-score-leaderboard-page/high-score-leaderboard-page.component';
 import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
@@ -61,7 +60,6 @@ import { LinkComponent } from './components/link/link.component';
     GameImageComponent,
     RunnerUpScoresComponent,
     CompetitionQrCodeComponent,
-    WinPrizesComponent,
     PageContainerComponent,
     HighScoreLeaderboardPageComponent,
     PeriodLeaderboardPageComponent,

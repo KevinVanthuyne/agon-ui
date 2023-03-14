@@ -11,7 +11,6 @@ import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/
 import { GameImageComponent } from './pages/ticker-items/game-image/game-image.component';
 import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
 import { RunnerUpScoresComponent } from './pages/ticker-items/runner-up-scores/runner-up-scores.component';
-import { WinPrizesComponent } from './pages/ticker-items/win-prizes/win-prizes.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
@@ -51,8 +50,7 @@ export const ROUTES: Routes = [
   { path: 'ticker/2', component: GameImageComponent },
   { path: 'ticker/3', component: ScoreToBeatComponent },
   { path: 'ticker/4', component: RunnerUpScoresComponent },
-  { path: 'ticker/5', component: WinPrizesComponent },
-  { path: 'ticker/6', component: CompetitionQrCodeComponent },
+  { path: 'ticker/5', component: CompetitionQrCodeComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
