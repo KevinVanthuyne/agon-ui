@@ -46,6 +46,7 @@ import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-p
 import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 import { LinkComponent } from './components/link/link.component';
+import { DivisionChampionComponent } from './pages/ticker-items/division-champion/division-champion.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { LinkComponent } from './components/link/link.component';
     NewGamePageComponent,
     EditGameStylePageComponent,
     LinkComponent,
+    DivisionChampionComponent,
   ],
   imports: [
     BrowserModule,

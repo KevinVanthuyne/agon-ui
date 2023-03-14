@@ -9,6 +9,7 @@ import { TickerDirective } from '../../directives/ticker.directive';
 import { TickerItemComponent } from '../ticker-items/ticker-item.component';
 import { CompetitionQrCodeComponent } from '../ticker-items/competition-qr-code/competition-qr-code.component';
 import { environment } from '../../../environments/environment';
+import { DivisionChampionComponent } from '../ticker-items/division-champion/division-champion.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -24,6 +25,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
     // GameImageComponent,
     // ScoreToBeatComponent,
     // RunnerUpScoresComponent,
+    DivisionChampionComponent,
     CompetitionQrCodeComponent,
   ];
 

@@ -1,0 +1,32 @@
+<app-ticker-item-container>
+  <div class="item-container">
+    <div class="item">
+      <div class="text-uppercase ticker-title">Top score for {{divisionId}}</div>
+    </div>
+  </div>
+
+  <!-- No score yet -->
+  <div class="item-container" *ngIf="!(currentTopScore$ | async)">
+    <div class="item">
+      <div class="font-weight-bold fit-text">No scores posted yet!</div>
+    </div>
+  </div>
+
+  <!-- Scores available -->
+  <ng-container *ngIf="currentTopScore$ | async as currentTopScore">
+    <div class="item-container">
+      <div class="item">
+        <div class="font-weight-bold fit-text">
+          {{ currentTopScore.points.toLocaleString() }}
+        </div>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="item">
+        <span class="text-uppercase fit-text">
+          {{ currentTopScore.username }}
+        </span>
+      </div>
+    </div>
+  </ng-container>
+</app-ticker-item-container>
