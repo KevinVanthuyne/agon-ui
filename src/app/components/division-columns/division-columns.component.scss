@@ -2,6 +2,7 @@
 
 .columns-container {
   height: calc(100vh - #{vars.$nav-bar-height} - #{vars.$footer-height});
+  width: 100vw;
   display: flex;
   flex-direction: row;
   overflow-y: auto;
