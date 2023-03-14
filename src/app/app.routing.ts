@@ -24,9 +24,9 @@ export const ROUTES: Routes = [
     path: 'leaderboard',
     component: LeaderboardPageComponent,
     children: [
-      { path: '', redirectTo: 'period', pathMatch: 'full' },
-      { path: 'period', component: PeriodLeaderboardPageComponent },
+      { path: '', redirectTo: 'high-score', pathMatch: 'full' },
       { path: 'high-score', component: HighScoreLeaderboardPageComponent },
+      { path: 'period', component: PeriodLeaderboardPageComponent },
     ],
   },
   { path: 'score', component: ScorePageComponent },
