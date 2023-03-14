@@ -12,6 +12,7 @@
     <div class="item">
       <div class="font-weight-bold fit-text">No scores posted yet!</div>
     </div>
+    {{ fitText() }}
   </div>
 
   <!-- Scores available -->
@@ -30,5 +31,6 @@
         </span>
       </div>
     </div>
+    {{ fitText() }} <!-- Has to be after all fit-text classes -->
   </ng-container>
 </app-ticker-item-container>
