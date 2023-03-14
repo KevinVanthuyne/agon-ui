@@ -11,12 +11,15 @@ import { Marquee } from 'dynamic-marquee';
   styleUrls: ['./game-of-the-month.component.scss'],
 })
 export class GameOfTheMonthComponent
-  implements TickerItemComponent, AfterViewInit, OnDestroy
+  extends TickerItemComponent
+  implements AfterViewInit, OnDestroy
 {
   private _sub = new Subscription();
   private _marquee: Marquee | undefined;
 
-  constructor(private gameService: GameService) {}
+  constructor(private gameService: GameService) {
+    super();
+  }
 
   ngAfterViewInit(): void {
     this._marquee = new Marquee(document.getElementById('marquee')!, {

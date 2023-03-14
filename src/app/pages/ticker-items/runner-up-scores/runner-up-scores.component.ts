@@ -11,11 +11,13 @@ import { ScoreToBeatComponent } from '../score-to-beat/score-to-beat.component';
   templateUrl: './runner-up-scores.component.html',
   styleUrls: ['./runner-up-scores.component.scss'],
 })
-export class RunnerUpScoresComponent implements TickerItemComponent {
+export class RunnerUpScoresComponent extends TickerItemComponent {
   constructor(
     private scoreService: ScoreService,
     private gameService: GameService
-  ) {}
+  ) {
+    super();
+  }
 
   get currentHighScore$(): Observable<HighScore[] | undefined> {
     return this.gameService.activeGame$.pipe(

@@ -27,11 +27,15 @@ export default abstract class AbstractCompetitionService<
       0,
       AbstractCompetitionService.REFRESH_INTERVAL
     ).pipe(
-      switchMap(() => this.http.get<Div[]>(`${this.competitionUrl}/divisions`)),
+      switchMap(() => this.allDivisionsOnce$),
       takeUntil(this.destroy$),
       shareReplay(1)
     );
     return this.divisionCache$;
+  }
+
+  get allDivisionsOnce$(): Observable<Div[]> {
+    return this.http.get<Div[]>(`${this.competitionUrl}/divisions`);
   }
 
   addDivision(gameId: number): Observable<Div> {

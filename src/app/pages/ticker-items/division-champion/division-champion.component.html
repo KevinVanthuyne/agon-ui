@@ -1,7 +1,9 @@
 <app-ticker-item-container>
   <div class="item-container">
     <div class="item">
-      <div class="text-uppercase ticker-title">Top score for {{divisionId}}</div>
+      <div class="text-uppercase ticker-title" *ngIf="division">
+        {{ division.game.name }}
+      </div>
     </div>
   </div>
 

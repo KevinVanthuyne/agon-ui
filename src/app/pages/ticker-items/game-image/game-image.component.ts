@@ -9,8 +9,10 @@ import Game from '../../../models/game';
   templateUrl: './game-image.component.html',
   styleUrls: ['./game-image.component.scss'],
 })
-export class GameImageComponent implements TickerItemComponent {
-  constructor(private gameService: GameService) {}
+export class GameImageComponent extends TickerItemComponent {
+  constructor(private gameService: GameService) {
+    super();
+  }
 
   get activeGame$(): Observable<Game> {
     return this.gameService.activeGame$;
