@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:8080',
   leaderBoardUrl: 'http://localhost:8080/leaderboard',
-  partakeCompetitionUrl: 'https://tronk.be/flipperkast.html',
+  partakeCompetitionUrl: 'https://scores.kevinvt.com',
   cacheRefreshInterval: 5 * 1000, // 5 seconds
   tickerPageInterval: 2 * 1000, // 2 seconds
 };
