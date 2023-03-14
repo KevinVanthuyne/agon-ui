@@ -10,12 +10,8 @@ import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-p
 import { RouterModule } from '@angular/router';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
 import { TickerDirective } from './directives/ticker.directive';
-import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/game-of-the-month.component';
-import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TickerItemContainerComponent } from './components/ticker-item-container/ticker-item-container.component';
-import { GameImageComponent } from './pages/ticker-items/game-image/game-image.component';
-import { RunnerUpScoresComponent } from './pages/ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { QRCodeModule } from 'angular2-qrcode';
 import { PageContainerComponent } from './components/page-container/page-container.component';
@@ -55,11 +51,7 @@ import { DivisionChampionComponent } from './pages/ticker-items/division-champio
     LeaderboardPageComponent,
     TickerPageComponent,
     TickerDirective,
-    GameOfTheMonthComponent,
-    ScoreToBeatComponent,
     TickerItemContainerComponent,
-    GameImageComponent,
-    RunnerUpScoresComponent,
     CompetitionQrCodeComponent,
     PageContainerComponent,
     HighScoreLeaderboardPageComponent,

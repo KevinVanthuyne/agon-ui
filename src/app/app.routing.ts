@@ -7,10 +7,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 import { GamesPageComponent } from './pages/admin/games/games-page/games-page.component';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
-import { GameOfTheMonthComponent } from './pages/ticker-items/game-of-the-month/game-of-the-month.component';
-import { GameImageComponent } from './pages/ticker-items/game-image/game-image.component';
-import { ScoreToBeatComponent } from './pages/ticker-items/score-to-beat/score-to-beat.component';
-import { RunnerUpScoresComponent } from './pages/ticker-items/runner-up-scores/runner-up-scores.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { ScoresPageComponent } from './pages/admin/scores-page/scores-page.component';
@@ -46,11 +42,7 @@ export const ROUTES: Routes = [
     ],
   },
   { path: 'ticker', component: TickerPageComponent },
-  { path: 'ticker/1', component: GameOfTheMonthComponent },
-  { path: 'ticker/2', component: GameImageComponent },
-  { path: 'ticker/3', component: ScoreToBeatComponent },
-  { path: 'ticker/4', component: RunnerUpScoresComponent },
-  { path: 'ticker/5', component: CompetitionQrCodeComponent },
+  { path: 'ticker/1', component: CompetitionQrCodeComponent },
   { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
 ];
