@@ -8,14 +8,9 @@ export class UrlService {
   public static readonly URLS = {
     games: {
       root: `${environment.apiUrl}/api/v1/games`,
-      passed: `${environment.apiUrl}/api/v1/games/passed`,
-      active: `${environment.apiUrl}/api/v1/games/active`,
     },
     gameStyles: {
       root: `${environment.apiUrl}/api/v1/game-styles`,
-    },
-    rankings: {
-      root: `${environment.apiUrl}/api/v1/scores/ranking/all`,
     },
     competitions: {
       root: `${environment.apiUrl}/api/v1/competitions`,
@@ -27,7 +22,6 @@ export class UrlService {
       active: `${environment.apiUrl}/api/v1/scores/active`,
       divisions: `${environment.apiUrl}/api/v1/scores/divisions`,
     },
-    user: `${environment.apiUrl}/api/v1/auth/user`,
     logout: `${environment.apiUrl}/api/v1/auth/logout`,
     login: `${environment.apiUrl}/api/v1/auth/login`,
   };

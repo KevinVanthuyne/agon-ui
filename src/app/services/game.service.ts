@@ -10,8 +10,6 @@ import { UrlService } from './url.service';
 })
 export class GameService extends CachingService implements OnDestroy {
   private gameCache$: Observable<Game[]> | undefined;
-  private passedGamesCache$: Observable<Game[]> | undefined;
-  private activeGameCache$: Observable<Game> | undefined;
 
   constructor(private http: HttpClient) {
     super();
@@ -26,28 +24,6 @@ export class GameService extends CachingService implements OnDestroy {
       );
     }
     return this.gameCache$;
-  }
-
-  get passedGames$(): Observable<Game[]> {
-    if (!this.passedGamesCache$) {
-      this.passedGamesCache$ = timer(0, GameService.REFRESH_INTERVAL).pipe(
-        switchMap(() => this.http.get<Game[]>(UrlService.URLS.games.passed)),
-        takeUntil(this.destroy$),
-        shareReplay(1)
-      );
-    }
-    return this.passedGamesCache$;
-  }
-
-  get activeGame$(): Observable<Game> {
-    if (!this.activeGameCache$) {
-      this.activeGameCache$ = timer(0, GameService.REFRESH_INTERVAL).pipe(
-        switchMap(() => this.http.get<Game>(UrlService.URLS.games.active)),
-        takeUntil(this.destroy$),
-        shareReplay(1)
-      );
-    }
-    return this.activeGameCache$;
   }
 
   addGame$(name: string): Observable<Game> {
