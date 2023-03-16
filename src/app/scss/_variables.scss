@@ -6,8 +6,9 @@ $nav-bar-height: 3rem;
 $footer-height: 2rem;
 
 // Colors
-$broken-white: mat.get-color-from-palette(theme.$primary-palette, 50);
+$broken-white: mat.get-color-from-palette(theme.$accent-palette, 50);
 $translucent-broken-white: rgba(250, 250, 250, 0.6);
-$light-gray: mat.get-color-from-palette(theme.$primary-palette, 600);
-$medium-gray: mat.get-color-from-palette(theme.$primary-palette, 800);
-$dark-gray: mat.get-color-from-palette(theme.$primary-palette, 900);
+$light-gray: mat.get-color-from-palette(theme.$accent-palette, 600);
+$medium-gray: mat.get-color-from-palette(theme.$accent-palette, 800);
+$dark-gray: mat.get-color-from-palette(theme.$accent-palette, 900);
+$amber: mat.get-color-from-palette(theme.$primary-palette, 500);
