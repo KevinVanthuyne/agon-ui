@@ -43,6 +43,6 @@ export const ROUTES: Routes = [
   },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: CompetitionQrCodeComponent },
-  { path: '', redirectTo: '/leaderboard', pathMatch: 'full' },
-  { path: '**', redirectTo: '/leaderboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/leaderboard/high-score', pathMatch: 'full' },
+  { path: '**', redirectTo: '/leaderboard/high-score', pathMatch: 'full' },
 ];
