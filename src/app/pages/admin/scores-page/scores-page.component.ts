@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import Score from '../../../models/score';
 import { ScoreService } from '../../../services/score.service';
 import AbstractDivision from '../../../models/division/abstract-division';
 import { HighScoreCompetitionService } from '../../../services/competition/high-score-competition.service';
 import { FormControl } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-scores-page',
@@ -11,10 +13,12 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./scores-page.component.scss'],
 })
 export class ScoresPageComponent implements OnInit {
+  @ViewChild(MatSort) sort: MatSort | undefined;
+
   displayedColumns = ['timestamp', 'id', 'username', 'points', 'delete'];
   divisions: AbstractDivision[] = [];
   divisionFormControl = new FormControl<number>(0);
-  scores: Score[] = [];
+  dataSource = new MatTableDataSource([] as Score[]);
 
   // TODO only supports HighScoreCompetitions for now
   constructor(
@@ -29,9 +33,12 @@ export class ScoresPageComponent implements OnInit {
   }
 
   updateDivision(divisionId: number): void {
-    this.scoreService
-      .getAllScoresOnce$(divisionId)
-      .subscribe((scores) => (this.scores = scores));
+    this.scoreService.getAllScoresOnce$(divisionId).subscribe((scores) => {
+      this.dataSource.data = scores;
+      if (this.sort) {
+        this.dataSource.sort = this.sort;
+      }
+    });
   }
 
   deleteScore(score: Score): void {

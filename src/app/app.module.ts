@@ -43,6 +43,7 @@ import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 import { LinkComponent } from './components/link/link.component';
 import { DivisionChampionComponent } from './pages/ticker-items/division-champion/division-champion.component';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { DivisionChampionComponent } from './pages/ticker-items/division-champio
     MatTableModule,
     FormsModule,
     MatIconModule,
+    MatSortModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
