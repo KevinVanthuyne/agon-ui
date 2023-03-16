@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HighScoreCompetitionService } from '../../services/competition/high-score-competition.service';
 import HighScoreDivision from '../../models/division/high-score-division';
 import { MatLegacySnackBar as MatSnackBar } from '@angular/material/legacy-snack-bar';
+import { Router } from '@angular/router';
 
 /**
  * Page with a form to submit a score. Does not implement any kind of authentication to provide quick and public input.
@@ -36,7 +37,8 @@ export class ScorePageComponent {
     private fb: FormBuilder,
     private scoreService: ScoreService,
     private competitionService: HighScoreCompetitionService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   get divisions$(): Observable<HighScoreDivision[]> {
@@ -55,7 +57,11 @@ export class ScorePageComponent {
           this.formDirective?.resetForm();
           this.form.reset();
           this.formError = undefined;
-          this.snackBar.open('Score submitted!', 'Dismiss', { duration: 3000 });
+          this.router.navigate(['/leaderboard']).then(() => {
+            this.snackBar.open('Score submitted!', 'Dismiss', {
+              duration: 3000,
+            });
+          });
         },
         error: (response) => {
           this.formError = response.error;
