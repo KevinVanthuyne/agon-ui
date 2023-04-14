@@ -1,4 +1,5 @@
 @use '@angular/material' as mat;
+@use 'variables' as vars;
 
 // TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
 //  The following line adds:
@@ -11,13 +12,10 @@
 @include mat.all-legacy-component-typographies();
 @include mat.legacy-core();
 
-$primary-palette: mat.define-palette(mat.$amber-palette);
-$accent-palette: mat.define-palette(mat.$gray-palette);
-
 $my-theme: mat.define-dark-theme((
   color: (
-    primary: $primary-palette,
-    accent: $accent-palette,
+    primary: vars.$primary-palette,
+    accent: vars.$accent-palette,
   ),
   typography: mat.define-legacy-typography-config(),
   density: 0,
