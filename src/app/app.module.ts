@@ -44,6 +44,7 @@ import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-
 import { LinkComponent } from './components/link/link.component';
 import { DivisionChampionComponent } from './pages/ticker-items/division-champion/division-champion.component';
 import { MatSortModule } from '@angular/material/sort';
+import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { MatSortModule } from '@angular/material/sort';
     EditGameStylePageComponent,
     LinkComponent,
     DivisionChampionComponent,
+    EditGamePageComponent,
   ],
   imports: [
     BrowserModule,

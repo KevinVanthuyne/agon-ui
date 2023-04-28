@@ -1,0 +1,14 @@
+<h2>Edit Game</h2>
+
+<form *ngIf="form" [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="form.controls.name" required/>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button type="submit" mat-raised-button [disabled]="form.invalid" color="primary">Submit</button>
+</form>

@@ -11,12 +11,13 @@ export class GamesPageComponent implements OnInit {
   displayedColumns = [
     'id',
     'name',
-    'editStyle',
     'bgColor',
     'bgImg',
     'headerImg',
     'borderColor',
     'fontColor',
+    'edit',
+    'editStyle',
     'delete',
   ];
   games: Game[] = [];
