@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Score from 'src/app/models/score';
 import { TickerItemComponent } from '../ticker-item.component';
+import { Observable } from 'rxjs';
+import { ScoreService } from '../../../services/score.service';
 
 @Component({
   selector: 'app-runner-ups',
@@ -8,19 +10,17 @@ import { TickerItemComponent } from '../ticker-item.component';
   styleUrls: ['./runner-ups.component.scss'],
 })
 export class RunnerUpsComponent extends TickerItemComponent implements OnInit {
-  score1: Score | undefined;
-  score2: Score | undefined;
+  currentTopScores$: Observable<Score[]> | undefined;
 
-  constructor() {
+  constructor(private scoreService: ScoreService) {
     super();
   }
 
   ngOnInit(): void {
-    if (!this.data?.division?.scores) return;
+    if (!this.data?.division) return;
 
-    const scores = this.data.division.scores;
-
-    this.score1 = scores.length >= 2 ? scores[1] : undefined;
-    this.score2 = scores.length >= 3 ? scores[2] : undefined;
+    this.currentTopScores$ = this.scoreService.getHighestScores$(
+      this.data!.division!.id
+    );
   }
 }

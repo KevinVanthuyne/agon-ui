@@ -1,50 +1,31 @@
 <app-ticker-item-container>
-  <!-- No score yet -->
-  <ng-container *ngIf="!score1">
-    <div class="item-container">
-      <div class="item">
-        <div class="text-uppercase fit-text">Nog geen #2 of #3 score</div>
-      </div>
-    </div>
-    <div class="item-container">
-      <div class="item">
-        <div
-          *ngIf="data?.division?.game?.name"
-          class="text-uppercase fit-text"
-        >
-          voor {{data?.division?.game?.name}}
-        </div>
-      </div>
-    </div>
-  </ng-container>
-
-  <!-- Scores available -->
-  <ng-container *ngIf="score1">
+  <ng-container *ngIf="currentTopScores$ | async as currentTopScores">
+    <!-- Scores available -->
     <div class="item-container">
       <div class="item">
         <span class="text-uppercase fw-bold fit-text">
-          #2 {{ score1.username }}
+          #2 {{ currentTopScores.length > 1 ? currentTopScores[1].username : "---" }}
         </span>
       </div>
     </div>
     <div class="item-container">
       <div class="item">
         <div class="fit-text">
-          {{ score1.points.toLocaleString() }}
+          {{ currentTopScores.length > 1 ? currentTopScores[1].points.toLocaleString() : "" }}
         </div>
       </div>
     </div>
     <div class="item-container">
       <div class="item">
-        <span class="text-uppercase fw-bold fit-text" *ngIf="score2">
-          #3 {{ score2.username }}
+        <span class="text-uppercase fw-bold fit-text">
+          #3 {{ currentTopScores.length > 2 ? currentTopScores[2].username : "---" }}
         </span>
       </div>
     </div>
     <div class="item-container">
       <div class="item">
-        <div class="fit-text" *ngIf="score2">
-          {{ score2.points.toLocaleString() }}
+        <div class="fit-text">
+          {{ currentTopScores.length > 2 ? currentTopScores[2].points.toLocaleString() : "" }}
         </div>
       </div>
     </div>
