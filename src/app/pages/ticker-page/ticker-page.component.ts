@@ -16,7 +16,7 @@ import { DivisionChampionComponent } from '../ticker-items/division-champion/div
 import { Subscription, take, tap } from 'rxjs';
 import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game-header-image.component';
 import { OvertinkerComponent } from '../ticker-items/overtinker/overtinker.component';
-import { RunnerUpsComponent } from '../ticker-items/runner-ups/runner-ups.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ticker-page',
@@ -39,12 +39,15 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   componentTypesPerDivision: Type<TickerItemComponent>[] = [
     GameHeaderImageComponent,
     DivisionChampionComponent,
-    RunnerUpsComponent,
+    // RunnerUpsComponent,
   ];
   // TODO only supports high score divisions currently
   divisions: AbstractDivision[] = [];
 
-  constructor(private competitionService: HighScoreCompetitionService) {}
+  constructor(
+    private competitionService: HighScoreCompetitionService,
+    private router: Router
+  ) {}
 
   ngAfterViewInit() {
     this.loadComponent();
@@ -75,6 +78,9 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
             if (this.currentDivisionIndex === divisions.length) {
               this.currentIndex = 0;
               this.currentDivisionIndex = 0;
+              void this.router.navigate(['leaderboard'], {
+                queryParams: { redirect: 'ticker' },
+              });
             }
           }
         }
