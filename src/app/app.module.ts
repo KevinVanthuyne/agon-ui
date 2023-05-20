@@ -45,6 +45,7 @@ import { LinkComponent } from './components/link/link.component';
 import { DivisionChampionComponent } from './pages/ticker-items/division-champion/division-champion.component';
 import { MatSortModule } from '@angular/material/sort';
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
+import { GameHeaderImageComponent } from './pages/ticker-items/game-header-image/game-header-image.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-g
     LinkComponent,
     DivisionChampionComponent,
     EditGamePageComponent,
+    GameHeaderImageComponent,
   ],
   imports: [
     BrowserModule,

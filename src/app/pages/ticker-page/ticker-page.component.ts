@@ -4,6 +4,7 @@ import {
   OnDestroy,
   Type,
   ViewChild,
+  ViewContainerRef,
 } from '@angular/core';
 import { TickerDirective } from '../../directives/ticker.directive';
 import { TickerItemComponent } from '../ticker-items/ticker-item.component';
@@ -12,7 +13,8 @@ import { environment } from '../../../environments/environment';
 import AbstractDivision from '../../models/division/abstract-division';
 import { HighScoreCompetitionService } from '../../services/competition/high-score-competition.service';
 import { DivisionChampionComponent } from '../ticker-items/division-champion/division-champion.component';
-import { take, tap } from 'rxjs';
+import { Subscription, take, tap } from 'rxjs';
+import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game-header-image.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -21,16 +23,19 @@ import { take, tap } from 'rxjs';
 })
 export class TickerPageComponent implements AfterViewInit, OnDestroy {
   @ViewChild(TickerDirective, { static: true }) tickerHost!: TickerDirective;
-  currentIndex = -1;
-  currentDivisionIndex = -1;
+  currentIndex = 0;
+  currentComponentIndex = 0;
+  currentDivisionIndex = 0;
   interval: number | undefined;
-  components: Type<TickerItemComponent>[] = [
-    // GameOfTheMonthComponent,
-    // GameImageComponent,
-    // ScoreToBeatComponent,
-    // RunnerUpScoresComponent,
-    DivisionChampionComponent,
+  sub = new Subscription();
+  // Only a single instance exists of these components
+  uniqueComponentTypes: Type<TickerItemComponent>[] = [
     CompetitionQrCodeComponent,
+  ];
+  // An instance of these components exist for each division
+  componentTypesPerDivision: Type<TickerItemComponent>[] = [
+    GameHeaderImageComponent,
+    DivisionChampionComponent,
   ];
   // TODO only supports high score divisions currently
   divisions: AbstractDivision[] = [];
@@ -49,38 +54,57 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   private loadComponent() {
     this.updateDivisions$()
       .pipe(take(1))
-      .subscribe(() => {
-        this.currentIndex = (this.currentIndex + 1) % this.components.length;
-        const tickerItemComponent = this.components[this.currentIndex];
-
+      .subscribe((divisions) => {
         const viewContainerRef = this.tickerHost.viewContainerRef;
         viewContainerRef.clear();
 
-        const componentRef =
-          viewContainerRef.createComponent<TickerItemComponent>(
-            tickerItemComponent
-          );
-
-        // Cycle through all divisions before advancing to the next component type
-        if (tickerItemComponent === DivisionChampionComponent) {
-          this.currentDivisionIndex =
-            (this.currentDivisionIndex + 1) % this.divisions.length;
-
-          componentRef.instance.data = {
-            division: this.divisions[this.currentDivisionIndex],
-          };
-
-          if (this.currentDivisionIndex < this.divisions.length - 1) {
-            // next component should also be a DivChampComponent because there are still more divisions
-            this.currentIndex--;
-          } else {
-            // looped over all divisions, move on to other component types
-            this.currentDivisionIndex = -1;
+        if (this.currentIndex < this.uniqueComponentTypes.length) {
+          this.createUniqueComponent(viewContainerRef);
+          this.currentIndex++;
+        } else {
+          // handle components per division
+          if (this.currentDivisionIndex < divisions.length) {
+            this.createComponentForDivision(
+              viewContainerRef,
+              divisions[this.currentDivisionIndex]
+            );
+            if (this.currentDivisionIndex === divisions.length) {
+              this.currentIndex = 0;
+              this.currentDivisionIndex = 0;
+            }
           }
         }
-
-        componentRef.changeDetectorRef.detectChanges();
       });
+  }
+
+  private createComponentForDivision(
+    viewContainerRef: ViewContainerRef,
+    division: AbstractDivision
+  ) {
+    const componentTypeToCreate =
+      this.componentTypesPerDivision[this.currentComponentIndex];
+    const componentRef = viewContainerRef.createComponent<TickerItemComponent>(
+      componentTypeToCreate
+    );
+    componentRef.instance.data = { division };
+    componentRef.changeDetectorRef.detectChanges();
+
+    if (
+      this.currentComponentIndex <
+      this.componentTypesPerDivision.length - 1
+    ) {
+      this.currentComponentIndex++;
+    } else {
+      this.currentComponentIndex = 0;
+      this.currentDivisionIndex++;
+    }
+  }
+
+  private createUniqueComponent(viewContainerRef: ViewContainerRef) {
+    const componentTypeToCreate = this.uniqueComponentTypes[this.currentIndex];
+    viewContainerRef.createComponent<TickerItemComponent>(
+      componentTypeToCreate
+    );
   }
 
   private updateDivisions$() {

@@ -1,0 +1,13 @@
+<app-ticker-item-container>
+  <ng-container *ngIf="gameStyle?.headerImage">
+    <div
+      class="image"
+      [ngStyle]="{
+        backgroundImage: 'url('+ gameStyle?.headerImage + ')'
+      }"
+    ></div>
+  </ng-container>
+  <ng-container *ngIf="!gameStyle?.headerImage">
+    {{data?.division?.game?.name}} Header
+  </ng-container>
+</app-ticker-item-container>
