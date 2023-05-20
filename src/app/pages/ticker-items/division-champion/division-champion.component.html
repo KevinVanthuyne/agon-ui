@@ -1,12 +1,4 @@
 <app-ticker-item-container>
-  <div class="item-container">
-    <div class="item">
-      <div class="text-uppercase ticker-title fit-text" *ngIf="division">
-        {{ division.game.name }}
-      </div>
-    </div>
-  </div>
-
   <!-- No score yet -->
   <div class="item-container" *ngIf="!(currentTopScore$ | async)">
     <div class="item">
@@ -17,6 +9,13 @@
 
   <!-- Scores available -->
   <ng-container *ngIf="currentTopScore$ | async as currentTopScore">
+    <div class="item-container">
+      <div class="item">
+        <div class="text-uppercase ticker-title fit-text">
+          Topspeler
+        </div>
+      </div>
+    </div>
     <div class="item-container">
       <div class="item">
         <div class="font-weight-bold fit-text">
