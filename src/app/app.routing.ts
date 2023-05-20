@@ -15,6 +15,7 @@ import { NewDivisionPageComponent } from './pages/admin/divisions/new-division-p
 import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game-page.component';
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
+import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
 
 export const ROUTES: Routes = [
   {
@@ -45,6 +46,7 @@ export const ROUTES: Routes = [
   },
   { path: 'ticker', component: TickerPageComponent },
   { path: 'ticker/1', component: CompetitionQrCodeComponent },
+  { path: 'ticker/2', component: OvertinkerComponent },
   { path: '', redirectTo: '/leaderboard/high-score', pathMatch: 'full' },
   { path: '**', redirectTo: '/leaderboard/high-score', pathMatch: 'full' },
 ];

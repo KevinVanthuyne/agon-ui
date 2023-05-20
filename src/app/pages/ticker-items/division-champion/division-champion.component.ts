@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ScoreService } from '../../../services/score.service';
 import { map, Observable } from 'rxjs';
 import Score from '../../../models/score';
-import fitterText from 'fitter-happier-text';
 import { TickerItemComponent } from '../ticker-item.component';
 import AbstractDivision from '../../../models/division/abstract-division';
 
@@ -33,15 +32,5 @@ export class DivisionChampionComponent
           return scores[0];
         })
       );
-  }
-
-  public fitText(): void {
-    const elements = document.getElementsByClassName('fit-text');
-    if (
-      elements.length <= 0 ||
-      elements.item(0)?.tagName.toLowerCase() === 'svg'
-    )
-      return;
-    fitterText(elements);
   }
 }

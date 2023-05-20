@@ -15,6 +15,7 @@ import { HighScoreCompetitionService } from '../../services/competition/high-sco
 import { DivisionChampionComponent } from '../ticker-items/division-champion/division-champion.component';
 import { Subscription, take, tap } from 'rxjs';
 import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game-header-image.component';
+import { OvertinkerComponent } from '../ticker-items/overtinker/overtinker.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -30,6 +31,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   sub = new Subscription();
   // Only a single instance exists of these components
   uniqueComponentTypes: Type<TickerItemComponent>[] = [
+    OvertinkerComponent,
     CompetitionQrCodeComponent,
   ];
   // An instance of these components exist for each division
