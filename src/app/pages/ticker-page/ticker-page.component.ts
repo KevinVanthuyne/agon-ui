@@ -16,6 +16,7 @@ import { DivisionChampionComponent } from '../ticker-items/division-champion/div
 import { Subscription, take, tap } from 'rxjs';
 import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game-header-image.component';
 import { OvertinkerComponent } from '../ticker-items/overtinker/overtinker.component';
+import { RunnerUpsComponent } from '../ticker-items/runner-ups/runner-ups.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -38,6 +39,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   componentTypesPerDivision: Type<TickerItemComponent>[] = [
     GameHeaderImageComponent,
     DivisionChampionComponent,
+    RunnerUpsComponent,
   ];
   // TODO only supports high score divisions currently
   divisions: AbstractDivision[] = [];

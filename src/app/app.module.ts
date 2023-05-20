@@ -47,6 +47,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
 import { GameHeaderImageComponent } from './pages/ticker-items/game-header-image/game-header-image.component';
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
+import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.
     EditGamePageComponent,
     GameHeaderImageComponent,
     OvertinkerComponent,
+    RunnerUpsComponent,
   ],
   imports: [
     BrowserModule,
