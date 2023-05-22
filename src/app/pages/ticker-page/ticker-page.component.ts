@@ -28,6 +28,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
   currentIndex = 0;
   currentComponentIndex = 0;
   currentDivisionIndex = 0;
+  redirectToLeaderboard = false;
   interval: number | undefined;
   sub = new Subscription();
   // Only a single instance exists of these components
@@ -62,8 +63,23 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
     this.updateDivisions$()
       .pipe(take(1))
       .subscribe((divisions) => {
+        if (this.redirectToLeaderboard) {
+          void this.router.navigate(['leaderboard'], {
+            queryParams: { redirect: 'ticker' },
+          });
+        }
+
         const viewContainerRef = this.tickerHost.viewContainerRef;
         viewContainerRef.clear();
+
+        console.log(
+          'i:',
+          this.currentIndex,
+          'd:',
+          this.currentDivisionIndex,
+          'c:',
+          this.currentComponentIndex
+        );
 
         if (this.currentIndex < this.uniqueComponentTypes.length) {
           this.createUniqueComponent(viewContainerRef);
@@ -78,9 +94,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
             if (this.currentDivisionIndex === divisions.length) {
               this.currentIndex = 0;
               this.currentDivisionIndex = 0;
-              void this.router.navigate(['leaderboard'], {
-                queryParams: { redirect: 'ticker' },
-              });
+              this.redirectToLeaderboard = true;
             }
           }
         }
