@@ -31,7 +31,7 @@ import { MatLegacySnackBarModule as MatSnackBarModule } from '@angular/material/
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { XhrInterceptor } from './interceptors/xhr-interceptor';
 import { HttpRequestInterceptor } from './interceptors/http-request-interceptor';
-import { GamesPageComponent } from './pages/admin/games/games-page/games-page.component';
+import { AdminGamesPageComponent } from './pages/admin/games/admin-games-page/admin-games-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
 import { ROUTES } from './app.routing';
 import { MatLegacyTableModule as MatTableModule } from '@angular/material/legacy-table';
@@ -48,6 +48,7 @@ import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-g
 import { GameHeaderImageComponent } from './pages/ticker-items/game-header-image/game-header-image.component';
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
 import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.component';
+import { GamesPageComponent } from './pages/games-page/games-page.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.c
     NavBarComponent,
     FooterComponent,
     LoginPageComponent,
-    GamesPageComponent,
+    AdminGamesPageComponent,
     AdminPageComponent,
     ScoresPageComponent,
     DivisionsPageComponent,
@@ -80,6 +81,7 @@ import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.c
     GameHeaderImageComponent,
     OvertinkerComponent,
     RunnerUpsComponent,
+    GamesPageComponent,
   ],
   imports: [
     BrowserModule,

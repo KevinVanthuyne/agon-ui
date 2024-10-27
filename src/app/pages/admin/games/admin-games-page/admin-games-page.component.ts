@@ -3,11 +3,11 @@ import { GameService } from '../../../../services/game.service';
 import Game from '../../../../models/game';
 
 @Component({
-  selector: 'app-games-page',
-  templateUrl: './games-page.component.html',
-  styleUrls: ['./games-page.component.scss'],
+  selector: 'app-admin-games-page',
+  templateUrl: './admin-games-page.component.html',
+  styleUrls: ['./admin-games-page.component.scss'],
 })
-export class GamesPageComponent implements OnInit {
+export class AdminGamesPageComponent implements OnInit {
   displayedColumns = [
     'id',
     'name',

@@ -5,7 +5,7 @@ import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-sco
 import { ScorePageComponent } from './pages/score-page/score-page.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { AdminPageComponent } from './pages/admin/admin-page/admin-page.component';
-import { GamesPageComponent } from './pages/admin/games/games-page/games-page.component';
+import { AdminGamesPageComponent } from './pages/admin/games/admin-games-page/admin-games-page.component';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
 import { AuthGuardService } from './services/auth-guard.service';
@@ -16,8 +16,10 @@ import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
+import {GamesPageComponent} from "./pages/games-page/games-page.component";
 
 export const ROUTES: Routes = [
+  { path: 'games', component: GamesPageComponent},
   {
     path: 'leaderboard',
     component: LeaderboardPageComponent,
@@ -36,7 +38,7 @@ export const ROUTES: Routes = [
     children: [
       { path: '', redirectTo: 'divisions', pathMatch: 'full' },
       { path: 'divisions', component: DivisionsPageComponent },
-      { path: 'games', component: GamesPageComponent },
+      { path: 'games', component: AdminGamesPageComponent },
       { path: 'game-style/:id', component: EditGameStylePageComponent },
       { path: 'game/:id', component: EditGamePageComponent },
       { path: 'new-game', component: NewGamePageComponent },
