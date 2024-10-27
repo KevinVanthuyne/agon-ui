@@ -49,6 +49,7 @@ import { GameHeaderImageComponent } from './pages/ticker-items/game-header-image
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
 import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.component';
 import { GamesPageComponent } from './pages/games-page/games-page.component';
+import { GameCardComponent } from './components/game-card/game-card.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import { GamesPageComponent } from './pages/games-page/games-page.component';
     OvertinkerComponent,
     RunnerUpsComponent,
     GamesPageComponent,
+    GameCardComponent,
   ],
   imports: [
     BrowserModule,

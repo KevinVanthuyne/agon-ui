@@ -1,1 +1,10 @@
-<p>games-page works!</p>
+<app-page-container>
+  <h2>Games</h2>
+  <div class="row">
+    <app-game-card
+      *ngFor="let game of (games$ | async)"
+      [name]="game.name"
+      [description]="game.description"
+    ></app-game-card>
+  </div>
+</app-page-container>
