@@ -13,6 +13,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: vars.$broken-white;
 }
 
 .mat-cell, .mat-header-cell {
@@ -23,10 +24,6 @@ body {
 .ticker-title {
   font-size: 7rem;
   font-weight: bold;
-}
-
-.mat-form-field {
-  color: vars.$broken-white;
 }
 
 a:hover {

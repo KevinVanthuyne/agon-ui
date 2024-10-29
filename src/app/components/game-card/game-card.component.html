@@ -1,3 +1,5 @@
-<b>{{ name }}</b>
-<p>{{ description }}</p>
-<img [src]="cabinetImageUrl" alt="The cabinet of {{name}}}" class="img-fluid" />
+<a routerLink="/games/{{game.id}}">
+  <h3>{{ game.name }}</h3>
+  <p>{{ game.description }}</p>
+  <img [src]="game.gameStyle.cabinetImage" alt="The cabinet of {{game.name}}}" class="img-fluid" />
+</a>

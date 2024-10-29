@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import Game from "../../models/game";
 
 @Component({
   selector: 'app-game-card',
@@ -6,7 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./game-card.component.scss']
 })
 export class GameCardComponent {
-  @Input() name?: string;
-  @Input() description?: string;
-  @Input() cabinetImageUrl!: string;
+  @Input() game!: Game;
 }

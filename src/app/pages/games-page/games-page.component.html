@@ -1,11 +1,10 @@
 <app-page-container>
   <h2>Games</h2>
   <div class="row">
-    <app-game-card
-      *ngFor="let game of (games$ | async)"
-      [name]="game.name"
-      [description]="game.description"
-      [cabinetImageUrl]="game.gameStyle.cabinetImage"
-    ></app-game-card>
+    <div *ngFor="let game of (games$ | async)" class="col-sm-6 col-md-4 col-lg-3">
+      <app-game-card
+        [game]="game"
+      ></app-game-card>
+    </div>
   </div>
 </app-page-container>

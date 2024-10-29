@@ -50,6 +50,7 @@ import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.
 import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.component';
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { GameCardComponent } from './components/game-card/game-card.component';
+import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-page.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { GameCardComponent } from './components/game-card/game-card.component';
     RunnerUpsComponent,
     GamesPageComponent,
     GameCardComponent,
+    GameDetailPageComponent,
   ],
   imports: [
     BrowserModule,

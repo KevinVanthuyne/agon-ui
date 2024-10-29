@@ -17,9 +17,11 @@ import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
 import {GamesPageComponent} from "./pages/games-page/games-page.component";
+import {GameDetailPageComponent} from "./pages/game-detail-page/game-detail-page.component";
 
 export const ROUTES: Routes = [
   { path: 'games', component: GamesPageComponent},
+  { path: 'games/:id', component: GameDetailPageComponent},
   {
     path: 'leaderboard',
     component: LeaderboardPageComponent,
