@@ -10,5 +10,14 @@
     </div>
   </div>
 
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [formControl]="form.controls.description" required></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
   <button type="submit" mat-raised-button [disabled]="form.invalid" color="primary">Submit</button>
 </form>

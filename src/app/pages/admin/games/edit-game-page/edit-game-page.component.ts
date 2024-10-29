@@ -4,6 +4,12 @@ import { GameService } from '../../../../services/game.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
 
+interface EditGameForm {
+  id: FormControl<number>;
+  name: FormControl<string>;
+  description: FormControl<string>;
+}
+
 @Component({
   selector: 'app-edit-game-page',
   templateUrl: './edit-game-page.component.html',
@@ -11,14 +17,14 @@ import { switchMap } from 'rxjs';
 })
 export class EditGamePageComponent implements OnInit {
   form:
-    | FormGroup<{ id: FormControl<number>; name: FormControl<string> }>
+    | FormGroup<EditGameForm>
     | undefined;
 
   constructor(
-    private fb: FormBuilder,
-    private gameService: GameService,
-    private router: Router,
-    private route: ActivatedRoute
+    private readonly fb: FormBuilder,
+    private readonly gameService: GameService,
+    private readonly router: Router,
+    private readonly route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +38,7 @@ export class EditGamePageComponent implements OnInit {
         this.form = this.fb.nonNullable.group({
           id: [{ value: game.id, disabled: true }],
           name: [game.name],
+          description: [game.description]
         });
       });
   }
@@ -39,7 +46,7 @@ export class EditGamePageComponent implements OnInit {
   onSubmit() {
     const game = this.form!.getRawValue();
     this.gameService
-      .editGame$(game.id, game.name)
+      .editGame$(game.id, game.name, game.description)
       .subscribe(() => this.router.navigate(['/admin/games']));
   }
 }

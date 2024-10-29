@@ -11,7 +11,7 @@ import { UrlService } from './url.service';
 export class GameService extends CachingService implements OnDestroy {
   private gameCache$: Observable<Game[]> | undefined;
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     super();
   }
 
@@ -37,10 +37,11 @@ export class GameService extends CachingService implements OnDestroy {
   /**
    * Edits the game with the given id to the given name.
    */
-  editGame$(gameId: number, name: string): Observable<Game> {
+  editGame$(gameId: number, name: string, description: string): Observable<Game> {
     return this.http.put<Game>(UrlService.URLS.games.root, {
       id: gameId,
       name,
+      description
     });
   }
 
