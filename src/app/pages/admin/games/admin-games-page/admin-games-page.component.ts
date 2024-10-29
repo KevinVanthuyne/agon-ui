@@ -11,6 +11,7 @@ export class AdminGamesPageComponent implements OnInit {
   displayedColumns = [
     'id',
     'name',
+    'description',
     'bgColor',
     'bgImg',
     'headerImg',
@@ -22,7 +23,7 @@ export class AdminGamesPageComponent implements OnInit {
   ];
   games: Game[] = [];
 
-  constructor(private gameService: GameService) {}
+  constructor(private readonly gameService: GameService) {}
 
   ngOnInit(): void {
     this.gameService.allGames$.subscribe((games) => {
