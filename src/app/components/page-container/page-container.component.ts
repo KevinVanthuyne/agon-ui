@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PageContainerComponent {
   @Input() title!: string;
+  @Input() margin = true;
 }

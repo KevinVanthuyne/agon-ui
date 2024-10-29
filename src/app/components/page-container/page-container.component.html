@@ -3,8 +3,8 @@
     [title]="title"
   ></app-nav-bar>
 
-  <main class="main pt-5">
-    <div class="container">
+  <main class="main" [ngClass]="margin ? 'pt-5' : ''">
+    <div [ngClass]="margin ? 'container' : ''">
       <ng-content></ng-content>
     </div>
   </main>
