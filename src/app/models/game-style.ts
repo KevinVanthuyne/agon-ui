@@ -5,4 +5,5 @@ export default interface GameStyle {
   headerImage: string;
   borderColor: string;
   fontColor: string;
+  cabinetImage: string;
 }

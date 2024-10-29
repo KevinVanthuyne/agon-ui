@@ -18,14 +18,15 @@ export class EditGameStylePageComponent implements OnInit {
         headerImage: FormControl<string>;
         borderColor: FormControl<string>;
         fontColor: FormControl<string>;
+        cabinetImage: FormControl<string>;
       }>
     | undefined;
 
   constructor(
-    private route: ActivatedRoute,
-    private gameStyleService: GameStyleService,
-    private fb: FormBuilder,
-    private router: Router
+    private readonly route: ActivatedRoute,
+    private readonly gameStyleService: GameStyleService,
+    private readonly fb: FormBuilder,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class EditGameStylePageComponent implements OnInit {
           headerImage: [style.headerImage],
           borderColor: [style.borderColor],
           fontColor: [style.fontColor],
+          cabinetImage: [style.cabinetImage]
         });
       });
   }

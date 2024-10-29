@@ -42,6 +42,15 @@
   <div class="row mb-2">
     <div class="col">
       <mat-form-field appearance="fill">
+        <mat-label>Cabinet Image</mat-label>
+        <input matInput [formControl]="form.controls.cabinetImage"/>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
         <mat-label>Border Color</mat-label>
         <input matInput [formControl]="form.controls.borderColor"/>
       </mat-form-field>

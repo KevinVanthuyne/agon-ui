@@ -5,6 +5,7 @@
       *ngFor="let game of (games$ | async)"
       [name]="game.name"
       [description]="game.description"
+      [cabinetImageUrl]="game.gameStyle.cabinetImage"
     ></app-game-card>
   </div>
 </app-page-container>

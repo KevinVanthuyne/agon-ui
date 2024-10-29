@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class GameStyleService {
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   get$(id: number): Observable<GameStyle> {
     return this.http.get<GameStyle>(`${UrlService.URLS.gameStyles.root}/${id}`);
