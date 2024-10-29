@@ -1,0 +1,7 @@
+<h3>Leaderboard</h3>
+<ng-container *ngFor="let division of (divisions$ | async)">
+  <h4>Division {{division?.id}}</h4>
+  <ol>
+    <li *ngFor="let score of (getScores$(division.id) | async)">{{score.points}} {{score.username}}</li>
+  </ol>
+</ng-container>

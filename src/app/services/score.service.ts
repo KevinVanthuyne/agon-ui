@@ -18,7 +18,7 @@ import Score from '../models/score';
 export class ScoreService extends CachingService implements OnDestroy {
   private divisionScoreCache$: Observable<Map<number, Score[]>> | undefined;
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
     super();
   }
 

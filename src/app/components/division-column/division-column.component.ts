@@ -14,7 +14,7 @@ import Score from '../../models/score';
 export class DivisionColumnComponent {
   @Input() division!: AbstractDivision;
 
-  constructor(private scoreService: ScoreService) {}
+  constructor(private readonly scoreService: ScoreService) {}
 
   get game(): Game {
     return this.division.game;

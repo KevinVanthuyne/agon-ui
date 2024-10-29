@@ -51,6 +51,7 @@ import { RunnerUpsComponent } from './pages/ticker-items/runner-ups/runner-ups.c
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { GameCardComponent } from './components/game-card/game-card.component';
 import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-page.component';
+import { GameLeaderboardComponent } from './components/game-leaderboard/game-leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +87,7 @@ import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-pa
     GamesPageComponent,
     GameCardComponent,
     GameDetailPageComponent,
+    GameLeaderboardComponent,
   ],
   imports: [
     BrowserModule,

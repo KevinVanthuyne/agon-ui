@@ -7,7 +7,7 @@ export const environment = {
   apiUrl: 'http://localhost:8080',
   leaderBoardUrl: 'http://localhost:8080/leaderboard',
   partakeCompetitionUrl: 'https://scores.kevinvt.com',
-  cacheRefreshInterval: 5 * 1000, // 5 seconds
+  cacheRefreshInterval: 1000, // 1 second
   tickerPageInterval: 2 * 1000, // 2 seconds
 };
 
