@@ -7,12 +7,14 @@
       : ''
   }"
 >
-  <img
-    *ngIf="gameStyle.headerImage"
-    [src]="gameStyle.headerImage"
-    [alt]="game.name"
-    class="header-img"
-  />
+  <a routerLink="/games/{{game.id}}">
+    <img
+      *ngIf="gameStyle.headerImage"
+      [src]="gameStyle.headerImage"
+      [alt]="game.name"
+      class="header-img"
+    />
+  </a>
   <h2 *ngIf="!gameStyle.headerImage" class="mat-display-1">
     {{ game.name }}
   </h2>
