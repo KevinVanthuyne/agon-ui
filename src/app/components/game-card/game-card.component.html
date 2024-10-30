@@ -1,5 +1,5 @@
 <a routerLink="/games/{{game.id}}">
-  <h3>{{ game.name }}</h3>
+  <img [src]="game.gameStyle.headerImage" alt="Header image of {{game.name}}" class="img-fluid">
   <p>{{ game.description }}</p>
   <img [src]="game.gameStyle.cabinetImage" alt="The cabinet of {{game.name}}}" class="img-fluid" />
 </a>

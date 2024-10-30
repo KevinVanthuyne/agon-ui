@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import Game from "../../models/game";
 import {ScoreService} from "../../services/score.service";
-import {Observable, of, tap} from "rxjs";
+import {Observable, of} from "rxjs";
 import Score from "../../models/score";
 import {DivisionService} from "../../services/division.service";
 import AbstractDivision from "../../models/division/abstract-division";
@@ -19,7 +19,7 @@ export class GameLeaderboardComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.divisions$ = this.divisionService.getDivisionsForGame$(this.game.id).pipe(tap(console.log));
+    this.divisions$ = this.divisionService.getDivisionsForGame$(this.game.id);
   }
 
   getScores$(divisionId: number): Observable<Score[]> {
