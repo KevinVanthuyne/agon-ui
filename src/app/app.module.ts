@@ -13,7 +13,7 @@ import { TickerDirective } from './directives/ticker.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TickerItemContainerComponent } from './components/ticker-item-container/ticker-item-container.component';
 import { CompetitionQrCodeComponent } from './pages/ticker-items/competition-qr-code/competition-qr-code.component';
-import { QRCodeModule } from 'angular2-qrcode';
+// import { QRCodeModule } from 'angular2-qrcode';
 import { PageContainerComponent } from './components/page-container/page-container.component';
 import { HighScoreLeaderboardPageComponent } from './pages/leaderboards/high-score-leaderboard-page/high-score-leaderboard-page.component';
 import { PeriodLeaderboardPageComponent } from './pages/leaderboards/period-leaderboard-page/period-leaderboard-page.component';
@@ -96,7 +96,7 @@ import { GameLeaderboardComponent } from './components/game-leaderboard/game-lea
     MatToolbarModule,
     HttpClientModule,
     NgbModule,
-    QRCodeModule,
+    // QRCodeModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
