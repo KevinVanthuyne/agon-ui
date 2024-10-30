@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {UrlService} from "./url.service";
 import AbstractDivision from "../models/division/abstract-division";
 
