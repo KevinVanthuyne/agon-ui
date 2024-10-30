@@ -1,17 +1,17 @@
 @use '@angular/material' as mat;
 
 // Theming
-$primary-palette: mat.define-palette(mat.$amber-palette);
-$accent-palette: mat.define-palette(mat.$gray-palette);
+$primary-palette: mat.m2-define-palette(mat.$m2-amber-palette);
+$accent-palette: mat.m2-define-palette(mat.$m2-gray-palette);
 
 // Sizes
 $nav-bar-height: 3rem;
 $footer-height: 2rem;
 
 // Colors
-$broken-white: mat.get-color-from-palette($accent-palette, 50);
+$broken-white: mat.m2-get-color-from-palette($accent-palette, 50);
 $translucent-broken-white: rgba(250, 250, 250, 0.6);
-$light-gray: mat.get-color-from-palette($accent-palette, 600);
-$medium-gray: mat.get-color-from-palette($accent-palette, 800);
-$dark-gray: mat.get-color-from-palette($accent-palette, 900);
-$amber: mat.get-color-from-palette($primary-palette, 500);
+$light-gray: mat.m2-get-color-from-palette($accent-palette, 600);
+$medium-gray: mat.m2-get-color-from-palette($accent-palette, 800);
+$dark-gray: mat.m2-get-color-from-palette($accent-palette, 900);
+$amber: mat.m2-get-color-from-palette($primary-palette, 500);

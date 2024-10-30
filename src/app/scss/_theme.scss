@@ -4,12 +4,12 @@
 @include mat.all-component-typographies();
 @include mat.core();
 
-$my-theme: mat.define-dark-theme((
+$my-theme: mat.m2-define-dark-theme((
   color: (
     primary: vars.$primary-palette,
     accent: vars.$accent-palette,
   ),
-  typography: mat.define-typography-config(),
+  typography: mat.m2-define-typography-config(),
   density: 0,
 ));
 
