@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "scored-ui:build:production"
+              "buildTarget": "agon-ui:build:production"
             },
             "development": {
-              "browserTarget": "scored-ui:build:development"
+              "buildTarget": "scored-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scored-ui:build"
+            "buildTarget": "scored-ui:build"
           }
         },
         "test": {
