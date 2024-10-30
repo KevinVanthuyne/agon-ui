@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
-import {GameService} from "../../services/game.service";
-import Game from "../../models/game";
-import {Observable} from "rxjs";
+import { GameService } from '../../services/game.service';
+import Game from '../../models/game';
+import { Observable, take } from 'rxjs';
 
 @Component({
   selector: 'app-games-page',
   templateUrl: './games-page.component.html',
-  styleUrls: ['./games-page.component.scss']
+  styleUrls: ['./games-page.component.scss'],
 })
 export class GamesPageComponent {
-  constructor(private readonly gameService: GameService) {
-  }
+  protected games$ = this.gameService.allGames$.pipe(take(1));
 
-  get games$(): Observable<Game[]> {
-    return this.gameService.allGames$;
-  }
+  constructor(private readonly gameService: GameService) {}
 }

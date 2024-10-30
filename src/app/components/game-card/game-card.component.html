@@ -1,5 +1,14 @@
-<a routerLink="/games/{{game.id}}">
-  <img [src]="game.gameStyle.headerImage" alt="Header image of {{game.name}}" class="img-fluid">
-  <p>{{ game.description }}</p>
-  <img [src]="game.gameStyle.cabinetImage" alt="The cabinet of {{game.name}}}" class="img-fluid" />
+<a routerLink="/games/{{ game.id }}">
+  <mat-card class="game-card">
+    <mat-card-content>
+      <img
+        [src]="game.gameStyle.cabinetImage"
+        alt="The cabinet of {{ game.name }}}"
+        class="img-fluid"
+      />
+      <div class="overlay">
+        <h2>{{ game.name }}</h2>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </a>
