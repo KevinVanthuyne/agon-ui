@@ -8,12 +8,9 @@
     </button>
   </div>
   <!-- Large viewport -->
-  <div
-    class="collapsable-nav d-sm-flex"
-    [ngClass]="navOpen ? 'open-nav' : 'closed-nav'"
-  >
+  <div class="collapsable-nav" [ngClass]="navOpen ? 'open-nav' : 'closed-nav'">
     <nav>
-      <ul>
+      <ul class="d-block d-sm-flex">
         <li><a routerLink="/games">Games</a></li>
         <!--      <li><a routerLink="/leaderboard/period">Period</a></li>-->
         <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
