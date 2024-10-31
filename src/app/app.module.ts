@@ -59,6 +59,7 @@ import { GameLeaderboardComponent } from './components/game-leaderboard/game-lea
 import { MatCard, MatCardContent } from '@angular/material/card';
 import { H2Component } from './components/headings/h2/h2.component';
 import { H3Component } from './components/headings/h3/h3.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { H3Component } from './components/headings/h3/h3.component';
     MatCardContent,
     H2Component,
     H3Component,
+    TruncatePipe,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },
