@@ -1,15 +1,23 @@
 @use "../../scss/variables" as vars;
+@import "@fontsource/audiowide";
 
 .toolbar {
   height: vars.$nav-bar-height;
   width: 100%;
+
+  .logo {
+    font-family: "Audiowide", sans-serif;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
 
   nav {
     flex-grow: 1;
 
     ul {
       list-style: none;
-      display: flex;
       flex-direction: row;
       margin: 0 0 0 3em;
       padding: 0;
@@ -28,9 +36,32 @@
         }
       }
     }
+  }
 
-    .spacer {
-      flex-grow: 1;
+  // Small devices (landscape phones, 576px and down)
+  @media (max-width: 576px) {
+    & {
+      position: fixed;
+      z-index: 1;
+    }
+
+    .navigation {
+      position: absolute;
+      left: 0;
+      top: vars.$nav-bar-height;
+      width: 100vw;
+      background-color: vars.$dark-gray;
+      z-index: 1;
+      margin: 0 !important;
+      transition: opacity 0.2s ease;
+    }
+
+    .open-nav {
+      opacity: 100;
+    }
+
+    .closed-nav {
+      opacity: 0;
     }
   }
 }

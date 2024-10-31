@@ -8,6 +8,7 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavBarComponent {
   @Input() title?: string;
+  navOpen = false;
 
   constructor(private authService: AuthService) {}
 
@@ -21,5 +22,9 @@ export class NavBarComponent {
 
   logout(): void {
     this.authService.logout();
+  }
+
+  protected toggleNav() {
+    this.navOpen = !this.navOpen;
   }
 }
