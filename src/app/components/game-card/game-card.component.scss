@@ -1,4 +1,4 @@
-@use 'src/app/scss/variables' as var;
+@use "src/app/scss/variables" as var;
 
 a {
   color: inherit;
@@ -7,6 +7,7 @@ a {
 
 .game-card {
   background-color: var.$dark-gray;
+  text-align: center;
 
   .overlay {
     position: absolute;
@@ -17,7 +18,7 @@ a {
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: .5s ease;
+    transition: 0.5s ease;
     background-color: var.$amber;
     color: var.$dark-gray;
     display: flex;
@@ -29,4 +30,3 @@ a {
     }
   }
 }
-

@@ -1,10 +1,11 @@
 <div class="root-container">
-  <app-nav-bar
-    [title]="title"
-  ></app-nav-bar>
+  <app-nav-bar [title]="title"></app-nav-bar>
 
   <main class="main" [ngClass]="margin ? 'pt-5' : ''">
     <div [ngClass]="margin ? 'container' : ''">
+      @if (title) {
+      <h2 class="mat-headline-2">{{ title }}</h2>
+      }
       <ng-content></ng-content>
     </div>
   </main>

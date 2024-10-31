@@ -57,6 +57,8 @@ import { GameCardComponent } from './components/game-card/game-card.component';
 import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-page.component';
 import { GameLeaderboardComponent } from './components/game-leaderboard/game-leaderboard.component';
 import { MatCard, MatCardContent } from '@angular/material/card';
+import { H2Component } from './components/headings/h2/h2.component';
+import { H3Component } from './components/headings/h3/h3.component';
 
 @NgModule({
   declarations: [
@@ -114,6 +116,8 @@ import { MatCard, MatCardContent } from '@angular/material/card';
     MatSortModule,
     MatCard,
     MatCardContent,
+    H2Component,
+    H3Component,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },

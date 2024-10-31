@@ -1,11 +1,20 @@
 <app-page-container>
   <div *ngIf="game" class="row">
     <div class="col-md-3">
-      <img [src]="game.gameStyle.cabinetImage" alt="Cabinet of {{game.name}}" class="img-fluid">
+      <img
+        [src]="game.gameStyle.headerImage"
+        alt="Header of {{ game.name }}"
+        class="img-fluid mb-3"
+      />
+      <img
+        [src]="game.gameStyle.cabinetImage"
+        alt="Cabinet of {{ game.name }}"
+        class="img-fluid"
+      />
     </div>
     <div class="col-md">
-      <h2>{{game.name}}</h2>
-      <p>{{game.description}}</p>
+      <app-h2>{{ game.name }} </app-h2>
+      <p>{{ game.description }}</p>
       <app-game-leaderboard [game]="game"></app-game-leaderboard>
     </div>
   </div>

@@ -7,19 +7,21 @@
       <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
       <li><a routerLink="/score">Add Score</a></li>
 
-      <ng-container *ngIf="isAuthenticated">
-        <li>|</li>
-        <li><a routerLink="/admin/divisions">Divisions</a></li>
-        <li><a routerLink="/admin/games">Games</a></li>
-        <li><a routerLink="/admin/scores">Scores</a></li>
-      </ng-container>
+      <ng-container *ngIf="isAuthenticated"> </ng-container>
 
       <span class="spacer"></span>
 
-      <li *ngIf="!isAuthenticated"><a routerLink="/login">Log in</a></li>
-      <li *ngIf="isAuthenticated">
+      @if (isAuthenticated) {
+      <li><a routerLink="/admin/divisions">Divisions</a></li>
+      <li><a routerLink="/admin/games">Games</a></li>
+      <li><a routerLink="/admin/scores">Scores</a></li>
+      <li>|</li>
+      <li>
         <button mat-button (click)="logout()">Log out</button>
       </li>
+      } @else {
+      <li><a routerLink="/login">Log in</a></li>
+      }
     </ul>
   </nav>
 </mat-toolbar>

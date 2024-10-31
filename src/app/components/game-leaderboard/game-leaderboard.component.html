@@ -1,6 +1,8 @@
-<h3>High scores</h3>
-<ng-container *ngFor="let division of (divisions$ | async)">
+<app-h3 [marginTop]="true">High scores</app-h3>
+<ng-container *ngFor="let division of divisions$ | async">
   <ol>
-    <li *ngFor="let score of (getScores$(division.id) | async)">{{score.points}} {{score.username}}</li>
+    <li *ngFor="let score of getScores$(division.id) | async">
+      {{ score.points }} {{ score.username }}
+    </li>
   </ol>
 </ng-container>

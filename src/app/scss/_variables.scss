@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 
 // Theming
+//$primary-palette: mat.m2-define-palette(mat.$m2-blue-palette);
 $primary-palette: mat.m2-define-palette(mat.$m2-amber-palette);
 $accent-palette: mat.m2-define-palette(mat.$m2-gray-palette);
 

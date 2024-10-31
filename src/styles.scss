@@ -12,14 +12,13 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
   color: vars.$broken-white;
 }
 
-.mat-mdc-cell, .mat-mdc-header-cell {
+.mat-mdc-cell,
+.mat-mdc-header-cell {
   padding: 0 1.5em !important;
 }
-
 
 .ticker-title {
   font-size: 7rem;
@@ -33,6 +32,6 @@ a:hover {
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
   }
 }
