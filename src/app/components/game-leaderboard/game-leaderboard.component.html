@@ -1,6 +1,15 @@
 <app-h3 [marginTop]="true">High scores</app-h3>
 
+@if ((divisions$ | async)?.length === 0) {
+<p>
+  No divisions have been set up for this game yet. Contact an admin to set one
+  up.
+</p>
+} @else {
 <ng-container *ngFor="let division of divisions$ | async">
+  @if ((getScores$(division.id) | async)?.length === 0) {
+  <p>No scores have been posted yet for this game.</p>
+  } @else {
   <table
     mat-table
     [dataSource]="getScores$(division.id)"
@@ -33,4 +42,9 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  <a mat-raised-button routerLink="/score" color="primary" class="mt-4">
+    Add score
+  </a>
+  }
 </ng-container>
+}
