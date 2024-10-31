@@ -8,10 +8,19 @@
   align-items: center;
   font-size: 1rem;
   height: vars.$footer-height;
+  width: 100vw;
 
   a {
     margin: 0 0.5em;
     color: vars.$light-gray;
     text-decoration: underline;
+  }
+
+  @media (max-width: 576px) {
+    & {
+      position: fixed;
+      z-index: 1;
+      bottom: 0;
+    }
   }
 }
