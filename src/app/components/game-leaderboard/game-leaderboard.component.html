@@ -1,8 +1,36 @@
 <app-h3 [marginTop]="true">High scores</app-h3>
+
 <ng-container *ngFor="let division of divisions$ | async">
-  <ol>
-    <li *ngFor="let score of getScores$(division.id) | async">
-      {{ score.points }} {{ score.username }}
-    </li>
-  </ol>
+  <table
+    mat-table
+    [dataSource]="getScores$(division.id)"
+    class="mat-elevation-z8"
+  >
+    <!-- Rank -->
+    <ng-container matColumnDef="rank">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let score; let i = index">{{ i + 1 }}</td>
+    </ng-container>
+
+    <!-- Name -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let score">{{ score.username }}</td>
+    </ng-container>
+
+    <!-- Score -->
+    <ng-container matColumnDef="score">
+      <th mat-header-cell *matHeaderCellDef>Score</th>
+      <td mat-cell *matCellDef="let score">{{ score.points }}</td>
+    </ng-container>
+
+    <!-- timestamp -->
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef>Date</th>
+      <td mat-cell *matCellDef="let score">{{ score.timestamp | date }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </ng-container>
