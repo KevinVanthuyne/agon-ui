@@ -13,9 +13,24 @@
       />
     </div>
     <div class="col-md mt-5 mt-sm-0">
-      <app-h2>{{ game.name }} </app-h2>
-      {{ game.year }}
+      <div class="row">
+        <div class="col-8">
+          <app-h2>{{ game.name }} </app-h2>
+        </div>
+        <div
+          class="col mat-headline-6 d-flex justify-content-end align-items-center"
+        >
+          {{ game.year }}
+        </div>
+      </div>
+
+      @if (game.description) {
       <p>{{ game.description }}</p>
+      } @if (game.collectionHistory) {
+      <app-h3 [marginTop]="true">Collection history</app-h3>
+      <p>{{ game.collectionHistory }}</p>
+      }
+
       <app-game-leaderboard [game]="game"></app-game-leaderboard>
     </div>
   </div>
