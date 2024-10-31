@@ -1,14 +1,14 @@
 <div class="root-container">
-  <app-nav-bar [title]="title"></app-nav-bar>
+  <app-nav-bar [title]="title"/>
 
-  <main class="main mt-5 mt-sm-0" [ngClass]="margin ? 'pt-5' : ''">
+  <main class="main mt-5 mt-sm-0 pb-5 pb-sm-0" [ngClass]="margin ? 'pt-5' : ''">
     <div [ngClass]="margin ? 'container' : ''">
       @if (title) {
       <h2 class="mat-headline-2">{{ title }}</h2>
       }
-      <ng-content></ng-content>
+      <ng-content/>
     </div>
   </main>
 
-  <app-footer></app-footer>
+  <app-footer/>
 </div>
