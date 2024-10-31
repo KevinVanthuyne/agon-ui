@@ -15,11 +15,6 @@ body {
   color: vars.$broken-white;
 }
 
-.mat-mdc-cell,
-.mat-mdc-header-cell {
-  padding: 0 1.5em !important;
-}
-
 .ticker-title {
   font-size: 7rem;
   font-weight: bold;
@@ -29,9 +24,35 @@ a:hover {
   color: vars.$amber !important;
 }
 
+table {
+  border-radius: 5px !important;
+  overflow: hidden;
+}
+
+// Material overrides
+table {
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    padding: 0 1.5em !important;
+  }
+
+  .mat-mdc-header-cell {
+    font-weight: 600 !important;
+  }
+
+  //thead {
+  //  background-color: vars.$dark-gray !important;
+  //}
+  //
+  //tbody tr:first-child {
+  //  border-top: 2px solid vars.$dark-gray;
+  //}
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
-  html {
+  html,
+  .mat-mdc-header-cell {
     font-size: 16px;
   }
 }
