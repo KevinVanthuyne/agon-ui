@@ -3,11 +3,17 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { GameService } from '../../../../services/game.service';
 import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { switchMap } from 'rxjs';
+import { GameStatus } from '../../../../models/game-status';
+import { GameCategory } from '../../../../models/game-category';
 
 interface EditGameForm {
   id: FormControl<number>;
   name: FormControl<string>;
   description: FormControl<string>;
+  collectionHistory: FormControl<string>;
+  year: FormControl<number>;
+  status: FormControl<GameStatus>;
+  category: FormControl<GameCategory>;
 }
 
 @Component({
@@ -16,9 +22,9 @@ interface EditGameForm {
   styleUrls: ['./edit-game-page.component.scss'],
 })
 export class EditGamePageComponent implements OnInit {
-  form:
-    | FormGroup<EditGameForm>
-    | undefined;
+  protected GameCategory = GameCategory;
+  protected GameStatus = GameStatus;
+  protected form: FormGroup<EditGameForm> | undefined;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -38,15 +44,27 @@ export class EditGamePageComponent implements OnInit {
         this.form = this.fb.nonNullable.group({
           id: [{ value: game.id, disabled: true }],
           name: [game.name],
-          description: [game.description]
+          description: [game.description],
+          collectionHistory: [game.collectionHistory],
+          year: [game.year],
+          status: [game.status],
+          category: [game.category],
         });
       });
+  }
+
+  get categories(): GameCategory[] {
+    return [GameCategory.ARCADE, GameCategory.PINBALL];
+  }
+
+  get statuses(): GameStatus[] {
+    return [GameStatus.UNKNOWN, GameStatus.IN_STORAGE, GameStatus.LIVE];
   }
 
   onSubmit() {
     const game = this.form!.getRawValue();
     this.gameService
-      .editGame$(game.id, game.name, game.description)
+      .editGame$(game)
       .subscribe(() => this.router.navigate(['/admin/games']));
   }
 }

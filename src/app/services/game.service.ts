@@ -4,6 +4,8 @@ import Game from '../models/game';
 import { Observable, shareReplay, switchMap, takeUntil, timer } from 'rxjs';
 import { CachingService } from './caching-service';
 import { UrlService } from './url.service';
+import { GameCategory } from '../models/game-category';
+import { GameStatus } from '../models/game-status';
 
 @Injectable({
   providedIn: 'root',
@@ -37,12 +39,16 @@ export class GameService extends CachingService implements OnDestroy {
   /**
    * Edits the game with the given id to the given name.
    */
-  editGame$(gameId: number, name: string, description: string): Observable<Game> {
-    return this.http.put<Game>(UrlService.URLS.games.root, {
-      id: gameId,
-      name,
-      description
-    });
+  editGame$(model: {
+    id: number;
+    name?: string;
+    description?: string;
+    collectionHistory?: string;
+    year?: number;
+    category?: GameCategory;
+    status?: GameStatus;
+  }): Observable<Game> {
+    return this.http.put<Game>(UrlService.URLS.games.root, model);
   }
 
   delete$(gameId: number): Observable<void> {
