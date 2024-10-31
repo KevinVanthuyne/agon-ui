@@ -53,7 +53,7 @@
       background-color: vars.$dark-gray;
       z-index: 1;
       margin: 0 !important;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
       box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
 
       li {
@@ -69,10 +69,12 @@
 
     .open-nav {
       opacity: 100;
+      visibility: visible;
     }
 
     .closed-nav {
       opacity: 0;
+      visibility: hidden;
     }
   }
 }
