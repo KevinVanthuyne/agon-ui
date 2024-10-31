@@ -8,32 +8,33 @@
     </button>
   </div>
   <!-- Large viewport -->
-  <nav>
-    <!--    <ul class="navigation d-sm-flex" [ngClass]="navOpen ? 'd-block' : 'd-none'">-->
-    <ul
-      class="navigation d-sm-flex"
-      [ngClass]="navOpen ? 'open-nav' : 'closed-nav'"
-    >
-      <li><a routerLink="/games">Games</a></li>
-      <!--      <li><a routerLink="/leaderboard/period">Period</a></li>-->
-      <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
-      <li><a routerLink="/score">Submit score</a></li>
+  <div
+    class="collapsable-nav d-sm-flex"
+    [ngClass]="navOpen ? 'open-nav' : 'closed-nav'"
+  >
+    <nav>
+      <ul>
+        <li><a routerLink="/games">Games</a></li>
+        <!--      <li><a routerLink="/leaderboard/period">Period</a></li>-->
+        <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
+        <li><a routerLink="/score">Submit score</a></li>
 
-      <span class="spacer"></span>
+        <span class="spacer"></span>
 
-      @if (isAuthenticated) {
-      <hr class="d-sm-none" />
-      <li><a routerLink="/admin/divisions">Divisions</a></li>
-      <li><a routerLink="/admin/games">Games</a></li>
-      <li><a routerLink="/admin/scores">Scores</a></li>
-      <li>
-        <button mat-button (click)="logout()" class="full-width-mobile">
-          Log out
-        </button>
-      </li>
-      } @else {
-      <li><a routerLink="/login">Log in</a></li>
-      }
-    </ul>
-  </nav>
+        @if (isAuthenticated) {
+        <hr class="d-sm-none" />
+        <li><a routerLink="/admin/divisions">Divisions</a></li>
+        <li><a routerLink="/admin/games">Games</a></li>
+        <li><a routerLink="/admin/scores">Scores</a></li>
+        <li>
+          <button mat-button (click)="logout()" class="full-width-mobile">
+            Log out
+          </button>
+        </li>
+        } @else {
+        <li><a routerLink="/login">Log in</a></li>
+        }
+      </ul>
+    </nav>
+  </div>
 </mat-toolbar>

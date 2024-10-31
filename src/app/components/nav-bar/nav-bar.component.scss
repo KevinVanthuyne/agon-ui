@@ -45,25 +45,33 @@
       z-index: 3;
     }
 
-    .navigation {
+    .collapsable-nav {
       position: absolute;
       left: 0;
       top: vars.$nav-bar-height;
       width: 100vw;
-      background-color: vars.$dark-gray;
       z-index: 1;
       margin: 0 !important;
       transition: opacity 0.2s ease, visibility 0.2s ease;
       box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+      //height: 100vh;
+      height: calc(100vh - #{vars.$nav-bar-height} - #{vars.$footer-height});
+      background-color: vars.$dark-gray;
 
-      li {
-        margin-right: 0 !important;
+      nav {
+        ul {
+          margin: 0;
 
-        a,
-        button {
-          display: block;
-          text-align: center;
-          padding: 0.7rem 0;
+          li {
+            margin-right: 0 !important;
+
+            a,
+            button {
+              display: block;
+              text-align: center;
+              padding: 0.7rem 0;
+            }
+          }
         }
       }
     }
