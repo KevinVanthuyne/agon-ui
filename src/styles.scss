@@ -49,6 +49,18 @@ table {
   //}
 }
 
+// Custom global classes
+
+.full-width-mobile {
+  width: auto;
+
+  @media (max-width: 576px) {
+    & {
+      width: 100%;
+    }
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   html,

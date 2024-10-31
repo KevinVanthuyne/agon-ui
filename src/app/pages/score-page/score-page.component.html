@@ -10,7 +10,7 @@
 
     <div class="row mb-2">
       <div class="col">
-        <mat-form-field appearance="fill" class="form-field">
+        <mat-form-field appearance="fill" class="full-width-mobile">
           <mat-label>Game</mat-label>
 
           <mat-select [formControl]="form.controls.divisionId" required>
@@ -34,7 +34,7 @@
 
     <div class="row mb-2">
       <div class="col">
-        <mat-form-field appearance="fill" class="form-field">
+        <mat-form-field appearance="fill" class="full-width-mobile">
           <mat-label>Name</mat-label>
           <input matInput [formControl]="form.controls.username" required />
           <mat-error *ngIf="form.controls.username.errors?.['required']">
@@ -49,7 +49,7 @@
 
     <div class="row mb-2">
       <div class="col">
-        <mat-form-field appearance="fill" class="form-field">
+        <mat-form-field appearance="fill" class="full-width-mobile">
           <mat-label>Score</mat-label>
           <input matInput [formControl]="form.controls.points" required />
           <mat-error *ngIf="form.controls.points.errors?.['required']">

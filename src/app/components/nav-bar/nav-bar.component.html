@@ -19,17 +19,17 @@
       <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
       <li><a routerLink="/score">Submit score</a></li>
 
-      <ng-container *ngIf="isAuthenticated"> </ng-container>
-
       <span class="spacer"></span>
 
       @if (isAuthenticated) {
+      <hr class="d-sm-none" />
       <li><a routerLink="/admin/divisions">Divisions</a></li>
       <li><a routerLink="/admin/games">Games</a></li>
       <li><a routerLink="/admin/scores">Scores</a></li>
-      <li>|</li>
       <li>
-        <button mat-button (click)="logout()">Log out</button>
+        <button mat-button (click)="logout()" class="full-width-mobile">
+          Log out
+        </button>
       </li>
       } @else {
       <li><a routerLink="/login">Log in</a></li>

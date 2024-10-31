@@ -1,28 +1,45 @@
 <app-page-container>
-  <form [formGroup]="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <app-h2>Login</app-h2>
 
+  <form [formGroup]="form" #loginForm="ngForm" (ngSubmit)="onSubmit()">
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
 
     <div class="row mb-2">
       <div class="col">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="full-width-mobile">
           <mat-label>Username</mat-label>
-          <input matInput [formControl]="form.controls.username" required/>
-          <mat-error *ngIf="form.controls.username.errors?.['required']">Can not be empty</mat-error>
+          <input matInput [formControl]="form.controls.username" required />
+          <mat-error *ngIf="form.controls.username.errors?.['required']"
+            >Can not be empty
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
 
     <div class="row mb-2">
       <div class="col">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="full-width-mobile">
           <mat-label>Password</mat-label>
-          <input matInput [formControl]="form.controls.password" type="password" required/>
-          <mat-error *ngIf="form.controls.password.errors?.['required']">Can not be empty</mat-error>
+          <input
+            matInput
+            [formControl]="form.controls.password"
+            type="password"
+            required
+          />
+          <mat-error *ngIf="form.controls.password.errors?.['required']"
+            >Can not be empty
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
 
-    <button type="submit" mat-raised-button [disabled]="form.invalid" color="primary">Log in</button>
+    <button
+      type="submit"
+      mat-raised-button
+      [disabled]="form.invalid"
+      color="primary"
+    >
+      Log in
+    </button>
   </form>
 </app-page-container>
