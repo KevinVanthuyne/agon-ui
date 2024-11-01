@@ -3,4 +3,5 @@ export interface Issue {
   gameId: number;
   username: string;
   description: string;
+  timestamp?: string;
 }

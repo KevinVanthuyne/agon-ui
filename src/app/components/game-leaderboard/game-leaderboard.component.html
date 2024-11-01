@@ -36,7 +36,9 @@
     <!-- timestamp -->
     <ng-container matColumnDef="timestamp">
       <th mat-header-cell *matHeaderCellDef>Date</th>
-      <td mat-cell *matCellDef="let score">{{ score.timestamp | date }}</td>
+      <td mat-cell *matCellDef="let score">
+        {{ score.timestamp | date: "d MMM y, HH:MM" }}
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

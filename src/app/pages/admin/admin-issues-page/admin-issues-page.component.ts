@@ -16,6 +16,7 @@ export class AdminIssuesPageComponent implements OnInit {
     'game',
     'username',
     'description',
+    'timestamp',
   ];
   protected issues$: Observable<Issue[]> = of();
   protected games$: Observable<Game[]> = of();
