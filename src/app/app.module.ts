@@ -11,7 +11,6 @@ import {
 } from '@angular/common/http';
 import { ScoreCardComponent } from './components/score-card/score-card.component';
 import { LeaderboardPageComponent } from './pages/leaderboard-page/leaderboard-page.component';
-import { RouterModule } from '@angular/router';
 import { TickerPageComponent } from './pages/ticker-page/ticker-page.component';
 import { TickerDirective } from './directives/ticker.directive';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -60,6 +59,9 @@ import { MatCard, MatCardContent } from '@angular/material/card';
 import { H2Component } from './components/headings/h2/h2.component';
 import { H3Component } from './components/headings/h3/h3.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { MatChip, MatChipSet } from '@angular/material/chips';
+import { ReportIssuePageComponent } from './pages/issues/report-issue-page/report-issue-page.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -96,6 +98,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     GameCardComponent,
     GameDetailPageComponent,
     GameLeaderboardComponent,
+    ReportIssuePageComponent,
   ],
   bootstrap: [AppComponent],
   imports: [
@@ -120,6 +123,8 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     H2Component,
     H3Component,
     TruncatePipe,
+    MatChipSet,
+    MatChip,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: XhrInterceptor, multi: true },

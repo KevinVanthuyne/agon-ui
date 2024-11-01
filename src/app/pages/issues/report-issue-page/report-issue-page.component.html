@@ -1,0 +1,67 @@
+<app-page-container title="Report issue">
+  <p class="mb-4">
+    Is a button or the joystick not responding? Does the screen look weird? Is
+    the cabinet damaged? Please report anything out of the ordinary so we are
+    notified and follow-up as soon as possible.
+  </p>
+
+  <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
+    <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
+
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill" class="full-width-mobile">
+          <mat-label>Game</mat-label>
+
+          <mat-select [formControl]="form.controls.gameId" required>
+            <mat-option *ngFor="let game of games$ | async" [value]="game.id">
+              {{ game.name }}
+            </mat-option>
+          </mat-select>
+
+          <mat-error
+            *ngIf="form.controls.gameId.errors?.['required'] || form.controls.gameId.errors?.['min']"
+          >
+            Can not be empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill" class="full-width-mobile">
+          <mat-label>Name</mat-label>
+          <input matInput [formControl]="form.controls.username" required />
+          <mat-hint>In case we need more info</mat-hint>
+          <mat-error *ngIf="form.controls.username.errors?.['required']">
+            Can not be empty
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+      <div class="col">
+        <mat-form-field appearance="fill" class="full-width-mobile">
+          <mat-label>Issue description</mat-label>
+          <textarea
+            matInput
+            [formControl]="form.controls.description"
+            rows="4"
+          ></textarea>
+          <mat-hint>As descriptive as possible</mat-hint>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      mat-raised-button
+      [disabled]="form.invalid"
+      color="primary"
+    >
+      Submit report
+    </button>
+  </form>
+</app-page-container>

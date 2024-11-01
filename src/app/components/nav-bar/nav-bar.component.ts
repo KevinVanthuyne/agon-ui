@@ -12,10 +12,6 @@ export class NavBarComponent {
 
   constructor(private authService: AuthService) {}
 
-  get displayTitle(): string {
-    return this.title ? `- ${this.title}` : '';
-  }
-
   get isAuthenticated(): boolean {
     return this.authService.authenticated;
   }

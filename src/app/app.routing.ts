@@ -16,12 +16,13 @@ import { NewGamePageComponent } from './pages/admin/games/new-game-page/new-game
 import { EditGameStylePageComponent } from './pages/admin/game-styles/edit-game-style-page/edit-game-style-page.component';
 import { EditGamePageComponent } from './pages/admin/games/edit-game-page/edit-game-page.component';
 import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.component';
-import {GamesPageComponent} from "./pages/games-page/games-page.component";
-import {GameDetailPageComponent} from "./pages/game-detail-page/game-detail-page.component";
+import { GamesPageComponent } from './pages/games-page/games-page.component';
+import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-page.component';
+import { ReportIssuePageComponent } from './pages/issues/report-issue-page/report-issue-page.component';
 
 export const ROUTES: Routes = [
-  { path: 'games', component: GamesPageComponent},
-  { path: 'games/:id', component: GameDetailPageComponent},
+  { path: 'games', component: GamesPageComponent },
+  { path: 'games/:id', component: GameDetailPageComponent },
   {
     path: 'leaderboard',
     component: LeaderboardPageComponent,
@@ -32,6 +33,7 @@ export const ROUTES: Routes = [
     ],
   },
   { path: 'score', component: ScorePageComponent },
+  { path: 'issue', component: ReportIssuePageComponent },
   { path: 'login', component: LoginPageComponent },
   {
     path: 'admin',

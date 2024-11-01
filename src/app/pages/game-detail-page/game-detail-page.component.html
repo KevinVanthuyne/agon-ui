@@ -13,22 +13,31 @@
       />
     </div>
     <div class="col-md mt-5 mt-sm-0">
-      <div class="row">
+      <div class="row mb-3">
         <div class="col-8">
-          <app-h2>{{ game.name }} </app-h2>
+          <app-h2 classOverride="mb-2">{{ game.name }}</app-h2>
+          <mat-chip-set>
+            @if (game.year) {
+              <mat-chip>{{ game.year }}</mat-chip>
+            }
+            @if (game.category) {
+              <mat-chip>{{ game.category }}</mat-chip>
+            }
+          </mat-chip-set>
         </div>
         <div
-          class="col mat-headline-6 d-flex justify-content-end align-items-center"
+          class="col mat-headline-6 d-flex justify-content-end align-items-start mt-2"
         >
-          {{ game.year }}
+          <a mat-raised-button color="warn" routerLink="#">Report issue</a>
         </div>
       </div>
 
       @if (game.description) {
-      <p>{{ game.description }}</p>
-      } @if (game.collectionHistory) {
-      <app-h3 [marginTop]="true">Collection history</app-h3>
-      <p>{{ game.collectionHistory }}</p>
+        <p>{{ game.description }}</p>
+      }
+      @if (game.collectionHistory) {
+        <app-h3 [marginTop]="true">Collection history</app-h3>
+        <p>{{ game.collectionHistory }}</p>
       }
 
       <app-game-leaderboard [game]="game"></app-game-leaderboard>

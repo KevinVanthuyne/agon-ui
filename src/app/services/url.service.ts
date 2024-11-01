@@ -25,6 +25,9 @@ export class UrlService {
       active: `${environment.apiUrl}/api/v1/scores/active`,
       divisions: `${environment.apiUrl}/api/v1/scores/divisions`,
     },
+    issues: {
+      root: `${environment.apiUrl}/api/v1/issues`,
+    },
     logout: `${environment.apiUrl}/api/v1/auth/logout`,
     login: `${environment.apiUrl}/api/v1/auth/login`,
   };
