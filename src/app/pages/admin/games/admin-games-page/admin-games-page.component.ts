@@ -11,7 +11,6 @@ export class AdminGamesPageComponent implements OnInit {
   displayedColumns = [
     'id',
     'name',
-    'description',
     'bgColor',
     'bgImg',
     'headerImg',
