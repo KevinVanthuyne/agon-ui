@@ -62,6 +62,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { MatChip, MatChipSet } from '@angular/material/chips';
 import { ReportIssuePageComponent } from './pages/issues/report-issue-page/report-issue-page.component';
 import { RouterModule } from '@angular/router';
+import { AdminIssuesPageComponent } from './pages/admin/admin-issues-page/admin-issues-page.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { RouterModule } from '@angular/router';
     GameDetailPageComponent,
     GameLeaderboardComponent,
     ReportIssuePageComponent,
+    AdminIssuesPageComponent,
   ],
   bootstrap: [AppComponent],
   imports: [

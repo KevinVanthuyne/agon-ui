@@ -10,6 +10,10 @@ import { UrlService } from './url.service';
 export class IssueService {
   constructor(private http: HttpClient) {}
 
+  getAll$(): Observable<Issue[]> {
+    return this.http.get<Issue[]>(UrlService.URLS.issues.root);
+  }
+
   addIssue$(issue: Issue): Observable<void> {
     return this.http.post<void>(UrlService.URLS.issues.root, issue);
   }

@@ -19,6 +19,7 @@ import { OvertinkerComponent } from './pages/ticker-items/overtinker/overtinker.
 import { GamesPageComponent } from './pages/games-page/games-page.component';
 import { GameDetailPageComponent } from './pages/game-detail-page/game-detail-page.component';
 import { ReportIssuePageComponent } from './pages/issues/report-issue-page/report-issue-page.component';
+import { AdminIssuesPageComponent } from './pages/admin/admin-issues-page/admin-issues-page.component';
 
 export const ROUTES: Routes = [
   { path: 'games', component: GamesPageComponent },
@@ -48,6 +49,7 @@ export const ROUTES: Routes = [
       { path: 'new-game', component: NewGamePageComponent },
       { path: 'scores', component: ScoresPageComponent },
       { path: 'new-division', component: NewDivisionPageComponent },
+      { path: 'issues', component: AdminIssuesPageComponent },
     ],
   },
   { path: 'ticker', component: TickerPageComponent },
