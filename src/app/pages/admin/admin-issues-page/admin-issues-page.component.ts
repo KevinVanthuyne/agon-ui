@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IssueService } from '../../../services/issue.service';
 import { Issue } from '../../../models/issue';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
+import { GameService } from '../../../services/game.service';
+import Game from '../../../models/game';
 
 @Component({
   selector: 'app-admin-issues-page',
@@ -16,10 +18,21 @@ export class AdminIssuesPageComponent implements OnInit {
     'description',
   ];
   protected issues$: Observable<Issue[]> = of();
+  protected games$: Observable<Game[]> = of();
 
-  constructor(private readonly issueService: IssueService) {}
+  constructor(
+    private readonly issueService: IssueService,
+    private readonly gameService: GameService
+  ) {}
 
   ngOnInit(): void {
     this.issues$ = this.issueService.getAll$();
+    this.games$ = this.gameService.allGames$;
+  }
+
+  getGame$(gameId: number): Observable<Game | undefined> {
+    return this.games$.pipe(
+      map((games) => games.filter((game) => game.id == gameId).pop())
+    );
   }
 }

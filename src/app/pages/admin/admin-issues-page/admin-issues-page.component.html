@@ -6,7 +6,9 @@
 
   <ng-container matColumnDef="game">
     <th mat-header-cell *matHeaderCellDef>Game</th>
-    <td mat-cell *matCellDef="let issue">{{ issue.gameId }}</td>
+    <td mat-cell *matCellDef="let issue">
+      {{ (getGame$(issue.gameId) | async)?.name ?? issue.gameId }}
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="username">
