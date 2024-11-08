@@ -1,9 +1,13 @@
 <app-page-container title="Report issue">
-  <p class="mb-4">
-    Is a button or the joystick not responding? Does the screen look weird? Is
-    the cabinet damaged? Please report anything out of the ordinary so I am
-    notified and follow-up as soon as possible.
-  </p>
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <p>
+        Is a button or the joystick not responding? Does the screen look weird?
+        Is the cabinet damaged? Please report anything out of the ordinary so I
+        am notified and follow-up as soon as possible.
+      </p>
+    </div>
+  </div>
 
   <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>

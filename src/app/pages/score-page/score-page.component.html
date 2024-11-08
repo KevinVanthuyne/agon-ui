@@ -1,9 +1,13 @@
 <app-page-container>
   <app-h2>Submit score</app-h2>
-  <p class="mb-4">
-    To override your previous score, match the name it was submitted with. If
-    you submit an incorrect score, contact an admin to correct it.
-  </p>
+  <div class="row mb-4">
+    <div class="col-md-6">
+      <p>
+        To override your previous score, match the name it was submitted with.
+        If you submit an incorrect score, contact an admin to correct it.
+      </p>
+    </div>
+  </div>
 
   <form [formGroup]="form" #formDirective="ngForm" (ngSubmit)="onSubmit()">
     <mat-error *ngIf="formError" class="mb-3">{{ formError }}</mat-error>
