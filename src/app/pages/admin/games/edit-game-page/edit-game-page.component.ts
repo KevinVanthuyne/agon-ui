@@ -59,7 +59,13 @@ export class EditGamePageComponent implements OnInit {
   }
 
   get statuses(): GameStatus[] {
-    return [GameStatus.UNKNOWN, GameStatus.IN_STORAGE, GameStatus.LIVE];
+    return [
+      GameStatus.UNKNOWN,
+      GameStatus.IN_STORAGE,
+      GameStatus.LIVE,
+      GameStatus.BROKEN,
+      GameStatus.UNDER_REPAIR,
+    ];
   }
 
   onSubmit() {
