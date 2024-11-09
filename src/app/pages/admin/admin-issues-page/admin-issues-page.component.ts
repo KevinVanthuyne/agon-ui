@@ -4,6 +4,7 @@ import { Issue } from '../../../models/issue';
 import { map, Observable, of } from 'rxjs';
 import { GameService } from '../../../services/game.service';
 import Game from '../../../models/game';
+import { IssueStatus } from '../../../models/issue-status';
 
 @Component({
   selector: 'app-admin-issues-page',
@@ -16,10 +17,12 @@ export class AdminIssuesPageComponent implements OnInit {
     'game',
     'username',
     'description',
+    'status',
     'timestamp',
   ];
   protected issues$: Observable<Issue[]> = of();
   protected games$: Observable<Game[]> = of();
+  protected IssueStatus = IssueStatus;
 
   constructor(
     private readonly issueService: IssueService,
