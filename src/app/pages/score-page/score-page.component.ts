@@ -22,12 +22,17 @@ export class ScorePageComponent {
   formError: string | undefined;
   form = this.fb.nonNullable.group({
     divisionId: [0, [Validators.required, Validators.min(1)]],
-    username: ['', [Validators.required, Validators.minLength(3)]],
+    username: [
+      '',
+      [Validators.required, Validators.minLength(3), Validators.maxLength(32)],
+    ],
+    // Points are a string because long does not exist in javascript
     points: [
       '',
       [
         Validators.required,
         Validators.minLength(1),
+        Validators.maxLength(18),
         Validators.pattern(/^[0-9]+$/),
       ],
     ],
@@ -64,6 +69,7 @@ export class ScorePageComponent {
           });
         },
         error: (response) => {
+          console.log(response);
           this.formError = response.error;
         },
       });

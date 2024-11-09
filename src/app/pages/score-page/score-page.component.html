@@ -45,7 +45,10 @@
             Can not be empty
           </mat-error>
           <mat-error *ngIf="form.controls.username.errors?.['minlength']">
-            Can not be shorter than 3 characters
+            Minimum 2 characters
+          </mat-error>
+          <mat-error *ngIf="form.controls.username.errors?.['maxlength']">
+            Maximum 32 characters
           </mat-error>
         </mat-form-field>
       </div>
@@ -60,7 +63,10 @@
             Can not be empty
           </mat-error>
           <mat-error *ngIf="form.controls.points.errors?.['minlength']">
-            Can not be shorter than 3 characters
+            Minimum 1 digit
+          </mat-error>
+          <mat-error *ngIf="form.controls.points.errors?.['maxlength']">
+            Maximum 18 digits
           </mat-error>
           <mat-error *ngIf="form.controls.points.errors?.['pattern']">
             Can only be a number
