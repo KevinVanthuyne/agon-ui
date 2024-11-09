@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbar">
   <h1 class="logo">Agon</h1>
   <!-- Small viewport -->
-  <div class="d-flex w-100 d-sm-none">
+  <div class="d-flex w-100 d-md-none">
     <span class="spacer"></span>
     <button mat-icon-button aria-label="Navigation menu" (click)="toggleNav()">
       <mat-icon>menu</mat-icon>
@@ -10,7 +10,7 @@
   <!-- Large viewport -->
   <div class="collapsable-nav" [ngClass]="navOpen ? 'open-nav' : 'closed-nav'">
     <nav>
-      <ul class="d-block d-sm-flex">
+      <ul class="d-block d-md-flex">
         <li><a routerLink="/games">Games</a></li>
         <!--      <li><a routerLink="/leaderboard/period">Period</a></li>-->
         <li><a routerLink="/leaderboard/high-score">Leaderboard</a></li>
@@ -20,7 +20,7 @@
         <span class="spacer"></span>
 
         @if (isAuthenticated) {
-        <hr class="d-sm-none" />
+        <hr class="d-md-none" />
         <li><a routerLink="/admin/divisions">Divisions</a></li>
         <li><a routerLink="/admin/games">Games</a></li>
         <li><a routerLink="/admin/scores">Scores</a></li>
