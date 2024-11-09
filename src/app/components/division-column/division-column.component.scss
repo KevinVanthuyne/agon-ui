@@ -1,22 +1,37 @@
+@use "../../scss/variables" as var;
+@use "../../scss/mixins" as mix;
+
 .column-container {
-  width: 200px;
-  height: 100%;
-  text-align: center;
+  //height: 100%;
+  width: 100%;
   background-size: cover;
   background-position: center;
   overflow-y: auto;
   padding: 0 0.5rem;
 
-  .header-img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 0.5rem;
+  .header-img-div {
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: var.$score-card-border-radius;
+    margin-top: var.$score-card-margin;
+    @include mix.score-shadow;
   }
-}
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .column-container {
-    width: 300px;
+  .game-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .game-title {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    border: var.$score-card-border-width solid black;
+    margin: var.$score-card-margin 0;
+    border-radius: var.$score-card-border-radius;
+    background-color: rgba(0, 0, 0, 0.3);
+    @include mix.score-shadow;
   }
 }

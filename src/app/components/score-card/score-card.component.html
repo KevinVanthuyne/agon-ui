@@ -1,6 +1,14 @@
 <div class="card" [ngStyle]="{ borderColor: gameStyle.borderColor }">
-  <div class="title mb-3 mb-sm-4" [ngStyle]="{ color: gameStyle.fontColor }">
-    {{ score.username }}
+  <div class="row h-100">
+    <div class="col d-flex align-items-center">
+      <div class="title" [ngStyle]="{ color: gameStyle.fontColor }">
+        {{ score.username }}
+      </div>
+    </div>
+    <div class="col d-flex justify-content-end align-items-center">
+      <div class="score">
+        {{ score.points.toLocaleString() }}
+      </div>
+    </div>
   </div>
-  <div class="score">{{ score.points.toLocaleString() }}</div>
 </div>

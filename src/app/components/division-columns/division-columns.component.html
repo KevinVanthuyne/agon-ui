@@ -1,13 +1,17 @@
 <div class="columns-container">
-  <div
-    *ngIf="divisions.length === 0"
-    class="d-flex justify-content-center align-items-center vw-100 mat-h1"
-  >
-    <p>No divisions have been setup yet</p>
-  </div>
+  @if (divisions.length === 0) {
+    <div class="d-flex justify-content-center align-items-center vw-100 mat-h1">
+      <p>No divisions have been setup yet</p>
+    </div>
+  }
 
-  <app-division-column
-    *ngFor="let division of divisions"
-    [division]="division"
-  ></app-division-column>
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      @for (division of divisions; track division.id) {
+        <div class="col-md-6 col-xl-4 col-xxl-3">
+          <app-division-column [division]="division"/>
+        </div>
+      }
+    </div>
+  </div>
 </div>

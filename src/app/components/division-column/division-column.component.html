@@ -7,21 +7,21 @@
       : ''
   }"
 >
-  <a routerLink="/games/{{game.id}}">
-    <img
-      *ngIf="gameStyle.headerImage"
-      [src]="gameStyle.headerImage"
-      [alt]="game.name"
-      class="header-img"
-    />
+  <a routerLink="/games/{{game.id}}" class="game-link">
+    @if (gameStyle.headerImage) {
+      <div [ngStyle]="{ backgroundImage: 'url(' + gameStyle.headerImage + ')' }" class="header-img-div"></div>
+    }
+    <div class="game-title">
+      <h2 class="mat-headline-4 m-0">
+        {{ game.name }}
+      </h2>
+    </div>
   </a>
-  <h2 *ngIf="!gameStyle.headerImage" class="mat-headline-4">
-    {{ game.name }}
-  </h2>
 
-  <app-score-card
-    *ngFor="let score of scores$ | async"
-    [score]="score"
-    [gameStyle]="game.gameStyle"
-  ></app-score-card>
+  @for (score of scores$ | async; track score.id) {
+    <app-score-card
+      [score]="score"
+      [gameStyle]="game.gameStyle"
+    />
+  }
 </div>
