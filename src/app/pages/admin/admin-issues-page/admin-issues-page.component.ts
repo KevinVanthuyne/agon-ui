@@ -54,7 +54,7 @@ export class AdminIssuesPageComponent implements OnInit {
 
   statusChanged(issue: Issue, event: MatSelectChange) {
     issue.status = event.value;
-    this.issueService.updateIssue$(issue).subscribe();
+    this.issueService.update$(issue).subscribe();
   }
 
   delete(issue: Issue): void {

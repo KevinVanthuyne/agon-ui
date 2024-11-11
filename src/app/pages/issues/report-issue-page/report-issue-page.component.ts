@@ -34,7 +34,7 @@ export class ReportIssuePageComponent {
 
   onSubmit(): void {
     this.issueService
-      .addIssue$({
+      .add$({
         gameId: this.form.value.gameId!,
         description: this.form.value.description!,
         username: this.form.value.username!,
