@@ -21,4 +21,8 @@ export class IssueService {
   updateIssue$(issue: Issue): Observable<Issue> {
     return this.http.put<Issue>(UrlService.URLS.issues.root, issue);
   }
+
+  delete$(issue: Issue): Observable<void> {
+    return this.http.delete<void>(`${UrlService.URLS.issues.root}/${issue.id}`);
+  }
 }

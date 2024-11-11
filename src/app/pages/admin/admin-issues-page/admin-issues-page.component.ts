@@ -20,6 +20,7 @@ export class AdminIssuesPageComponent implements OnInit {
     'description',
     'status',
     'timestamp',
+    'delete',
   ];
   protected issues$: Observable<Issue[]> = of();
   protected games$: Observable<Game[]> = of();
@@ -54,5 +55,17 @@ export class AdminIssuesPageComponent implements OnInit {
   statusChanged(issue: Issue, event: MatSelectChange) {
     issue.status = event.value;
     this.issueService.updateIssue$(issue).subscribe();
+  }
+
+  delete(issue: Issue): void {
+    if (
+      confirm(
+        `Are you sure you want to delete issue ${issue.id} with description "${issue.description}"?`
+      )
+    ) {
+      this.issueService
+        .delete$(issue)
+        .subscribe(() => (this.issues$ = this.issueService.getAll$()));
+    }
   }
 }
