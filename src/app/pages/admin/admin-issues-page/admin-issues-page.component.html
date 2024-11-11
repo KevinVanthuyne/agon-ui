@@ -26,7 +26,19 @@
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef>Status</th>
     <td mat-cell *matCellDef="let issue">
-      {{ issue.status }}
+      <mat-form-field>
+        <mat-label>Status</mat-label>
+        <mat-select
+          [value]="issue.status"
+          (selectionChange)="statusChanged(issue, $event)"
+        >
+          @for (status of issueStatuses; track status) {
+          <mat-option [value]="IssueStatus[status]">
+            {{ IssueStatus[status] }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
     </td>
   </ng-container>
 

@@ -17,4 +17,8 @@ export class IssueService {
   addIssue$(issue: Issue): Observable<void> {
     return this.http.post<void>(UrlService.URLS.issues.root, issue);
   }
+
+  updateIssue$(issue: Issue): Observable<Issue> {
+    return this.http.put<Issue>(UrlService.URLS.issues.root, issue);
+  }
 }

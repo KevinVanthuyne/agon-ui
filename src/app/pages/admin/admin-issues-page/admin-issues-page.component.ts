@@ -5,6 +5,7 @@ import { map, Observable, of } from 'rxjs';
 import { GameService } from '../../../services/game.service';
 import Game from '../../../models/game';
 import { IssueStatus } from '../../../models/issue-status';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-admin-issues-page',
@@ -34,9 +35,25 @@ export class AdminIssuesPageComponent implements OnInit {
     this.games$ = this.gameService.allGames$;
   }
 
+  get issueStatuses(): IssueStatus[] {
+    return [
+      IssueStatus.NOT_AN_ISSUE,
+      IssueStatus.IN_PROGRESS,
+      IssueStatus.FIXED,
+      IssueStatus.CANNOT_REPRODUCE,
+      IssueStatus.NEEDS_TRIAGE,
+    ];
+  }
+
   getGame$(gameId: number): Observable<Game | undefined> {
     return this.games$.pipe(
       map((games) => games.filter((game) => game.id == gameId).pop())
     );
+  }
+
+  statusChanged(issue: Issue, event: MatSelectChange) {
+    console.log(issue, event);
+    issue.status = event.value;
+    this.issueService.updateIssue$(issue).subscribe();
   }
 }
