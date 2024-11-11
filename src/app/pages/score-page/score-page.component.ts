@@ -69,7 +69,6 @@ export class ScorePageComponent {
           });
         },
         error: (response) => {
-          console.log(response);
           this.formError = response.error;
         },
       });

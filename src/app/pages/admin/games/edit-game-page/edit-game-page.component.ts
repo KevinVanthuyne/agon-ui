@@ -41,7 +41,6 @@ export class EditGamePageComponent implements OnInit {
         )
       )
       .subscribe((game) => {
-        console.log(game);
         this.form = this.fb.nonNullable.group({
           id: [{ value: game.id, disabled: true }],
           name: [game.name],
