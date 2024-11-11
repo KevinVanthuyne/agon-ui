@@ -62,7 +62,7 @@ export class EditGamePageComponent implements OnInit {
     return [
       GameStatus.UNKNOWN,
       GameStatus.IN_STORAGE,
-      GameStatus.LIVE,
+      GameStatus.ON_LOCATION,
       GameStatus.BROKEN,
       GameStatus.UNDER_REPAIR,
     ];

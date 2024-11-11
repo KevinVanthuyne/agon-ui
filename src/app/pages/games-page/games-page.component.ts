@@ -15,7 +15,7 @@ export class GamesPageComponent {
   constructor(private readonly gameService: GameService) {}
 
   showGame(game: Game): boolean {
-    return game.status === GameStatus.LIVE;
+    return game.status === GameStatus.ON_LOCATION;
   }
 
   get noGamesVisible$(): Observable<boolean> {

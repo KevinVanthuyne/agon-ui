@@ -1,6 +1,6 @@
 export enum GameStatus {
   UNKNOWN = 'UNKNOWN',
-  LIVE = 'LIVE',
+  ON_LOCATION = 'ON_LOCATION',
   IN_STORAGE = 'IN_STORAGE',
   BROKEN = 'BROKEN',
   UNDER_REPAIR = 'UNDER_REPAIR',
