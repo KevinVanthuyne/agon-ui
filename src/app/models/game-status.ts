@@ -1,7 +1,7 @@
 export enum GameStatus {
-  UNKNOWN,
-  LIVE,
-  IN_STORAGE,
-  BROKEN,
-  UNDER_REPAIR,
+  UNKNOWN = 'UNKNOWN',
+  LIVE = 'LIVE',
+  IN_STORAGE = 'IN_STORAGE',
+  BROKEN = 'BROKEN',
+  UNDER_REPAIR = 'UNDER_REPAIR',
 }
