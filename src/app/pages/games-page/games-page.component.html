@@ -1,5 +1,4 @@
-<app-page-container>
-  <app-h2>Games</app-h2>
+<app-page-container title="Games">
   <div class="row">
     @for (game of games$ | async; track game.id) {
       @if (showGame(game)) {
