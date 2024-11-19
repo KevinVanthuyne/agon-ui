@@ -1,5 +1,5 @@
 # Stage 1: Build the Angular app
-FROM node:18-alpine as node
+FROM node:18-alpine AS node
 #ENV NODE_ENV=production
 WORKDIR /app
 COPY ["package.json", "package-lock.json*", "./"]
