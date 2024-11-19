@@ -25,7 +25,7 @@ the [Agon Docker Compose repo](https://github.com/KevinVanthuyne/agon-docker-com
 
 Build the Docker image:
 
-```
+```shell
 docker build -t kevinvt/agon-ui .
 ```
 
@@ -40,6 +40,6 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`
 
 Push to Docker Hub:
 
-```
+```shell
 docker push kevinvt/agon-ui:latest
 ```
