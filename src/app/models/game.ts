@@ -12,3 +12,7 @@ export default interface Game {
   category: GameCategory;
   year: number;
 }
+
+export function showGame(game: Game): boolean {
+  return game.status === GameStatus.ON_LOCATION;
+}

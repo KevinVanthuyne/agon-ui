@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import AbstractDivision from '../../models/division/abstract-division';
+import { showGame } from '../../models/game';
 
 @Component({
   selector: 'app-division-columns',
@@ -8,4 +9,8 @@ import AbstractDivision from '../../models/division/abstract-division';
 })
 export class DivisionColumnsComponent {
   @Input() divisions!: AbstractDivision[];
+
+  get filteredDivisions(): AbstractDivision[] {
+    return this.divisions.filter((division) => showGame(division.game));
+  }
 }

@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { GameService } from '../../services/game.service';
-import Game from '../../models/game';
+import Game, { showGame } from '../../models/game';
 import { map, Observable, take } from 'rxjs';
-import { GameStatus } from '../../models/game-status';
 
 @Component({
   selector: 'app-games-page',
@@ -15,7 +14,7 @@ export class GamesPageComponent {
   constructor(private readonly gameService: GameService) {}
 
   showGame(game: Game): boolean {
-    return game.status === GameStatus.ON_LOCATION;
+    return showGame(game);
   }
 
   get noGamesVisible$(): Observable<boolean> {
