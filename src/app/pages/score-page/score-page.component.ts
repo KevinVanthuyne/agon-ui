@@ -1,11 +1,12 @@
-import { Component, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
-import { ScoreService } from '../../services/score.service';
-import { Observable } from 'rxjs';
-import { HighScoreCompetitionService } from '../../services/competition/high-score-competition.service';
+import {Component, ViewChild} from '@angular/core';
+import {FormBuilder, NgForm, Validators} from '@angular/forms';
+import {ScoreService} from '../../services/score.service';
+import {map, Observable} from 'rxjs';
+import {HighScoreCompetitionService} from '../../services/competition/high-score-competition.service';
 import HighScoreDivision from '../../models/division/high-score-division';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {Router} from '@angular/router';
+import {showGame} from '../../models/game';
 
 /**
  * Page with a form to submit a score. Does not implement any kind of authentication to provide quick and public input.
@@ -47,7 +48,11 @@ export class ScorePageComponent {
   ) {}
 
   get divisions$(): Observable<HighScoreDivision[]> {
-    return this.competitionService.allDivisions$;
+    return this.competitionService.allDivisions$.pipe(
+      map((divisions) =>
+        divisions.filter((division) => showGame(division.game))
+      )
+    );
   }
 
   onSubmit(): void {

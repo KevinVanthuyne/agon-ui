@@ -1,7 +1,14 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Game from '../models/game';
-import { Observable, shareReplay, switchMap, takeUntil, timer } from 'rxjs';
+import Game, { showGame } from '../models/game';
+import {
+  map,
+  Observable,
+  shareReplay,
+  switchMap,
+  takeUntil,
+  timer,
+} from 'rxjs';
 import { CachingService } from './caching-service';
 import { UrlService } from './url.service';
 import { GameCategory } from '../models/game-category';
@@ -30,6 +37,12 @@ export class GameService extends CachingService implements OnDestroy {
       );
     }
     return this.gameCache$;
+  }
+
+  get visibleGames$(): Observable<Game[]> {
+    return this.allGames$.pipe(
+      map((games) => games.filter((game) => showGame(game)))
+    );
   }
 
   addGame$(name: string): Observable<Game> {

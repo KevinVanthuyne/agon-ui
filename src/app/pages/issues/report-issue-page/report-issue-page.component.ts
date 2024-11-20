@@ -29,7 +29,7 @@ export class ReportIssuePageComponent {
   ) {}
 
   get games$(): Observable<Game[]> {
-    return this.gameService.allGames$;
+    return this.gameService.visibleGames$;
   }
 
   onSubmit(): void {
