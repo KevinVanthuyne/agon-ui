@@ -1,34 +1,40 @@
-<a mat-raised-button routerLink="/admin/new-division" class="mb-3">Add Division</a>
+<app-h2>Divisions admin</app-h2>
 
-<table mat-table [dataSource]="divisions">
-  <!-- Id -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>Id</th>
-    <td mat-cell *matCellDef="let div"> {{ div.id }} </td>
-  </ng-container>
+<a mat-raised-button routerLink="/admin/new-division" class="mb-3">
+  Add Division
+</a>
 
-  <!-- Game Name -->
-  <ng-container matColumnDef="gameName">
-    <th mat-header-cell *matHeaderCellDef>Game Name</th>
-    <td mat-cell *matCellDef="let div"> {{ div.game.name }} </td>
-  </ng-container>
+<div class="table-responsive">
+  <table mat-table [dataSource]="divisions">
+    <!-- Id -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let div">{{ div.id }}</td>
+    </ng-container>
 
-  <!-- Game Id -->
-  <ng-container matColumnDef="gameId">
-    <th mat-header-cell *matHeaderCellDef>Game Id</th>
-    <td mat-cell *matCellDef="let div"> {{ div.game.id }} </td>
-  </ng-container>
+    <!-- Game Name -->
+    <ng-container matColumnDef="gameName">
+      <th mat-header-cell *matHeaderCellDef>Game Name</th>
+      <td mat-cell *matCellDef="let div">{{ div.game.name }}</td>
+    </ng-container>
 
-  <!-- Delete -->
-  <ng-container matColumnDef="delete">
-    <th mat-header-cell *matHeaderCellDef>Delete</th>
-    <td mat-cell *matCellDef="let div">
-      <button mat-button (click)="deleteDivision(div)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </td>
-  </ng-container>
+    <!-- Game Id -->
+    <ng-container matColumnDef="gameId">
+      <th mat-header-cell *matHeaderCellDef>Game Id</th>
+      <td mat-cell *matCellDef="let div">{{ div.game.id }}</td>
+    </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+    <!-- Delete -->
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>Delete</th>
+      <td mat-cell *matCellDef="let div">
+        <button mat-button (click)="deleteDivision(div)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

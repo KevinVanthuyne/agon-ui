@@ -15,7 +15,7 @@ import { MatSort } from '@angular/material/sort';
 export class ScoresPageComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort | undefined;
 
-  displayedColumns = ['timestamp', 'id', 'username', 'points', 'delete'];
+  displayedColumns = ['timestamp', /*'id',*/ 'username', 'points', 'delete'];
   divisions: AbstractDivision[] = [];
   divisionFormControl = new FormControl<number>(0);
   dataSource = new MatTableDataSource([] as Score[]);
