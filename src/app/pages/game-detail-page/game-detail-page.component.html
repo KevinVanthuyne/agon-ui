@@ -15,7 +15,7 @@
       </div>
       <div class="col-md mt-5 mt-sm-0">
         <div class="row mb-3">
-          <div class="col-8">
+          <div class="col-md-8">
             <app-h2 classOverride="mb-2">{{ game.name }}</app-h2>
             <mat-chip-set>
               @if (game.year) {
@@ -27,7 +27,7 @@
             </mat-chip-set>
           </div>
           <div
-            class="col mat-headline-6 d-flex justify-content-end align-items-start mt-2"
+            class="col-md mat-headline-6 d-flex justify-content-md-end align-items-start d-none d-md-block mt-md-2"
           >
             <a mat-raised-button color="warn" routerLink="/issue">Report issue</a>
           </div>
@@ -40,6 +40,7 @@
           <app-h3 [marginTop]="true">Collection history</app-h3>
           <p>{{ game.collectionHistory }}</p>
         }
+        <a mat-raised-button color="warn" routerLink="/issue" class="d-md-none mt-4">Report issue</a>
 
         <app-game-leaderboard [game]="game"/>
       </div>
