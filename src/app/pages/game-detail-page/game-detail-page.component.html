@@ -36,6 +36,10 @@
         @if (game.description) {
           <p>{{ game.description }}</p>
         }
+        @if (game.howToPlay) {
+          <app-h3 [marginTop]="true">How to Play</app-h3>
+          <p>{{ game.howToPlay }}</p>
+        }
         @if (game.collectionHistory) {
           <app-h3 [marginTop]="true">Collection history</app-h3>
           <p>{{ game.collectionHistory }}</p>

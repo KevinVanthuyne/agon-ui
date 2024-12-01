@@ -31,6 +31,19 @@
   <div class="row mb-2">
     <div class="col">
       <mat-form-field appearance="fill">
+        <mat-label>How to Play</mat-label>
+        <textarea
+          matInput
+          [formControl]="form.controls.howToPlay"
+          rows="4"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col">
+      <mat-form-field appearance="fill">
         <mat-label>Collection history</mat-label>
         <textarea
           matInput

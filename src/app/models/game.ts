@@ -6,6 +6,7 @@ export default interface Game {
   id: number;
   name: string;
   description: string;
+  howToPlay: string;
   collectionHistory: string;
   gameStyle: GameStyle;
   status: GameStatus;

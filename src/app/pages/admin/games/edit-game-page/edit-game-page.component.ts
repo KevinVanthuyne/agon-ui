@@ -10,6 +10,7 @@ interface EditGameForm {
   id: FormControl<number>;
   name: FormControl<string>;
   description: FormControl<string>;
+  howToPlay: FormControl<string>;
   collectionHistory: FormControl<string>;
   year: FormControl<number>;
   status: FormControl<GameStatus>;
@@ -45,6 +46,7 @@ export class EditGamePageComponent implements OnInit {
           id: [{ value: game.id, disabled: true }],
           name: [game.name],
           description: [game.description],
+          howToPlay: [game.howToPlay],
           collectionHistory: [game.collectionHistory],
           year: [game.year],
           status: [game.status],
