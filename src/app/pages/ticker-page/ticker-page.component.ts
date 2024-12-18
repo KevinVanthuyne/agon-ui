@@ -17,6 +17,7 @@ import { Subscription, take, tap } from 'rxjs';
 import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game-header-image.component';
 import { OvertinkerComponent } from '../ticker-items/overtinker/overtinker.component';
 import { Router } from '@angular/router';
+import HighScoreDivision from 'src/app/models/division/high-score-division';
 
 @Component({
   selector: 'app-ticker-page',
@@ -63,42 +64,49 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
     this.updateDivisions$()
       .pipe(take(1))
       .subscribe((divisions) => {
-        if (this.redirectToLeaderboard) {
-          void this.router.navigate(['leaderboard'], {
-            queryParams: { redirect: 'ticker' },
-          });
-        }
-
-        const viewContainerRef = this.tickerHost.viewContainerRef;
-        viewContainerRef.clear();
-
-        console.log(
-          'i:',
-          this.currentIndex,
-          'd:',
-          this.currentDivisionIndex,
-          'c:',
-          this.currentComponentIndex
-        );
-
-        if (this.currentIndex < this.uniqueComponentTypes.length) {
-          this.createUniqueComponent(viewContainerRef);
-          this.currentIndex++;
-        } else {
-          // handle components per division
-          if (this.currentDivisionIndex < divisions.length) {
-            this.createComponentForDivision(
-              viewContainerRef,
-              divisions[this.currentDivisionIndex]
-            );
-            if (this.currentDivisionIndex === divisions.length) {
-              this.currentIndex = 0;
-              this.currentDivisionIndex = 0;
-              this.redirectToLeaderboard = true;
-            }
-          }
-        }
+        // this.legacyTickerHandling(divisions)
+        void this.router.navigate(['leaderboard'], {
+          queryParams: { mode: 'ticker' },
+        });
       });
+  }
+
+  private legacyTickerHandling(divisions: HighScoreDivision[]) {
+    if (this.redirectToLeaderboard) {
+      void this.router.navigate(['leaderboard'], {
+        queryParams: { redirect: 'ticker' },
+      });
+    }
+
+    const viewContainerRef = this.tickerHost.viewContainerRef;
+    viewContainerRef.clear();
+
+    console.log(
+      'i:',
+      this.currentIndex,
+      'd:',
+      this.currentDivisionIndex,
+      'c:',
+      this.currentComponentIndex
+    );
+
+    if (this.currentIndex < this.uniqueComponentTypes.length) {
+      this.createUniqueComponent(viewContainerRef);
+      this.currentIndex++;
+    } else {
+      // handle components per division
+      if (this.currentDivisionIndex < divisions.length) {
+        this.createComponentForDivision(
+          viewContainerRef,
+          divisions[this.currentDivisionIndex]
+        );
+        if (this.currentDivisionIndex === divisions.length) {
+          this.currentIndex = 0;
+          this.currentDivisionIndex = 0;
+          this.redirectToLeaderboard = true;
+        }
+      }
+    }
   }
 
   private createComponentForDivision(

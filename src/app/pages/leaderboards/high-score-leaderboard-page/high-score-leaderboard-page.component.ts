@@ -26,12 +26,12 @@ export class HighScoreLeaderboardPageComponent implements OnInit {
         this.divisions = divisions;
       });
 
-    const redirectParam = this.route.snapshot.queryParamMap.get('redirect');
-    if (redirectParam && redirectParam === 'ticker') {
-      setTimeout(
-        () => this.router.navigate(['ticker']),
-        environment.tickerPageInterval * 2
-      );
-    }
+    // const redirectParam = this.route.snapshot.queryParamMap.get('redirect');
+    // if (redirectParam && redirectParam === 'ticker') {
+    //   setTimeout(
+    //     () => this.router.navigate(['ticker']),
+    //     environment.tickerPageInterval * 2
+    //   );
+    // }
   }
 }
