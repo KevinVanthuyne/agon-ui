@@ -63,6 +63,7 @@ import { MatChip, MatChipSet } from '@angular/material/chips';
 import { ReportIssuePageComponent } from './pages/issues/report-issue-page/report-issue-page.component';
 import { RouterModule } from '@angular/router';
 import { AdminIssuesPageComponent } from './pages/admin/admin-issues-page/admin-issues-page.component';
+import { LeaderboardComponent } from './pages/ticker-items/leaderboard/leaderboard.component';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { AdminIssuesPageComponent } from './pages/admin/admin-issues-page/admin-
     GameLeaderboardComponent,
     ReportIssuePageComponent,
     AdminIssuesPageComponent,
+    LeaderboardComponent,
   ],
   bootstrap: [AppComponent],
   imports: [

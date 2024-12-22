@@ -9,6 +9,7 @@ import { showGame } from '../../models/game';
 })
 export class DivisionColumnsComponent {
   @Input() divisions!: AbstractDivision[];
+  @Input() displayLarge = false;
 
   get filteredDivisions(): AbstractDivision[] {
     return this.divisions.filter((division) => showGame(division.game));

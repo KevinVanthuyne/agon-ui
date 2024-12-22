@@ -18,6 +18,7 @@ import { GameHeaderImageComponent } from '../ticker-items/game-header-image/game
 import { OvertinkerComponent } from '../ticker-items/overtinker/overtinker.component';
 import { Router } from '@angular/router';
 import HighScoreDivision from 'src/app/models/division/high-score-division';
+import { LeaderboardComponent } from '../ticker-items/leaderboard/leaderboard.component';
 
 @Component({
   selector: 'app-ticker-page',
@@ -53,7 +54,7 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit() {
     this.loadComponent();
-    this.setupInterval();
+    // this.setupInterval(); // This is not necessary now that only a single component is displayed
   }
 
   ngOnDestroy() {
@@ -65,9 +66,12 @@ export class TickerPageComponent implements AfterViewInit, OnDestroy {
       .pipe(take(1))
       .subscribe((divisions) => {
         // this.legacyTickerHandling(divisions)
-        void this.router.navigate(['leaderboard'], {
-          queryParams: { mode: 'ticker' },
-        });
+
+        const viewContainerRef = this.tickerHost.viewContainerRef;
+        viewContainerRef.clear();
+        viewContainerRef.createComponent<TickerItemComponent>(
+          LeaderboardComponent
+        );
       });
   }
 

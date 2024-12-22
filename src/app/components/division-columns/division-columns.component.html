@@ -7,8 +7,8 @@
     <div class="container-fluid">
       <div class="row justify-content-center h-100">
         @for (division of filteredDivisions; track division.id) {
-          <div class="col-md-6 col-xl-4 col-xxl-3">
-            <app-division-column [division]="division"/>
+          <div [class]="displayLarge ? '' : 'col-md-6 col-xl-4 col-xxl-3'">
+            <app-division-column [division]="division" [displayLarge]="displayLarge" />
           </div>
         }
       </div>

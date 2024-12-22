@@ -12,6 +12,7 @@ import { environment } from '../../../../environments/environment';
 })
 export class HighScoreLeaderboardPageComponent implements OnInit {
   divisions: HighScoreDivision[] = [];
+  isTicker = false;
 
   constructor(
     private competitionService: HighScoreCompetitionService,
@@ -25,6 +26,11 @@ export class HighScoreLeaderboardPageComponent implements OnInit {
       .subscribe((divisions) => {
         this.divisions = divisions;
       });
+
+    const mode = this.route.snapshot.queryParamMap.get('mode');
+    if (mode === 'ticker') {
+      this.isTicker = true;
+    }
 
     // const redirectParam = this.route.snapshot.queryParamMap.get('redirect');
     // if (redirectParam && redirectParam === 'ticker') {

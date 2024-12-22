@@ -13,6 +13,7 @@ import Score from '../../models/score';
 })
 export class DivisionColumnComponent {
   @Input() division!: AbstractDivision;
+  @Input() displayLarge = false;
 
   constructor(private readonly scoreService: ScoreService) {}
 

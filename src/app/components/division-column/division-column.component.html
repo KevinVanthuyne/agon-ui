@@ -9,7 +9,12 @@
 >
   <a routerLink="/games/{{game.id}}" class="game-link">
     @if (gameStyle.headerImage) {
-      <div [ngStyle]="{ backgroundImage: 'url(' + gameStyle.headerImage + ')' }" class="header-img-div"></div>
+      <div 
+      [ngStyle]="{ 
+        backgroundImage: 'url(' + gameStyle.headerImage + ')',
+        height: displayLarge ? '400px' : '200px'
+       }" 
+      class="header-img-div"></div>
     }
     <div class="game-title">
       <h2 class="mat-headline-4 m-0">
