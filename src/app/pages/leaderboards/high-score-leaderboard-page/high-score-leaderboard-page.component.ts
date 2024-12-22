@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { HighScoreCompetitionService } from '../../../services/competition/high-score-competition.service';
 import { take } from 'rxjs';
 import HighScoreDivision from '../../../models/division/high-score-division';
-import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-high-score-leaderboard-page',
@@ -14,11 +12,7 @@ export class HighScoreLeaderboardPageComponent implements OnInit {
   divisions: HighScoreDivision[] = [];
   isTicker = false;
 
-  constructor(
-    private competitionService: HighScoreCompetitionService,
-    private route: ActivatedRoute,
-    private router: Router
-  ) {}
+  constructor(private competitionService: HighScoreCompetitionService) {}
 
   ngOnInit(): void {
     this.competitionService.allDivisions$
@@ -26,18 +20,5 @@ export class HighScoreLeaderboardPageComponent implements OnInit {
       .subscribe((divisions) => {
         this.divisions = divisions;
       });
-
-    const mode = this.route.snapshot.queryParamMap.get('mode');
-    if (mode === 'ticker') {
-      this.isTicker = true;
-    }
-
-    // const redirectParam = this.route.snapshot.queryParamMap.get('redirect');
-    // if (redirectParam && redirectParam === 'ticker') {
-    //   setTimeout(
-    //     () => this.router.navigate(['ticker']),
-    //     environment.tickerPageInterval * 2
-    //   );
-    // }
   }
 }
